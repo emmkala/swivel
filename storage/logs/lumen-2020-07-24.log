@@ -1,0 +1,460 @@
+[2020-07-24 19:57:30] production.ERROR: ErrorException: Undefined variable: twig in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:31
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(31): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 31, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: twig at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:31)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(31): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 31, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2020-07-24 20:00:23] production.ERROR: Twig\Error\SyntaxError: Unexpected character "$". in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.html:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(292): Twig\Lexer->lexExpression()
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(186): Twig\Lexer->lexVar()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(542): Twig\Lexer->tokenize(Object(Twig\Source))
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(595): Twig\Environment->tokenize(Object(Twig\Source))
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('landing.html')
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('landing.html')
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(31): Twig\Environment->render('landing.html', Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#13 {main} {"exception":"[object] (Twig\\Error\\SyntaxError(code: 0): Unexpected character \"$\". at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.html:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(292): Twig\\Lexer->lexExpression()
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(186): Twig\\Lexer->lexVar()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(542): Twig\\Lexer->tokenize(Object(Twig\\Source))
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(595): Twig\\Environment->tokenize(Object(Twig\\Source))
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(408): Twig\\Environment->compileSource(Object(Twig\\Source))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(359): Twig\\Environment->loadTemplate('landing.html')
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(318): Twig\\Environment->load('landing.html')
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(31): Twig\\Environment->render('landing.html', Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#13 {main}
+"} 
+[2020-07-24 20:00:28] production.ERROR: Twig\Error\SyntaxError: Unexpected character "$". in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.html:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(292): Twig\Lexer->lexExpression()
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(186): Twig\Lexer->lexVar()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(542): Twig\Lexer->tokenize(Object(Twig\Source))
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(595): Twig\Environment->tokenize(Object(Twig\Source))
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('landing.html')
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('landing.html')
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(31): Twig\Environment->render('landing.html', Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#13 {main} {"exception":"[object] (Twig\\Error\\SyntaxError(code: 0): Unexpected character \"$\". at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.html:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(292): Twig\\Lexer->lexExpression()
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(186): Twig\\Lexer->lexVar()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(542): Twig\\Lexer->tokenize(Object(Twig\\Source))
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(595): Twig\\Environment->tokenize(Object(Twig\\Source))
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(408): Twig\\Environment->compileSource(Object(Twig\\Source))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(359): Twig\\Environment->loadTemplate('landing.html')
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(318): Twig\\Environment->load('landing.html')
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(31): Twig\\Environment->render('landing.html', Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#13 {main}
+"} 
+[2020-07-24 20:00:44] production.ERROR: Twig\Error\SyntaxError: Unexpected character "$". in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.html:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(292): Twig\Lexer->lexExpression()
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(186): Twig\Lexer->lexVar()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(542): Twig\Lexer->tokenize(Object(Twig\Source))
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(595): Twig\Environment->tokenize(Object(Twig\Source))
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('landing.html')
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('landing.html')
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(15): Twig\Environment->render('landing.html', Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#13 {main} {"exception":"[object] (Twig\\Error\\SyntaxError(code: 0): Unexpected character \"$\". at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.html:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(292): Twig\\Lexer->lexExpression()
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(186): Twig\\Lexer->lexVar()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(542): Twig\\Lexer->tokenize(Object(Twig\\Source))
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(595): Twig\\Environment->tokenize(Object(Twig\\Source))
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(408): Twig\\Environment->compileSource(Object(Twig\\Source))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(359): Twig\\Environment->loadTemplate('landing.html')
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(318): Twig\\Environment->load('landing.html')
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(15): Twig\\Environment->render('landing.html', Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#13 {main}
+"} 
+[2020-07-24 20:02:13] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ';' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:38
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ';' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:38)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:02:25] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ';' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:38
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ';' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:38)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:03:10] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ';' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:38
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ';' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:38)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:03:17] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ';' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:38
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ';' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:38)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:03:48] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ';' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:38
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ';' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:38)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:05:33] production.ERROR: Twig\Error\LoaderError: Unable to find template "landing.html" (looked into: resources/views). in C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Loader\FilesystemLoader.php:250
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Loader\FilesystemLoader.php(150): Twig\Loader\FilesystemLoader->findTemplate('landing.html')
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(299): Twig\Loader\FilesystemLoader->getCacheKey('landing.html')
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(381): Twig\Environment->getTemplateClass('landing.html')
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('landing.html')
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('landing.html')
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(15): Twig\Environment->render('landing.html', Array)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#7 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#10 {main} {"exception":"[object] (Twig\\Error\\LoaderError(code: 0): Unable to find template \"landing.html\" (looked into: resources/views). at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Loader\\FilesystemLoader.php:250)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Loader\\FilesystemLoader.php(150): Twig\\Loader\\FilesystemLoader->findTemplate('landing.html')
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(299): Twig\\Loader\\FilesystemLoader->getCacheKey('landing.html')
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->getTemplateClass('landing.html')
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(359): Twig\\Environment->loadTemplate('landing.html')
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(318): Twig\\Environment->load('landing.html')
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(15): Twig\\Environment->render('landing.html', Array)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#7 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#10 {main}
+"} 
+[2020-07-24 20:06:09] production.ERROR: Twig\Error\SyntaxError: Unexpected character "$". in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.html:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(292): Twig\Lexer->lexExpression()
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(186): Twig\Lexer->lexVar()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(542): Twig\Lexer->tokenize(Object(Twig\Source))
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(595): Twig\Environment->tokenize(Object(Twig\Source))
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('landing.html')
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('landing.html')
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(14): Twig\Environment->render('landing.html', Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#13 {main} {"exception":"[object] (Twig\\Error\\SyntaxError(code: 0): Unexpected character \"$\". at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.html:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(292): Twig\\Lexer->lexExpression()
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(186): Twig\\Lexer->lexVar()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(542): Twig\\Lexer->tokenize(Object(Twig\\Source))
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(595): Twig\\Environment->tokenize(Object(Twig\\Source))
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(408): Twig\\Environment->compileSource(Object(Twig\\Source))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(359): Twig\\Environment->loadTemplate('landing.html')
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(318): Twig\\Environment->load('landing.html')
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(14): Twig\\Environment->render('landing.html', Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#13 {main}
+"} 
+[2020-07-24 20:06:32] production.ERROR: Twig\Error\SyntaxError: Unexpected character "$". in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.html:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(292): Twig\Lexer->lexExpression()
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Lexer.php(186): Twig\Lexer->lexVar()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(542): Twig\Lexer->tokenize(Object(Twig\Source))
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(595): Twig\Environment->tokenize(Object(Twig\Source))
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(408): Twig\Environment->compileSource(Object(Twig\Source))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(381): Twig\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(359): Twig\Environment->loadTemplate('landing.html')
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\twig\twig\src\Environment.php(318): Twig\Environment->load('landing.html')
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(14): Twig\Environment->render('landing.html', Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#13 {main} {"exception":"[object] (Twig\\Error\\SyntaxError(code: 0): Unexpected character \"$\". at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.html:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(292): Twig\\Lexer->lexExpression()
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Lexer.php(186): Twig\\Lexer->lexVar()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(542): Twig\\Lexer->tokenize(Object(Twig\\Source))
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(595): Twig\\Environment->tokenize(Object(Twig\\Source))
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(408): Twig\\Environment->compileSource(Object(Twig\\Source))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(381): Twig\\Environment->loadClass('__TwigTemplate_...', 'landing.html', NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(359): Twig\\Environment->loadTemplate('landing.html')
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\twig\\twig\\src\\Environment.php(318): Twig\\Environment->load('landing.html')
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(14): Twig\\Environment->render('landing.html', Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#10 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#13 {main}
+"} 
+[2020-07-24 20:07:02] production.ERROR: ErrorException: Undefined variable: twig in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:31
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(31): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 31, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: twig at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:31)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(31): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 31, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2020-07-24 20:13:41] production.ERROR: InvalidArgumentException: View [landing] not found. in C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\FileViewFinder.php:137
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\FileViewFinder.php(79): Illuminate\View\FileViewFinder->findInPaths('landing', Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Factory.php(131): Illuminate\View\FileViewFinder->find('landing')
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\helpers.php(422): Illuminate\View\Factory->make('landing', Array, Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(35): view('landing', Array)
+#4 [internal function]: Closure->{closure}()
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#13 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#15 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#16 {main} {"exception":"[object] (InvalidArgumentException(code: 0): View [landing] not found. at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\FileViewFinder.php:137)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('landing', Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Factory.php(131): Illuminate\\View\\FileViewFinder->find('landing')
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\helpers.php(422): Illuminate\\View\\Factory->make('landing', Array, Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(35): view('landing', Array)
+#4 [internal function]: Closure->{closure}()
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 
+[2020-07-24 20:22:36] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:36
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:36)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:23:23] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:36
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:36)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:24:45] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:36
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:36)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-24 20:25:50] production.ERROR: ErrorException: Undefined variable: twig in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:34
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(34): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 34, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: twig at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:34)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(34): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 34, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2020-07-24 20:26:39] production.ERROR: ErrorException: Undefined variable: twig in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:34
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(34): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 34, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: twig at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:34)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(34): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 34, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2020-07-24 20:46:09] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:48
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected 'public' (T_PUBLIC), expecting end of file at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:48)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 

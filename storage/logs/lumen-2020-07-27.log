@@ -1,0 +1,170 @@
+[2020-07-27 15:26:06] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected ';', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:42
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected ';', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:42)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-27 15:26:53] production.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Cannot use Symfony\Component\HttpFoundation\Response as Response because the name is already in use in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:10
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot use Symfony\\Component\\HttpFoundation\\Response as Response because the name is already in use at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:10)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RegistersExceptionHandlers.php(54): Laravel\\Lumen\\Application->handleShutdown()
+#1 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}()
+#2 {main}
+"} 
+[2020-07-27 15:28:58] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected ';', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:42
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected ';', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:42)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-27 15:29:17] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected ';', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:42
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected ';', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:42)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-27 15:30:01] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected ';', expecting ')' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:42
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected ';', expecting ')' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:42)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-07-27 15:33:08] production.ERROR: ErrorException: Undefined variable: collectionName in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:37
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(37): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 37, Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(19): require('C:\\Users\\Emma L...')
+#2 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#5 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: collectionName at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:37)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(37): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 37, Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(19): require('C:\\\\Users\\\\Emma L...')
+#2 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#5 {main}
+"} 
+[2020-07-27 15:33:18] production.ERROR: ErrorException: Undefined variable: projectid in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:47
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(47): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 47, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: projectid at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:47)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(47): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 47, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2020-07-27 15:34:01] production.ERROR: ErrorException: Undefined variable: projectid in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:47
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(47): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 47, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: projectid at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:47)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(47): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 47, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
+[2020-07-27 15:35:00] production.ERROR: ErrorException: Undefined variable: test in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:50
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(50): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 50, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#13 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: test at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:50)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(50): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 50, Array)
+#1 [internal function]: Closure->{closure}()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#13 {main}
+"} 
