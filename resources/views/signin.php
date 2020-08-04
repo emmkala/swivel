@@ -1,6 +1,7 @@
 <!-- Global sign in page -->
 <?php
-include "inc\header.php";
+include 'inc\firebase_init.php';
+include 'inc\header.php';
  ?>
 
  <div class="signin">

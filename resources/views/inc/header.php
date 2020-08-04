@@ -1,8 +1,3 @@
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-
 <div>
   <nav>
     <a class="nav-links" id="studentReg" href="/studentRegister">Student</a>
@@ -16,20 +11,6 @@
 </div>
 
 <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAJJps330a5Q9PM3sF7VHXY6OIwwdEkLhI",
-    authDomain: "swivel-5fbcc.firebaseapp.com",
-    databaseURL: "https://swivel-5fbcc.firebaseio.com",
-    projectId: "swivel",
-    storageBucket: "swivel.appspot.com",
-    messagingSenderId: "653573960641",
-    appId: "1:653573960641:web:c0e189ae8f43dcd3f0b540",
-    measurementId: "G-55XEZZV1WZ"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
   // if the user is signed in, display certain buttons
   var signOut = document.getElementById("signOut");
@@ -60,7 +41,10 @@
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
     }).catch(function(error) {
-      // An error happened.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage);
+      console.log(errorCode);
     });
   }
 

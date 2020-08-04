@@ -1,5 +1,10 @@
+<h2> Start-Up Sign Up </h2>
 <?php
 include 'inc\firebase_init.php';
 include 'inc\header.php';
  ?>
- <h2>Landing page</h2>
+
+
+ <?php
+ include 'inc\footer.php';
+  ?>

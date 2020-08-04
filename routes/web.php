@@ -34,7 +34,8 @@ $bookFields = ['id', 'title', 'author', 'description', 'published_date', 'image_
 $firestore = new FirestoreClient([
   'projectid' => $projectid,
 ]);
-$collection = $firestore->collection('test');
+$studCollection = $firestore->collection('student');
+$compCollection = $firestore->collection('company');
 
 $storage = new StorageClient([
   'projectid' => $projectid,
@@ -50,14 +51,35 @@ $router->get('/', function(){
 
 // Student sign up
 $router->get('/studentRegister', function(){
-  return view('stud_signup', [
+  return view('stud_reg', [
+    'test' => null,
+  ]);
+});
+
+// Student profile set up
+$router->get('/studentSetup', function(){
+  return view('stud_setup', [
     'test' => null,
   ]);
 });
 
 // Company sign up
 $router->get('/companyRegister', function(){
-  return view('comp_signup', [
+  return view('comp_reg', [
+    'test' => null,
+  ]);
+});
+
+// Global Sign In
+$router->get('/sigin', function(){
+  return view('signin', [
+    'test' => null,
+  ]);
+});
+
+// Error Page
+$router->get('/error', function(){
+  return view('error', [
     'test' => null,
   ]);
 });
