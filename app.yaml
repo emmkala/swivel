@@ -5,3 +5,10 @@ env_variables:
   APP_DEBUG: true
   LOG_CHANNEL: stderr
   APP_STORAGE: /tmp
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /images
+  static_dir: img

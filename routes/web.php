@@ -26,10 +26,6 @@ $twig->render('landing.html', array(
 */
 
 $projectid = getenv('GOOGLE_CLOUD_PROJECT');
-/*
-$collectionName = getenv('FIRESTORE_COLLECTION') ?: 'books';
-$bookFields = ['id', 'title', 'author', 'description', 'published_date', 'image_url'];
-*/
 
 $firestore = new FirestoreClient([
   'projectid' => $projectid,
@@ -55,6 +51,35 @@ $router->get('/studentRegister', function(){
     'test' => null,
   ]);
 });
+
+/*
+Initial doc created, includes:
+email, fname, lname, role:student
+School will be added here when doing school auth
+
+$router->post('/studentRegister', function (Request $request) use ($studCollection) {
+
+  $fname = $request->input('fname');
+  $lname = $request->input('lname');
+  $email = $request->input('email');
+
+  $regData = [
+    'fname' => $fname,
+    'lname' => $lname,
+    'email' => $email
+  ];
+
+  // Data cleansing & error handling
+
+  //$newProfile = $studCollection->newDocument();
+  //$newProfile->set($regData);
+
+  $studCollection.doc($userID).set($regData);
+
+  return redirect('/studentSetup/' . $newProfile->id());
+  //return redirect('/studentSetup');
+});
+*/
 
 // Student profile set up
 $router->get('/studentSetup', function(){
@@ -83,6 +108,16 @@ $router->get('/error', function(){
     'test' => null,
   ]);
 });
+
+
+// Helper functions
+function to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Output: " . $output . "' );</script>";
+}
 
 
 

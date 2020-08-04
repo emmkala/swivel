@@ -1,6 +1,6 @@
 <?php
-include 'inc\firebase_init.php';
-include 'inc\header.php';
+include 'inc/firebase_init.php';
+include 'inc/header.php';
 ob_start();
 ?>
 
@@ -9,19 +9,20 @@ ob_start();
 <!-- register form, simple email password for testing -->
 <div class="register">
   <!-- <form> -->
-  <form method="POST" enctype="multipart/form-data">
-    <input type="text" id="fname" placeholder="First Name">
-    <input type="text" id="lname" placeholder="Last Name">
+  <!-- <form method="POST" enctype="multipart/form-data"> -->
+    <input type="text" id="fname" name="fname" placeholder="First Name">
+    <input type="text" id="lname" name="lname" placeholder="Last Name">
     <!-- Can get school from email, not super important -->
     <!-- <input type="text" id="university" placeholder="School"> Might change to drop down-->
-    <input type="text" id="email" placeholder="School Email">
-    <input type="password" id="password" placeholder="Password">
+    <input type="text" id="email" name="email" placeholder="School Email">
+    <input type="password" id="password" name="email" placeholder="Password">
     <input type="password" id="passwordCheck" placeholder="Confirm Password">
     <input type="submit" value="submit" onclick="register()" >
-  </form>
+  <!-- </form> -->
 </div>
 
 <script>
+  var db = firebase.firestore();
   function register(){
 
     var fname = document.getElementById("fname").value;
@@ -44,8 +45,21 @@ ob_start();
       firebase.auth().signInWithEmailAndPassword(email, pass).then(function() {
         // On sign in success, go to profile setup
         var user = firebase.auth().currentUser;
-        console.log(user.email, " signed in");
-        window.location = '/studentSetup';
+        var uid = user.uid;
+
+        db.collection("student").doc(uid).set({
+          FName: fname,
+          LName: lname,
+          Email: email
+        }).then(() => {
+            window.location = '/studentSetup';
+
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log("Doc not created", errorMessage);
+        });
+
       }).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -61,5 +75,5 @@ ob_start();
 </script>
 
 <?php
-include 'inc\footer.php';
+include 'inc/footer.php';
  ?>
