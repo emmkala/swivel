@@ -1,4 +1,4 @@
-<h2> Start-Up Sign Up </h2>
+<!-- contact info, no info passed in -->
 <?php
 include "inc\header.php";
  ?>

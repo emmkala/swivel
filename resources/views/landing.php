@@ -1,1 +1,4 @@
-<h2>Welcome to Swivel!</h2>
+<?php
+include "inc\header.php";
+ ?>
+ <h2>Landing page</h2>

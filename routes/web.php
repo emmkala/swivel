@@ -32,12 +32,12 @@ $bookFields = ['id', 'title', 'author', 'description', 'published_date', 'image_
 */
 
 $firestore = new FirestoreClient([
-  'swivel' => $projectid,
+  'projectid' => $projectid,
 ]);
 $collection = $firestore->collection('test');
 
 $storage = new StorageClient([
-  'swivel' => $projectid,
+  'projectid' => $projectid,
 ]);
 //$gcsBucket = $storage->bucket($projectid.'_bucket';);
 

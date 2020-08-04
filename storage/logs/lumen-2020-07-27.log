@@ -168,3 +168,123 @@ Stack trace:
 #12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
 #13 {main}
 "} 
+[2020-07-27 19:33:51] production.ERROR: ErrorException: include(inc\header.php): failed to open stream: No such file or directory in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(3): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(2, 'include(inc\\hea...', 'C:\\Users\\Emma L...', 3, Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(3): include()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(43): include('C:\\Users\\Emma L...')
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(21): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\Users\\Emma L...', Array)
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(142): Illuminate\View\Engines\PhpEngine->get('C:\\Users\\Emma L...', Array)
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(125): Illuminate\View\View->getContents()
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(90): Illuminate\View\View->renderContents()
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\http\Response.php(42): Illuminate\View\View->render()
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\symfony\http-foundation\Response.php(205): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(436): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Laravel\Lumen\Application->prepareResponse(Object(Illuminate\View\View))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#13 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#14 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#15 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#16 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#17 {main} {"exception":"[object] (ErrorException(code: 0): include(inc\\header.php): failed to open stream: No such file or directory at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(3): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'include(inc\\\\hea...', 'C:\\\\Users\\\\Emma L...', 3, Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(3): include()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(43): include('C:\\\\Users\\\\Emma L...')
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(21): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Emma L...', Array)
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(142): Illuminate\\View\\Engines\\PhpEngine->get('C:\\\\Users\\\\Emma L...', Array)
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(125): Illuminate\\View\\View->getContents()
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(90): Illuminate\\View\\View->renderContents()
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\http\\Response.php(42): Illuminate\\View\\View->render()
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(436): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Laravel\\Lumen\\Application->prepareResponse(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#13 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#15 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#16 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#17 {main}
+"} 
+[2020-07-27 19:36:29] production.ERROR: ErrorException: include(\inc\header.php): failed to open stream: No such file or directory in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(3): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(2, 'include(\\inc\\he...', 'C:\\Users\\Emma L...', 3, Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(3): include()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(43): include('C:\\Users\\Emma L...')
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(21): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\Users\\Emma L...', Array)
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(142): Illuminate\View\Engines\PhpEngine->get('C:\\Users\\Emma L...', Array)
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(125): Illuminate\View\View->getContents()
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(90): Illuminate\View\View->renderContents()
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\http\Response.php(42): Illuminate\View\View->render()
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\symfony\http-foundation\Response.php(205): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(436): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Laravel\Lumen\Application->prepareResponse(Object(Illuminate\View\View))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#13 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#14 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#15 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#16 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#17 {main} {"exception":"[object] (ErrorException(code: 0): include(\\inc\\header.php): failed to open stream: No such file or directory at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(3): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'include(\\\\inc\\\\he...', 'C:\\\\Users\\\\Emma L...', 3, Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(3): include()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(43): include('C:\\\\Users\\\\Emma L...')
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(21): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Emma L...', Array)
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(142): Illuminate\\View\\Engines\\PhpEngine->get('C:\\\\Users\\\\Emma L...', Array)
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(125): Illuminate\\View\\View->getContents()
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(90): Illuminate\\View\\View->renderContents()
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\http\\Response.php(42): Illuminate\\View\\View->render()
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(436): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Laravel\\Lumen\\Application->prepareResponse(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#13 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#15 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#16 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#17 {main}
+"} 
+[2020-07-27 19:37:08] production.ERROR: ErrorException: include(\inc\header.php): failed to open stream: No such file or directory in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php:3
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(3): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(2, 'include(\\inc\\he...', 'C:\\Users\\Emma L...', 3, Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(3): include()
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(43): include('C:\\Users\\Emma L...')
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(21): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\Users\\Emma L...', Array)
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(142): Illuminate\View\Engines\PhpEngine->get('C:\\Users\\Emma L...', Array)
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(125): Illuminate\View\View->getContents()
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(90): Illuminate\View\View->renderContents()
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\http\Response.php(42): Illuminate\View\View->render()
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\symfony\http-foundation\Response.php(205): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(436): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Laravel\Lumen\Application->prepareResponse(Object(Illuminate\View\View))
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#13 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#14 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#15 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#16 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#17 {main} {"exception":"[object] (ErrorException(code: 0): include(\\inc\\header.php): failed to open stream: No such file or directory at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php:3)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(3): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'include(\\\\inc\\\\he...', 'C:\\\\Users\\\\Emma L...', 3, Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(3): include()
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(43): include('C:\\\\Users\\\\Emma L...')
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(21): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Emma L...', Array)
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(142): Illuminate\\View\\Engines\\PhpEngine->get('C:\\\\Users\\\\Emma L...', Array)
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(125): Illuminate\\View\\View->getContents()
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(90): Illuminate\\View\\View->renderContents()
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\http\\Response.php(42): Illuminate\\View\\View->render()
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(436): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Laravel\\Lumen\\Application->prepareResponse(Object(Illuminate\\View\\View))
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#13 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#14 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#15 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#16 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#17 {main}
+"} 
