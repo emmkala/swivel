@@ -4,14 +4,12 @@ include 'inc/firebase_init.php';
 
 <head>
   <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <h2> Welcome, <span id="currUser"></span>!</h1>
+  <form id="regForm" enctype="multipart/form-data">
 
-  <form id="regForm" method="POST" enctype="multipart/form-data">
-
-  <h1 class="regTitle" id="regMain">Hi *persons name*</h1>
   <h2 class="regTitle" id="regSecond">Let's start </h2>
   <p class="regTitle" id="regSub">Take 2 minutes to fill out your profile to help us find the best startups for you to connect with</p>
 
@@ -57,47 +55,47 @@ include 'inc/firebase_init.php';
      new emps when enough people add them in other-->
     <p>What are some of you primary values and motivations?
       <span>Choose up to 3</span>
-      <input type="checkbox" oninput="this.className = ''" name="prim1" value="Creativity">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim1" value="Creativity">
         <label for="prim1"> Creativity </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim2" value="Adventure">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim2" value="Adventure">
         <label for="prim2"> Adventure </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim3" value="Achievement">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim3" value="Achievement">
         <label for="prim3"> Achievement </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim4" value="Learning">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim4" value="Learning">
         <label for="prim4"> Learning </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim5" value="Security">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim5" value="Security">
         <label for="prim5"> Security </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim6" value="Social_Impact">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim6" value="Social_Impact">
         <label for="prim6"> Social Impact </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim7" value="Intelligence">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim7" value="Intelligence">
         <label for="prim7"> Intelligence </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim8" value="Honesty">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim8" value="Honesty">
         <label for="prim8"> Honesty </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim9" value="Health">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim9" value="Health">
         <label for="prim9"> Health </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim10" value="Family">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim10" value="Family">
         <label for="prim10"> Family </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim11" value="Peace">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim11" value="Peace">
         <label for="prim11"> Peace </label>
-      <input type="checkbox" oninput="this.className = ''" name="prim12" value="Wealth">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim12" value="Wealth">
         <label for="prim12"> Wealth </label>
-        <input type="checkbox" oninput="this.className = ''" name="prim13" value="Accountability">
-          <label for="prim13"> Accountability </label>
-        <input type="checkbox" oninput="this.className = ''" name="prim14" value="Innovation">
-          <label for="prim14"> Innovation </label>
-        <input type="checkbox" oninput="this.className = ''" name="prim15" value="Team_Work">
-          <label for="prim15"> Team Work </label>
-        <input type="checkbox" oninput="this.className = ''" name="prim16" value="Quality">
-          <label for="prim16"> Quality </label>
-        <input type="checkbox" oninput="this.className = ''" name="prim17" value="Fun">
-          <label for="prim17"> Fun </label>
-        <input type="checkbox" oninput="this.className = ''" name="prim18" value="People">
-          <label for="prim18"> People </label>
-          <input type="checkbox" oninput="this.className = ''" name="prim19" value="Equality">
-            <label for="prim19"> Equality </label>
-          <input type="checkbox" oninput="this.className = ''" name="prim20" value="Balance">
-            <label for="prim20"> Balance </label>
-      <input placeholder="Other" oninput="this.className = ''" name="primOther">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim13" value="Accountability">
+        <label for="prim13"> Accountability </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim14" value="Innovation">
+        <label for="prim14"> Innovation </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim15" value="Team_Work">
+        <label for="prim15"> Team Work </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim16" value="Quality">
+        <label for="prim16"> Quality </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim17" value="Fun">
+        <label for="prim17"> Fun </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim18" value="People">
+        <label for="prim18"> People </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim19" value="Equality">
+        <label for="prim19"> Equality </label>
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim20" value="Balance">
+        <label for="prim20"> Balance </label>
+      <input placeholder="Other" oninput="this.className = 'prim'" name="primOther">
     </p>
     <p>What are some of you secondary values and motivations?
       <span>Choose up to 5</span>
@@ -253,7 +251,7 @@ include 'inc/firebase_init.php';
       <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship">
         <label for="work1"> Internship/Co-op </label>
       <input type="checkbox" oninput="this.className = ''" name="work2" value="Full_Time">
-        <label for="work2"> Full_Time </label>
+        <label for="work2"> Full Time </label>
       <input type="checkbox" oninput="this.className = ''" name="work3" value="Contract">
         <label for="work3"> Contract Work </label>
     </p>
@@ -356,6 +354,93 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+$('#regForm').on('submit', (e) => {
+  let dataToSend ={
+    // form data
+  }
+
+  e.preventDefault();
+
+  $.ajax({
+    url: // do we need this ?,
+    dataType: // json ?,
+    type: 'post',
+    /*headers: {
+        'authorization': `Bearer ${authToken}`
+    },
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader('authorization',
+            `Bearer ${authToken}`);
+
+        $.LoadingOverlay("show");
+    }, */
+    data: JSON.stringify(dataToSend),
+    success: function () {
+      alert('success')
+    },
+    error: function (textStatus, errorThrown) {
+        alert('Error occured: ' + errorThrown);
+        // window.location.href = '/listing';
+        console.log(errorThrown);
+        // window.location.reload();
+    }
+
+
+  });
+
+});
+
+/*
+$('#formAdd').on('submit', (e) => {
+
+    let dataToSend = {
+        type: $("input[name='addressType']").val(),
+        name: $("#name").val(),
+        address: {
+            address1: $("#address1").val(),
+            address2: $("#address2").val(),
+            city: $("#city").val(),
+            state: $("#state").val(),
+            postalCode: $("#postalCode").val(),
+            country: $("#country").val()
+        }
+    }
+
+    e.preventDefault();
+
+    $.ajax({
+        url: API_BASE_URL + 'Company_Create',
+        dataType: 'json',
+        type: 'post',
+        contentType: 'application/json',
+        headers: {
+            'authorization': `Bearer ${authToken}`
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('authorization',
+                `Bearer ${authToken}`);
+
+            $.LoadingOverlay("show");
+        },
+        data: JSON.stringify(dataToSend),
+        success: function (data, textStatus) {
+            $.LoadingOverlay("hide");
+            // alert('Building added successfully');
+            window.location.href = `/payments/add-payment-step-2.html?companyId=${data.data}`;
+        },
+        error: function (textStatus, errorThrown) {
+            $.LoadingOverlay("hide");
+            alert('Error occured: ' + errorThrown);
+            // window.location.href = '/listing';
+            console.log(errorThrown);
+            // window.location.reload();
+        }
+
+    })
+})
+*/
+
 </script>
 
 
@@ -377,7 +462,6 @@ else {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    document.getElementById("currUser").innerHTML = user.email;
     document.getElementById("uid").value = user.uid;
   } else {
     // Go to error page if no current user

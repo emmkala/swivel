@@ -115,19 +115,48 @@ $router->post('/studentSetup/{studentId}', function (Request $request) use ($stu
   exp3
   magic
   */
+
+  $keys = array_keys($rawData);
+
   $profileData = [
     ['path' => 'degree', 'value' => $rawData['degree']],
     ['path' => 'major', 'value' => $rawData['major']],
     ['path' => 'loc', 'value' => $rawData['loc']],
-    ['path' => 'year', 'value' => $rawData['year']]
+    ['path' => 'year', 'value' => $rawData['year']],
+    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[5]]],
+    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[6]]],
+    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[7]]],
+    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[8]]],
+    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[9]]],
+    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[10]]],
+    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[11]]],
+    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[12]]],
+    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[13]]],
+    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[14]]],
+    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[15]]],
+    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[16]]],
+    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[17]]],
+    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[18]]],
+    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[19]]],
+    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[20]]],
+    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[21]]],
+    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[22]]],
+    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[23]]],
+    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[24]]],
+    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[25]]],
+    // work type ??
+    ['path' => 'Experience.exp1', 'value' => $rawData['exp1']],
+    ['path' => 'Experience.exp2', 'value' => $rawData['exp2']],
+    ['path' => 'Experience.exp3', 'value' => $rawData['exp3']],
+    ['path' => 'magic', 'value' => $rawData['magic']],
   ];
+
+  workTypes($profileData, $rawData);
 
   $studCollection->document($userId)->update($profileData);
 
-  return redirect('/dashboard' . '/' . $userId);
+  return redirect('/dashboard/' . $userId);
 
-
-  // Data cleansing & error handling
 /*
   $query = $studCollection->where('email', '=', $userEmail);
   $documents = $query->documents();
@@ -145,6 +174,7 @@ $router->post('/studentSetup/{studentId}', function (Request $request) use ($stu
     }
   }
   */
+
 });
 
 // Company sign up
@@ -178,6 +208,33 @@ $router->get('/dashboard/{studentId}', function(){
 
 
 // Helper functions
+
+function workTypes($profileData, $rawData){
+
+  // find how many work things
+  $tmp = $rawData;
+  // getting rid of all elements that aren't in the
+  array_splice($tmp, 0, 25);
+  array_pop($tmp);
+  array_pop($tmp);
+  array_pop($tmp);
+  array_pop($tmp);
+
+  // append each thing to the array
+  foreach($tmp as $work){
+    if($work == "Internship"){
+      $profileData[] = (object) ['path' => 'WorkType.work1', 'value' => "Internship"];
+    } else if($work == "Full_Time"){
+      $profileData[] = (object) ['path' => 'WorkType.work2', 'value' => "Full_Time"];
+    } else if($work == "Contract"){
+      $profileData[] = (object) ['path' => 'WorkType.work3', 'value' => "Contract"];
+    }
+  }
+
+  return $profileData;
+}
+
+
 function to_console($data) {
     $output = $data;
     if (is_array($output))
