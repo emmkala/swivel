@@ -3,7 +3,7 @@ include 'inc/firebase_init.php';
 ?>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
 </head>
 
 <body>
@@ -44,6 +44,9 @@ include 'inc/firebase_init.php';
         <option value="2019">2022</option>
         <option value="2019">2023</option>
       </select>
+    </p>
+    <p>
+      <input type="password" id="uid" name="uid" value="" style="display: none;">
     </p>
   </div>
 
@@ -283,7 +286,6 @@ include 'inc/firebase_init.php';
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
-document.getElementById("uid").value = "NewTest";
 
 function showTab(n) {
   // This function will display the specified tab of the form...
@@ -376,7 +378,7 @@ else {
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     document.getElementById("currUser").innerHTML = user.email;
-    //document.getElementById("uid").emp = user.uid;
+    document.getElementById("uid").value = user.uid;
   } else {
     // Go to error page if no current user
     //window.location = '/error';

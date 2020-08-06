@@ -82,10 +82,69 @@ $router->post('/studentRegister', function (Request $request) use ($studCollecti
 */
 
 // Student profile set up
-$router->get('/studentSetup', function(){
+$router->get('/studentSetup/{studentId}', function(){
   return view('stud_setup', [
     'test' => null,
   ]);
+});
+
+$router->post('/studentSetup/{studentId}', function (Request $request) use ($studCollection) {
+  $rawData = $request->all();
+  $userId = $request->input('uid');
+
+  // segmenting the raw data
+  // raw data in associative array, use array keys
+  /*
+  degree - 0
+  major - 1
+  loc - 2
+  year - 3
+
+ // force 5/3
+ can do something with array_keys and array_key_exists to find ?
+  primary (3)
+  sec (5)
+  emp (3)
+
+  tech (5)
+  soft (5)
+  work (3)
+
+  exp1
+  exp2
+  exp3
+  magic
+  */
+  $profileData = [
+    ['path' => 'degree', 'value' => $rawData['degree']],
+    ['path' => 'major', 'value' => $rawData['major']],
+    ['path' => 'loc', 'value' => $rawData['loc']],
+    ['path' => 'year', 'value' => $rawData['year']]
+  ];
+
+  $studCollection->document($userId)->update($profileData);
+
+  return redirect('/dashboard' . '/' . $userId);
+
+
+  // Data cleansing & error handling
+/*
+  $query = $studCollection->where('email', '=', $userEmail);
+  $documents = $query->documents();
+
+  foreach ($documents as $user) {
+    if ($document->exists()) {
+      to_console("Success");
+      $userId = $user.id();
+      $studCollection.doc($userId).update($rawData);
+      return redirect('/dashboard');
+
+    } else {
+        to_console('Document %s does not exist!' . PHP_EOL, $snapshot->id());
+        return redirect('/error');
+    }
+  }
+  */
 });
 
 // Company sign up
@@ -108,6 +167,14 @@ $router->get('/error', function(){
     'test' => null,
   ]);
 });
+
+// Dashboard
+$router->get('/dashboard/{studentId}', function(){
+  return view('dashboard', [
+    'test' => null,
+  ]);
+});
+
 
 
 // Helper functions

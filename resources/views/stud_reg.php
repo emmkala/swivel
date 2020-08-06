@@ -52,7 +52,8 @@ ob_start();
           LName: lname,
           Email: email
         }).then(() => {
-            window.location = '/studentSetup';
+          var url = '/studentSetup/'+uid;
+            window.location = url;
 
         }).catch(function(error) {
           var errorCode = error.code;

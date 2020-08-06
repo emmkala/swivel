@@ -7,8 +7,8 @@ env_variables:
   APP_STORAGE: /tmp
 
 handlers:
-- url: /css
-  static_dir: css
+- url: /stylesheets
+  static_dir: stylesheets
 
 - url: /images
   static_dir: img
