@@ -82,13 +82,14 @@ $router->post('/studentRegister', function (Request $request) use ($studCollecti
 */
 
 // Student profile set up
-$router->get('/studentSetup/{studentId}', function(){
+$router->get('/studentSetup/{userId}', function(){
   return view('stud_setup', [
     'test' => null,
   ]);
 });
 
-$router->post('/studentSetup/{studentId}', function (Request $request) use ($studCollection) {
+// Student profile post
+$router->post('/studentSetup/{userId}', function (Request $request) use ($studCollection) {
   $rawData = $request->all();
   $userId = $request->input('uid');
 
@@ -126,24 +127,24 @@ $router->post('/studentSetup/{studentId}', function (Request $request) use ($stu
     ['path' => 'Primary.prim1', 'value' => $rawData[$keys[5]]],
     ['path' => 'Primary.prim2', 'value' => $rawData[$keys[6]]],
     ['path' => 'Primary.prim3', 'value' => $rawData[$keys[7]]],
-    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[8]]],
-    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[9]]],
-    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[10]]],
-    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[11]]],
-    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[12]]],
-    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[13]]],
-    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[14]]],
-    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[15]]],
-    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[16]]],
-    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[17]]],
-    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[18]]],
-    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[19]]],
-    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[20]]],
-    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[21]]],
-    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[22]]],
-    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[23]]],
-    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[24]]],
-    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[25]]],
+    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[9]]],
+    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[10]]],
+    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[11]]],
+    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[12]]],
+    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[13]]],
+    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[15]]],
+    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[16]]],
+    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[17]]],
+    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[19]]],
+    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[20]]],
+    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[21]]],
+    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[22]]],
+    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[23]]],
+    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[25]]],
+    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[26]]],
+    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[27]]],
+    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[28]]],
+    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[29]]],
     // work type ??
     ['path' => 'Experience.exp1', 'value' => $rawData['exp1']],
     ['path' => 'Experience.exp2', 'value' => $rawData['exp2']],
@@ -151,7 +152,8 @@ $router->post('/studentSetup/{studentId}', function (Request $request) use ($stu
     ['path' => 'magic', 'value' => $rawData['magic']],
   ];
 
-  workTypes($profileData, $rawData);
+
+  $profileData = workTypes($profileData, $rawData, "stud");
 
   $studCollection->document($userId)->update($profileData);
 
@@ -184,6 +186,86 @@ $router->get('/companyRegister', function(){
   ]);
 });
 
+// Company profile setup
+$router->get('/companySetup/{userId}', function(){
+  return view('comp_setup', [
+    'test' => null,
+  ]);
+});
+
+// Company profile post
+$router->post('/companySetup/{userId}', function (Request $request) use ($compCollection) {
+  $rawData = $request->all();
+  $userId = $request->input('uid');
+
+  // segmenting the raw data
+  // raw data in associative array, use array keys
+  /*
+  degree - 0
+  major - 1
+  loc - 2
+  year - 3
+
+ // force 5/3
+ can do something with array_keys and array_key_exists to find ?
+  primary (3)
+  sec (5)
+  emp (3)
+
+  tech (5)
+  soft (5)
+  work (3)
+
+  exp1
+  exp2
+  exp3
+  magic
+  */
+
+  $keys = array_keys($rawData);
+
+  $profileData = [
+    ['path' => 'position', 'value' => $rawData['position']],
+    ['path' => 'size', 'value' => $rawData['size']],
+    ['path' => 'loc', 'value' => $rawData['loc']],
+    ['path' => 'site', 'value' => $rawData['site']],
+    ['path' => 'alma', 'value' => $rawData['alma']],
+    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[6]]],
+    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[7]]],
+    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[8]]],
+    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[10]]],
+    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[11]]],
+    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[12]]],
+    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[13]]],
+    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[14]]],
+    ['path' => 'Apart.diff1', 'value' => $rawData[$keys[16]]],
+    ['path' => 'Apart.diff2', 'value' => $rawData[$keys[17]]],
+    ['path' => 'Apart.diff3', 'value' => $rawData[$keys[18]]],
+    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[20]]],
+    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[21]]],
+    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[22]]],
+    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[23]]],
+    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[24]]],
+    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[26]]],
+    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[27]]],
+    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[28]]],
+    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[29]]],
+    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[30]]],
+    // work type ??
+    ['path' => 'Info.info1', 'value' => $rawData['info1']],
+    ['path' => 'Info.info2', 'value' => $rawData['info2']],
+    ['path' => 'Info.info3', 'value' => $rawData['info3']],
+  ];
+
+
+  $profileData = workTypes($profileData, $rawData, "comp");
+
+  $compCollection->document($userId)->update($profileData);
+
+  return redirect('/dashboard/' . $userId);
+
+});
+
 // Global Sign In
 $router->get('/sigin', function(){
   return view('signin', [
@@ -199,7 +281,7 @@ $router->get('/error', function(){
 });
 
 // Dashboard
-$router->get('/dashboard/{studentId}', function(){
+$router->get('/dashboard/{userId}', function(){
   return view('dashboard', [
     'test' => null,
   ]);
@@ -209,25 +291,33 @@ $router->get('/dashboard/{studentId}', function(){
 
 // Helper functions
 
-function workTypes($profileData, $rawData){
+function workTypes($profileData, $rawData, $user){
 
-  // find how many work things
+  $numFir;
+  $numLas;
+
+  if($user == "stud"){
+    $numFir = 29;
+    $numLas = 4;
+  } else if($user == "comp") {
+    $numFir = 30;
+    $numLas = 3;
+  }
   $tmp = $rawData;
   // getting rid of all elements that aren't in the
-  array_splice($tmp, 0, 25);
-  array_pop($tmp);
-  array_pop($tmp);
-  array_pop($tmp);
-  array_pop($tmp);
+  array_splice($tmp, 0, $numFir);
+  for($i = 0; $i < $numLas; $i++){
+    array_pop($tmp);
+  }
 
   // append each thing to the array
   foreach($tmp as $work){
     if($work == "Internship"){
-      $profileData[] = (object) ['path' => 'WorkType.work1', 'value' => "Internship"];
+      $profileData[] = ['path' => 'WorkType.work1', 'value' => "Internship"];
     } else if($work == "Full_Time"){
-      $profileData[] = (object) ['path' => 'WorkType.work2', 'value' => "Full_Time"];
+      $profileData[] = ['path' => 'WorkType.work2', 'value' => "Full_Time"];
     } else if($work == "Contract"){
-      $profileData[] = (object) ['path' => 'WorkType.work3', 'value' => "Contract"];
+      $profileData[] = ['path' => 'WorkType.work3', 'value' => "Contract"];
     }
   }
 

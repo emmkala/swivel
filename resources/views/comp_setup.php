@@ -23,25 +23,22 @@ include 'inc/firebase_init.php';
 
   <!-- One "tab" for each step in the form: -->
 
-  <!-- School Information -->
+  <!-- Company Information -->
   <div class="tab">
-    <p>What is your degree?
-      <input placeholder="Bachelor of Applied Sciences" id="degree" oninput="this.className = ''" name="degree">
+    <p>What is your position?
+      <input placeholder="CEO & Co-Founder" id="position" oninput="this.className = ''" name="position">
     </p>
-    <p>What is you major/specification?
-      <input placeholder="Mechanincal Engineering" oninput="this.className = ''" name="major">
+    <p>What is your company size?
+      <input placeholder="15" oninput="this.className = ''" name="size">
     </p>
     <p>Where are you located?
       <input placeholder="Toronto, ON" oninput="this.className = ''" name="loc">
     </p>
-    <p>What is your graduation year?
-      <select oninput="this.className = ''" name="year">
-        <option value="2019">2019</option>
-        <option value="2019">2020</option>
-        <option value="2019">2021</option>
-        <option value="2019">2022</option>
-        <option value="2019">2023</option>
-      </select>
+    <p>What is you company's website?
+      <input placeholder="www.swivelnetwork.com" oninput="this.className = ''" name="site">
+    </p>
+    <p>Where post secondary/graduate school did you attend?
+      <input placeholder="Queen's University" oninput="this.className = ''" name="alma">
     </p>
     <p>
       <input type="password" id="uid" name="uid" value="" style="display: none;">
@@ -53,8 +50,8 @@ include 'inc/firebase_init.php';
 
     <!-- Future, these emps will be populated from the db, adding
      new emps when enough people add them in other-->
-    <p>What are some of you primary values and motivations?
-      <span>Choose up to 3</span>
+    <p>What are your company's primary values?
+      <span>Choose 3 values from the list</span>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim1" value="Creativity">
         <label for="prim1"> Creativity </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim2" value="Adventure">
@@ -97,8 +94,8 @@ include 'inc/firebase_init.php';
         <label for="prim20"> Balance </label>
       <input placeholder="Other" oninput="this.className = 'prim'" name="primOther">
     </p>
-    <p>What are some of you secondary values and motivations?
-      <span>Choose up to 5</span>
+    <p>What are your company's secondary values?
+      <span>Choose 5 values from the list</span>
       <input type="checkbox" oninput="this.className = ''" name="sec1" value="Creativity">
         <label for="sec1"> Creativity </label>
       <input type="checkbox" oninput="this.className = ''" name="sec2" value="Adventure">
@@ -143,33 +140,33 @@ include 'inc/firebase_init.php';
     </p>
     <!-- These are gonna change based on Al's mockup-->
     <p>What are some important aspects to you when considering an employer?
-      <span>Choose up to 3</span>
-      <input type="checkbox" oninput="this.className = ''" name="emp1" value="Flexible">
-        <label for="emp1"> Flexible Work Hours </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp2" value="Purpose">
-        <label for="emp2"> Purposeful Work </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp3" value="Company_Rep">
-        <label for="emp3"> Company Reputation </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp4" value="Sustainable">
-        <label for="emp4"> Sustainable Practices </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp5" value="Office">
-        <label for="emp5"> Office Space </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp6" value="Fun">
-        <label for="emp6"> Fun Culture </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp7" value="Benefits">
-        <label for="emp7"> Benefits </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp8" value="Team">
-        <label for="emp8"> The Team </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp8" value="Location">
-        <label for="emp8"> Location </label>
-      <input placeholder="Other" oninput="this.className = ''" name="empOther">
+      <span>Choose 3 attributes from the list</span>
+      <input type="checkbox" oninput="this.className = ''" name="diff1" value="Flexible">
+        <label for="diff1"> Flexible Work Hours </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff2" value="Purpose">
+        <label for="diff2"> Purposeful Work </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff3" value="Company_Rep">
+        <label for="diff3"> Company Reputation </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff4" value="Sustainable">
+        <label for="diff4"> Sustainable Practices </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff5" value="Office">
+        <label for="diff5"> Office Space </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff6" value="Fun">
+        <label for="diff6"> Fun Culture </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff7" value="Benefits">
+        <label for="diff7"> Benefits </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff8" value="Team">
+        <label for="diff8"> The Team </label>
+      <input type="checkbox" oninput="this.className = ''" name="diff8" value="Location">
+        <label for="diff8"> Location </label>
+      <input placeholder="Other" oninput="this.className = ''" name="diffOther">
     </p>
   </div>
 
   <!-- Skills -->
   <div class="tab">
-    <p>What are some of your technical skills?
-      <span>Choose up to 5</span>
+    <p>What technical skills are you looking for?
+      <span>Choose 5 skills from the list</span>
       <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web_Dev">
         <label for="tech1"> Web Development </label>
       <input type="checkbox" oninput="this.className = ''" name="tech2" value="Android">
@@ -212,8 +209,8 @@ include 'inc/firebase_init.php';
         <label for="tech20"> eCommerce </label>
       <input placeholder="Other" oninput="this.className = ''" name="techOther">
     </p>
-    <p>What are some of your soft skills?
-      <span>Choose up to 5</span>
+    <p>What soft skills are you looking for?
+      <span>Choose 5 skills from the list</span>
       <input type="checkbox" oninput="this.className = ''" name="soft1" value="Leadership">
         <label for="soft1"> Leadership </label>
       <input type="checkbox" oninput="this.className = ''" name="soft2" value="Adaptability">
@@ -246,7 +243,7 @@ include 'inc/firebase_init.php';
         <label for="soft15"> Open-Mindedness </label>
       <input placeholder="Other" oninput="this.className = ''" name="softOther">
     </p>
-    <p> What type of work are you looking for?
+    <p> Employment Type?
       <span> Choose all that apply </span>
       <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship">
         <label for="work1"> Internship/Co-op </label>
@@ -259,17 +256,20 @@ include 'inc/firebase_init.php';
 
   <!-- Experience -->
   <div class="tab">
-    <span> What are your top 3 resume highlights? </span>
-    <span> Please write 1 sentence about 3 experiences listed on your resume </span>
+    <span> Give us a brief description of your company </span>
+    <span> In 50 words or less </span>
     <!-- Very hack probably unsafe way to do this, see if you can figure it out with security rules -->
     <!-- <p><input type="text" id="uid" name="uid" value="" style="display:none;"></p> -->
-    <p><textarea placeholder="Summer Data Science internship with RBC" oninput="this.className = ''" name="exp1"></textarea></p>
-    <p><textarea placeholder="Research Assistant with Queen's University" oninput="this.className = ''" name="exp2"></textarea></p>
-    <p><textarea placeholder="Varsity soccer team captian" oninput="this.className = ''" name="exp3"></textarea></p>
+    <p><textarea placeholder="Swivels purpose is to..." oninput="this.className = ''" name="info1"></textarea></p>
 
-    <span> Tell us something that isn't on your resume. </span>
-    <span> This is your space to wow! What is something that helps you stand out? </span>
-    <p><textarea placeholder="I've travelled to 25 different countries" oninput="this.className = ''" name="magic"></textarea></p>
+    <span> Give us a brief description of life at your company </span>
+    <span> In 50 words or less </span>
+    <p><textarea placeholder="Life at Swivel is filled with learning, teamwork and ..." oninput="this.className = ''" name="info2"></textarea></p>
+
+    <span> Give us a brief description of yourself </span>
+    <span> In 50 words or less </span>
+    <p><textarea placeholder="I am an entrepreneur at heart ..." oninput="this.className = ''" name="info3"></textarea></p>
+
   </div>
 
   <div style="overflow:auto;">
