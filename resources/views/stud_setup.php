@@ -43,9 +43,6 @@ include 'inc/firebase_init.php';
         <option value="2019">2023</option>
       </select>
     </p>
-    <p>
-      <input type="password" id="uid" name="uid" value="" style="display: none;">
-    </p>
   </div>
 
   <!-- Values -->

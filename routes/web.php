@@ -52,34 +52,6 @@ $router->get('/studentRegister', function(){
   ]);
 });
 
-/*
-Initial doc created, includes:
-email, fname, lname, role:student
-School will be added here when doing school auth
-
-$router->post('/studentRegister', function (Request $request) use ($studCollection) {
-
-  $fname = $request->input('fname');
-  $lname = $request->input('lname');
-  $email = $request->input('email');
-
-  $regData = [
-    'fname' => $fname,
-    'lname' => $lname,
-    'email' => $email
-  ];
-
-  // Data cleansing & error handling
-
-  //$newProfile = $studCollection->newDocument();
-  //$newProfile->set($regData);
-
-  $studCollection.doc($userID).set($regData);
-
-  return redirect('/studentSetup/' . $newProfile->id());
-  //return redirect('/studentSetup');
-});
-*/
 
 // Student profile set up
 $router->get('/studentSetup/{userId}', function(){
@@ -89,10 +61,8 @@ $router->get('/studentSetup/{userId}', function(){
 });
 
 // Student profile post
-$router->post('/studentSetup/{userId}', function (Request $request) use ($studCollection) {
+$router->post('/studentSetup/{userId}', function (Request $request, $userId) use ($studCollection) {
   $rawData = $request->all();
-  $userId = $request->input('uid');
-
   // segmenting the raw data
   // raw data in associative array, use array keys
   /*
@@ -124,27 +94,27 @@ $router->post('/studentSetup/{userId}', function (Request $request) use ($studCo
     ['path' => 'major', 'value' => $rawData['major']],
     ['path' => 'loc', 'value' => $rawData['loc']],
     ['path' => 'year', 'value' => $rawData['year']],
-    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[5]]],
-    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[6]]],
-    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[7]]],
-    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[9]]],
-    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[10]]],
-    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[11]]],
-    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[12]]],
-    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[13]]],
-    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[15]]],
-    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[16]]],
-    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[17]]],
-    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[19]]],
-    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[20]]],
-    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[21]]],
-    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[22]]],
-    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[23]]],
-    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[25]]],
-    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[26]]],
-    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[27]]],
-    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[28]]],
-    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[29]]],
+    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[4]]],
+    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[5]]],
+    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[6]]],
+    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[8]]],
+    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[9]]],
+    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[10]]],
+    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[11]]],
+    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[12]]],
+    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[14]]],
+    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[15]]],
+    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[16]]],
+    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[18]]],
+    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[19]]],
+    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[20]]],
+    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[21]]],
+    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[22]]],
+    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[24]]],
+    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[25]]],
+    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[26]]],
+    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[27]]],
+    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[28]]],
     // work type ??
     ['path' => 'Experience.exp1', 'value' => $rawData['exp1']],
     ['path' => 'Experience.exp2', 'value' => $rawData['exp2']],
@@ -157,7 +127,7 @@ $router->post('/studentSetup/{userId}', function (Request $request) use ($studCo
 
   $studCollection->document($userId)->update($profileData);
 
-  return redirect('/dashboard/' . $userId);
+  return redirect('/matching/' . $userId);
 
 /*
   $query = $studCollection->where('email', '=', $userEmail);
@@ -179,6 +149,21 @@ $router->post('/studentSetup/{userId}', function (Request $request) use ($studCo
 
 });
 
+// Universal ?? For now student and comp come back to this
+$router->get('/editStudentProfile/{userId}', function($userId) use ($studCollection) {
+  $studDoc = $studCollection->document($userId);
+  $studData = $studDoc->snapshot();
+
+  if (!$studData->exists()) {
+    return new Response('', Response::HTTP_NOT_FOUND);
+  }
+
+  return view('stud_edit', [
+    'data' => $studData,
+  ]);
+});
+
+
 // Company sign up
 $router->get('/companyRegister', function(){
   return view('comp_reg', [
@@ -194,10 +179,8 @@ $router->get('/companySetup/{userId}', function(){
 });
 
 // Company profile post
-$router->post('/companySetup/{userId}', function (Request $request) use ($compCollection) {
+$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection) {
   $rawData = $request->all();
-  $userId = $request->input('uid');
-
   // segmenting the raw data
   // raw data in associative array, use array keys
   /*
@@ -230,27 +213,27 @@ $router->post('/companySetup/{userId}', function (Request $request) use ($compCo
     ['path' => 'loc', 'value' => $rawData['loc']],
     ['path' => 'site', 'value' => $rawData['site']],
     ['path' => 'alma', 'value' => $rawData['alma']],
-    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[6]]],
-    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[7]]],
-    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[8]]],
-    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[10]]],
-    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[11]]],
-    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[12]]],
-    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[13]]],
-    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[14]]],
-    ['path' => 'Apart.diff1', 'value' => $rawData[$keys[16]]],
-    ['path' => 'Apart.diff2', 'value' => $rawData[$keys[17]]],
-    ['path' => 'Apart.diff3', 'value' => $rawData[$keys[18]]],
-    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[20]]],
-    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[21]]],
-    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[22]]],
-    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[23]]],
-    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[24]]],
-    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[26]]],
-    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[27]]],
-    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[28]]],
-    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[29]]],
-    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[30]]],
+    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[5]]],
+    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[6]]],
+    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[7]]],
+    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[9]]],
+    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[10]]],
+    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[11]]],
+    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[12]]],
+    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[13]]],
+    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[15]]],
+    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[16]]],
+    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[17]]],
+    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[19]]],
+    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[20]]],
+    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[21]]],
+    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[22]]],
+    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[23]]],
+    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[25]]],
+    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[26]]],
+    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[27]]],
+    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[28]]],
+    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[29]]],
     // work type ??
     ['path' => 'Info.info1', 'value' => $rawData['info1']],
     ['path' => 'Info.info2', 'value' => $rawData['info2']],
@@ -262,7 +245,8 @@ $router->post('/companySetup/{userId}', function (Request $request) use ($compCo
 
   $compCollection->document($userId)->update($profileData);
 
-  return redirect('/dashboard/' . $userId);
+  // redirect to edit page when matching is working
+  return redirect('/matching/' . $userId);
 
 });
 
@@ -281,8 +265,11 @@ $router->get('/error', function(){
 });
 
 // Dashboard
-$router->get('/dashboard/{userId}', function(){
-  return view('dashboard', [
+$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection){
+  // finding matches
+
+
+  return view('matching', [
     'test' => null,
   ]);
 });
@@ -297,10 +284,10 @@ function workTypes($profileData, $rawData, $user){
   $numLas;
 
   if($user == "stud"){
-    $numFir = 29;
+    $numFir = 28;
     $numLas = 4;
   } else if($user == "comp") {
-    $numFir = 30;
+    $numFir = 29;
     $numLas = 3;
   }
   $tmp = $rawData;

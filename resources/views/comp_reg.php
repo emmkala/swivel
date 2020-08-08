@@ -13,7 +13,7 @@ ob_start();
     <input type="text" id="fname" name="fname" placeholder="First Name">
     <input type="text" id="lname" name="lname" placeholder="Last Name">
     <!-- Can get company from email, not super important -->
-    <!-- <input type="text" id="company" placeholder="Company"> Might change to drop down-->
+    <input type="text" id="company" placeholder="Company Name">
     <input type="text" id="email" name="email" placeholder="Company Email">
     <input type="password" id="password" name="email" placeholder="Password">
     <input type="password" id="passwordCheck" placeholder="Confirm Password">
@@ -28,7 +28,7 @@ ob_start();
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
     // can get uni from email parse
-    // var uni = document.getElementById("university").value;
+    var comp = document.getElementById("company").value;
     var email = document.getElementById("email").value;
     var pass = document.getElementById("password").value;
     var dup = document.getElementById("passwordCheck").value;
@@ -59,9 +59,10 @@ ob_start();
 
 
         db.collection("company").doc(uid).set({
-          FName: fname,
-          LName: lname,
-          Email: email,
+          fname: fname,
+          lname: lname,
+          email: email,
+          company: comp,
           Primary: primary,
           Secondary: secondary,
           Apart: diff,

@@ -40,9 +40,6 @@ include 'inc/firebase_init.php';
     <p>Where post secondary/graduate school did you attend?
       <input placeholder="Queen's University" oninput="this.className = ''" name="alma">
     </p>
-    <p>
-      <input type="password" id="uid" name="uid" value="" style="display: none;">
-    </p>
   </div>
 
   <!-- Values -->
@@ -258,8 +255,6 @@ include 'inc/firebase_init.php';
   <div class="tab">
     <span> Give us a brief description of your company </span>
     <span> In 50 words or less </span>
-    <!-- Very hack probably unsafe way to do this, see if you can figure it out with security rules -->
-    <!-- <p><input type="text" id="uid" name="uid" value="" style="display:none;"></p> -->
     <p><textarea placeholder="Swivels purpose is to..." oninput="this.className = ''" name="info1"></textarea></p>
 
     <span> Give us a brief description of life at your company </span>
