@@ -70,9 +70,40 @@ ob_start();
           Soft: soft,
           WorkType: work,
           Info: info
-        }).then(() => {
-          var url = '/companySetup/'+uid;
-          window.location = url;
+        });
+
+        var interests = [];
+        var skips = [];
+        // set empty interested collection
+        db.collection("interested").doc(uid).set({
+          interests: interests
+        });
+        // est empty skipped colletion
+        db.collection("skipped").doc(uid).set({
+          skips: skips
+        });
+
+        // get all of the current company documents
+        var studentIds = [];
+        db.collection("student").get().then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            studentIds.push(doc.id);
+          });
+        }).then(function() {
+          // set the notSeen array
+          db.collection("notSeen").doc(uid).set({
+            notSeenIds: studentIds,
+          }).then(function() {
+            //go to the next page
+            var url = '/companySetup/'+uid;
+            window.location = url;
+            // end of successful path
+
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorMessage);
+        });
 
         }).catch(function(error) {
           var errorCode = error.code;

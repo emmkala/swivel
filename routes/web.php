@@ -171,7 +171,7 @@ $router->get('/editStudentProfile/{userId}', function($userId) use ($studCollect
 });
 
 // Get possible matches
-$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection, $notSeenCollection, $skipCollection){
+$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection, $notSeenCollection){
 
   // finding possible matches
   if($studCollection->document($userId)->snapshot()->exists()){
@@ -193,6 +193,10 @@ $router->get('/matching/{userId}', function($userId) use ($compCollection, $stud
       $type = "Company";
       if($notSeenCollection->document($userId)->snapshot()->exists()){
         $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
+        if(count($notSeen["notSeenIds"]) == 0){
+          // if notSeen go to noNewMatches page
+          return redirect('/noNewMatches/'.$userId);
+        }
 
       } else {
         to_console("notSeen doesn't exist");

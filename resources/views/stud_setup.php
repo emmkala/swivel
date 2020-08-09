@@ -374,7 +374,6 @@ else {
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    document.getElementById("uid").value = user.uid;
     console.log("Logged In");
   } else {
     // Go to error page if no current user

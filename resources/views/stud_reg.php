@@ -8,8 +8,6 @@ ob_start();
 
 <!-- register form, simple email password for testing -->
 <div class="register">
-  <!-- <form> -->
-  <!-- <form method="POST" enctype="multipart/form-data"> -->
     <input type="text" id="fname" name="fname" placeholder="First Name">
     <input type="text" id="lname" name="lname" placeholder="Last Name">
     <!-- Can get school from email, not super important -->
@@ -18,7 +16,6 @@ ob_start();
     <input type="password" id="password" name="email" placeholder="Password">
     <input type="password" id="passwordCheck" placeholder="Confirm Password">
     <input type="submit" value="submit" onclick="register()" >
-  <!-- </form> -->
 </div>
 
 <script>
