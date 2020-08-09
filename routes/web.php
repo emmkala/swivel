@@ -6,6 +6,8 @@ use Google\Cloud\Core\Exception\FailedPreconditionException;
 
 use Google\Cloud\Firestore\FirestoreClient;
 use Google\Cloud\Storage\StorageClient;
+use Google\Cloud\Firestore\FieldValue;
+
 
 /*
 use Symfony\Component\HttpFoundation\Response;
@@ -33,6 +35,10 @@ $firestore = new FirestoreClient([
 $studCollection = $firestore->collection('student');
 $compCollection = $firestore->collection('company');
 $notSeenCollection = $firestore->collection('notSeen');
+$interestCollection = $firestore->collection('interested');
+$skipCollection = $firestore->collection('skipped');
+
+
 
 $storage = new StorageClient([
   'projectid' => $projectid,
@@ -165,15 +171,19 @@ $router->get('/editStudentProfile/{userId}', function($userId) use ($studCollect
 });
 
 // Get possible matches
-$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection, $notSeenCollection){
-  // finding matches
+$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection, $notSeenCollection, $skipCollection){
+
+  // finding possible matches
   if($studCollection->document($userId)->snapshot()->exists()){
     // user is a student, get all companies
       $type = "Student";
       // get all companies the student hasn't seen
       if($notSeenCollection->document($userId)->snapshot()->exists()){
         $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
-
+        if(count($notSeen["notSeenIds"]) == 0){
+          // if notSeen go to noNewMatches page
+          return redirect('/noNewMatches/'.$userId);
+        }
       } else {
         to_console("notSeen doesn't exist");
         // return redirect('/error');
@@ -196,11 +206,59 @@ $router->get('/matching/{userId}', function($userId) use ($compCollection, $stud
 
   return view('matching', [
     'type' => $type,
-    'notSeen' => $notSeen
+    'show' => $notSeen,
   ]);
 });
 
+// move id from notSeen array to interest/skip array
+$router->post('/matching/{userId}', function (Request $request, $userId) use ($notSeenCollection, $interestCollection, $skipCollection) {
 
+  $rawData = $request->all();
+  $prospectId = $request->input("prospectId");
+
+  //remove from $notSeen
+  $notSeenCollection->document($userId)->update([
+    ['path' => 'notSeenIds', 'value' => FieldValue::arrayRemove([$prospectId])]
+  ]);
+
+  if($rawData["choice"] == "Interested"){
+    // add to interested array
+    $interestCollection->document($userId)->update([
+      ['path' => 'interests', 'value' => FieldValue::arrayUnion([$prospectId])]
+    ]);
+
+    if($interestCollection->document($prospectId)->snapshot()->exists()){
+      $prospectLikes = $interestCollection->document($prospectId)->snapshot()->data();
+      // if the prospect has already liked them
+      if(in_array($prospectLikes, $userId)){
+        // match!
+        return redirect('/matched/'.$userId);
+      } else {
+        // hasn't been liked back
+        return redirect('/matching/'.$userId);
+      }
+    } else {
+      to_console("error");
+    }
+
+  } else if($rawData["choice"] == "Skip"){
+    $skipCollection->document($userId)->update([
+      ['path' => 'skips', 'value' => FieldValue::arrayUnion([$prospectId])]
+    ]);
+    return redirect('/matching/'.$userId);
+  } else {
+    to_console("error");
+  }
+
+  return redirect('/matching/' . $userId);
+});
+
+
+$router->get('noNewMatches/{userId}', function(){
+  return view('no_new', [
+    'test' => null,
+  ]);
+});
 
 // Company sign up
 $router->get('/companyRegister', function(){
@@ -259,9 +317,9 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
     ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[11]]],
     ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[12]]],
     ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[13]]],
-    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[15]]],
-    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[16]]],
-    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[17]]],
+    ['path' => 'Apart.diff1', 'value' => $rawData[$keys[15]]],
+    ['path' => 'Apart.diff2', 'value' => $rawData[$keys[16]]],
+    ['path' => 'Apart.diff3', 'value' => $rawData[$keys[17]]],
     ['path' => 'Tech.tech1', 'value' => $rawData[$keys[19]]],
     ['path' => 'Tech.tech2', 'value' => $rawData[$keys[20]]],
     ['path' => 'Tech.tech3', 'value' => $rawData[$keys[21]]],

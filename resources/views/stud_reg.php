@@ -72,6 +72,17 @@ ob_start();
           Experience: exp
         });
 
+        var interests = [];
+        var skips = [];
+        // set empty interested collection
+        db.collection("interested").doc(uid).set({
+          interests: interests
+        });
+        // est empty skipped colletion
+        db.collection("skipped").doc(uid).set({
+          skips: skips
+        });
+
         // get all of the current company documents
         var companyIds = [];
         db.collection("company").get().then(function(querySnapshot) {
@@ -81,7 +92,7 @@ ob_start();
         }).then(function() {
           // set the notSeen array
           db.collection("notSeen").doc(uid).set({
-            compIds: companyIds,
+            notSeenIds: companyIds,
           }).then(function() {
             //go to the next page
             var url = '/studentSetup/'+uid;
