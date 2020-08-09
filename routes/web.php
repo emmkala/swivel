@@ -32,6 +32,7 @@ $firestore = new FirestoreClient([
 ]);
 $studCollection = $firestore->collection('student');
 $compCollection = $firestore->collection('company');
+$notSeenCollection = $firestore->collection('notSeen');
 
 $storage = new StorageClient([
   'projectid' => $projectid,
@@ -163,6 +164,43 @@ $router->get('/editStudentProfile/{userId}', function($userId) use ($studCollect
   ]);
 });
 
+// Get possible matches
+$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection, $notSeenCollection){
+  // finding matches
+  if($studCollection->document($userId)->snapshot()->exists()){
+    // user is a student, get all companies
+      $type = "Student";
+      // get all companies the student hasn't seen
+      if($notSeenCollection->document($userId)->snapshot()->exists()){
+        $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
+
+      } else {
+        to_console("notSeen doesn't exist");
+        // return redirect('/error');
+      }
+
+  } else if($compCollection->document($userId)->snapshot()->exists()){
+      $type = "Company";
+      if($notSeenCollection->document($userId)->snapshot()->exists()){
+        $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
+
+      } else {
+        to_console("notSeen doesn't exist");
+        // return redirect('/error');
+      }
+
+  } else {
+    to_console("User doesn't exist in student or company collection");
+    //return redirect('/error');
+  }
+
+  return view('matching', [
+    'type' => $type,
+    'notSeen' => $notSeen
+  ]);
+});
+
+
 
 // Company sign up
 $router->get('/companyRegister', function(){
@@ -263,17 +301,6 @@ $router->get('/error', function(){
     'test' => null,
   ]);
 });
-
-// Dashboard
-$router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection){
-  // finding matches
-
-
-  return view('matching', [
-    'test' => null,
-  ]);
-});
-
 
 
 // Helper functions

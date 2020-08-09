@@ -251,7 +251,7 @@ include 'inc/firebase_init.php';
     </p>
   </div>
 
-  <!-- Experience -->
+  <!-- Descriptions -->
   <div class="tab">
     <span> Give us a brief description of your company </span>
     <span> In 50 words or less </span>

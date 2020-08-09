@@ -57,7 +57,7 @@ ob_start();
 
         var exp = {exp1: "", exp2: "", exp3: ""};
 
-
+        // create new document for current user
         db.collection("student").doc(uid).set({
           fname: fname,
           lname: lname,
@@ -70,9 +70,29 @@ ob_start();
           Soft: soft,
           WorkType: work,
           Experience: exp
-        }).then(() => {
-          var url = '/studentSetup/'+uid;
+        });
+
+        // get all of the current company documents
+        var companyIds = [];
+        db.collection("company").get().then(function(querySnapshot) {
+          querySnapshot.forEach(function(doc) {
+            companyIds.push(doc.id);
+          });
+        }).then(function() {
+          // set the notSeen array
+          db.collection("notSeen").doc(uid).set({
+            compIds: companyIds,
+          }).then(function() {
+            //go to the next page
+            var url = '/studentSetup/'+uid;
             window.location = url;
+            // end of successful path
+
+        }).catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorMessage);
+        });
 
         }).catch(function(error) {
           var errorCode = error.code;
