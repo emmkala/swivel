@@ -58,11 +58,10 @@ ob_start();
         db.collection("interested").doc(uid).set({
           interests: interests
         });
-        // est empty skipped colletion
+        // set empty skipped colletion
         db.collection("skipped").doc(uid).set({
           skips: skips
         });
-
         // get all of the current company documents
         var companyIds = [];
         db.collection("company").get().then(function(querySnapshot) {

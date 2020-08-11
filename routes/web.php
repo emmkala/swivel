@@ -9,8 +9,6 @@ use Google\Cloud\Storage\StorageClient;
 use Google\Cloud\Firestore\FieldValue;
 use Google\Cloud\Core\Timestamp;
 
-
-
 /*
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,9 +38,11 @@ $notSeenCollection = $firestore->collection('notSeen');
 $interestCollection = $firestore->collection('interested');
 $skipCollection = $firestore->collection('skipped');
 $regCollection = $firestore->collection('reg');
+$matchCollection = $firestore->collection('matches');
+$timeCollection = $firestore->collection('times');
 
-
-
+// zoomLinks - $GLOBALS['zoomLinks']
+$zoomLinks = array("test1", "test2", "test3", "test4");
 
 $storage = new StorageClient([
   'projectid' => $projectid,
@@ -282,9 +282,8 @@ $router->post('/matching/{userId}', function (Request $request, $userId) use ($n
       $prospectLikes = $interestCollection->document($prospectId)->snapshot()->data();
       // if the prospect has already liked them
       if(in_array($userId, $prospectLikes["interests"])){
-        // send some sort of info to other user ? Notification maybe ?
-        // match!
-        return redirect('/matched/'.$userId);
+        // can do all match db set in newMatch
+        return redirect('/newMatch/'.$userId.'/'.$prospectId);
       } else {
         // hasn't been liked back
         return redirect('/matching/'.$userId);
@@ -373,6 +372,91 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
       'test' => null,
     ]);
   }
+});
+
+// page user gets when they initiate a match
+$router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zoomLinks, $notSeenCollection, $compCollection, $studCollection, $matchCollection){
+
+    $userType = userType($compCollection, $studCollection, $userId);
+    // $zoom = first elem in array, zoomLinks removes first elem
+    $zoom = array_shift($zoomLinks);
+
+    if($userType == "Student"){
+      $userData = $studCollection->document($userId)->snapshot()->data();
+      $matchData = $compCollection->document($matchId)->snapshot()->data();
+    } else {
+      $userData = $compCollection->document($userId)->snapshot()->data();
+      $matchData = $studCollection->document($matchId)->snapshot()->data();
+    }
+
+    // set userEmail and match Email
+    $userEmail = $userData["email"];
+    $matchEmail = $matchData["email"];
+
+    $matchName = $matchData["fname"];
+
+    if($matchCollection->document($userId)->snapshot()->exists()){
+      // USER: match -> update
+      $pathZoom = $matchId.".zoomLink";
+      $pathMatchEmail = $matchId.".matchEmail";
+      $pathUserEmail = $matchId.".userEmail";
+
+      $matchCollection->document($userId)->update([
+        ["path" => $pathZoom, "value" => $zoom],
+        ["path" => $pathMatchEmail, "value" => $matchEmail],
+        ["path" => $pathUserEmail, "value" => $userEmail],
+      ]);
+
+    } else {
+      // USER: first match, match -> set
+      $matchCollection->document($userId)->set([
+        $matchId => [
+          "zoomLink" => $zoom,
+          //time
+          "matchEmail" => $matchEmail,
+          "userEmail" => $userEmail
+        ],
+      ]);
+    }
+
+    if($matchCollection->document($matchId)->snapshot()->exists()){
+      // MATCH: match -> update
+      $pathZoom = $userId.".zoomLink";
+      $pathMatchEmail = $userId.".matchEmail";
+      $pathUserEmail = $userId.".userEmail";
+
+      $matchCollection->document($userId)->update([
+        ["path" => $pathZoom, "value" => $zoom],
+        ["path" => $pathMatchEmail, "value" => $userEmail],
+        ["path" => $pathUserEmail, "value" => $matchEmail],
+      ]);
+
+    } else {
+      // MATCH: first match, match -> set
+      $matchCollection->document($matchId)->set([
+        $userId => [
+          "zoomLink" => $zoom,
+          //time
+          "matchEmail" => $userEmail,
+          "userEmail" => $matchEmail
+        ],
+      ]);
+
+    }
+
+
+    return view('new_match', [
+      'match' => $matchName,
+    ]);
+
+
+
+
+
+
+
+
+
 });
 
 // Global Sign In
