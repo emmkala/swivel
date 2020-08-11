@@ -44,30 +44,13 @@ ob_start();
         var user = firebase.auth().currentUser;
         var uid = user.uid;
 
-        var primary = {prim1: "", prim2: "", prim3: ""};
-        var secondary = {sec1: "", sec2: "", sec3: "", sec4: "", sec5: ""};
-        var employer = {emp1: "", emp2: "", emp3: ""};
-
-        var tech = {tech1: "", tech2: "", tech3: "", tech4: "", tech5: ""};
-        var soft = {soft1: "", soft2: "", soft3: "", soft4: "", soft5: ""};
-        var work = {work1: "", work2: "", work3: ""};
-
-        var exp = {exp1: "", exp2: "", exp3: ""};
-
-        // create new document for current user
-        db.collection("student").doc(uid).set({
+        db.collection("reg").doc(uid).set({
           fname: fname,
           lname: lname,
           email: email,
           school: uni,
-          Primary: primary,
-          Secondary: secondary,
-          Employer: employer,
-          Tech: tech,
-          Soft: soft,
-          WorkType: work,
-          Experience: exp
         });
+        // move create time to php
 
         var interests = [];
         var skips = [];

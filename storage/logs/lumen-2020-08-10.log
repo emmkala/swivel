@@ -1,0 +1,24 @@
+[2020-08-10 21:30:33] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:305
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:305)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 
+[2020-08-10 21:30:34] production.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: syntax error, unexpected '}' in C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php:305
+Stack trace:
+#0 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Routing\Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(20): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#3 {main} {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}' at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php:305)
+[stacktrace]
+#0 [internal function]: {closure}(Object(Laravel\\Lumen\\Routing\\Router))
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Routing\\Router.php(62): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Routing\\Router))
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(20): Laravel\\Lumen\\Routing\\Router->group(Array, Object(Closure))
+#3 {main}
+"} 

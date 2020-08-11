@@ -7,6 +7,8 @@ use Google\Cloud\Core\Exception\FailedPreconditionException;
 use Google\Cloud\Firestore\FirestoreClient;
 use Google\Cloud\Storage\StorageClient;
 use Google\Cloud\Firestore\FieldValue;
+use Google\Cloud\Core\Timestamp;
+
 
 
 /*
@@ -37,6 +39,8 @@ $compCollection = $firestore->collection('company');
 $notSeenCollection = $firestore->collection('notSeen');
 $interestCollection = $firestore->collection('interested');
 $skipCollection = $firestore->collection('skipped');
+$regCollection = $firestore->collection('reg');
+
 
 
 
@@ -68,8 +72,17 @@ $router->get('/studentSetup/{userId}', function(){
 });
 
 // Student profile post
-$router->post('/studentSetup/{userId}', function (Request $request, $userId) use ($studCollection) {
+$router->post('/studentSetup/{userId}', function (Request $request, $userId) use ($studCollection, $regCollection) {
   $rawData = $request->all();
+  $regData = $regCollection->document($userId)->snapshot()->data();
+
+  $school = $regData["school"];
+  $fname = $regData["fname"];
+  $lname = $regData["lname"];
+  $email = $regData["email"];
+
+  $regCollection->document($userId)->delete();
+
   // segmenting the raw data
   // raw data in associative array, use array keys
   /*
@@ -96,64 +109,34 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
 
   $keys = array_keys($rawData);
 
+  $workTypes = workTypes($rawData, "stud");
+
+  $currTime = time();
+  // set data
   $profileData = [
-    ['path' => 'degree', 'value' => $rawData['degree']],
-    ['path' => 'major', 'value' => $rawData['major']],
-    ['path' => 'loc', 'value' => $rawData['loc']],
-    ['path' => 'year', 'value' => $rawData['year']],
-    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[4]]],
-    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[5]]],
-    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[6]]],
-    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[8]]],
-    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[9]]],
-    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[10]]],
-    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[11]]],
-    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[12]]],
-    ['path' => 'Employer.emp1', 'value' => $rawData[$keys[14]]],
-    ['path' => 'Employer.emp2', 'value' => $rawData[$keys[15]]],
-    ['path' => 'Employer.emp3', 'value' => $rawData[$keys[16]]],
-    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[18]]],
-    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[19]]],
-    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[20]]],
-    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[21]]],
-    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[22]]],
-    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[24]]],
-    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[25]]],
-    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[26]]],
-    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[27]]],
-    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[28]]],
-    // work type ??
-    ['path' => 'Experience.exp1', 'value' => $rawData['exp1']],
-    ['path' => 'Experience.exp2', 'value' => $rawData['exp2']],
-    ['path' => 'Experience.exp3', 'value' => $rawData['exp3']],
-    ['path' => 'magic', 'value' => $rawData['magic']],
+    'fname' => $fname,
+    'lname' => $lname,
+    'email' => $email,
+    'school' => $school,
+    'degree' => $rawData['degree'],
+    'major' => $rawData['major'],
+    'loc' => $rawData['loc'],
+    'year' => $rawData['year'],
+    'latestSeen' => '',
+    'created' => $currTime,
+    'Primary' => ['prim1' => $rawData[$keys[4]], 'prim2' =>  $rawData[$keys[5]], 'prim3' => $rawData[$keys[6]]],
+    'Secondary' => ['sec1'=> $rawData[$keys[8]], 'sec2'=> $rawData[$keys[9]], 'sec3' => $rawData[$keys[10]], 'sec4'=> $rawData[$keys[11]], 'sec5'=> $rawData[$keys[12]]],
+    'Employer' => ['emp1' => $rawData[$keys[14]], 'emp2' => $rawData[$keys[15]], 'emp3' => $rawData[$keys[16]]],
+    'Tech' => ['tech1' => $rawData[$keys[18]], 'tech2' => $rawData[$keys[19]], 'tech3' => $rawData[$keys[20]], 'tech4' => $rawData[$keys[21]], 'tech5' => $rawData[$keys[22]]],
+    'Soft' => ['soft1' => $rawData[$keys[24]], 'soft2' => $rawData[$keys[25]], 'soft3' => $rawData[$keys[26]], 'soft4' => $rawData[$keys[27]], 'soft5' => $rawData[$keys[28]]],
+    'Experience' => ['exp1' => $rawData['exp1'], 'exp2' => $rawData['exp2'], 'exp3' => $rawData['exp3']],
+    'WorkType' => ['work1' => $workTypes[0], 'work2' => $workTypes[1], 'work3' => $workTypes[2]],
+    'magic' => $rawData['magic'],
   ];
 
-
-  $profileData = workTypes($profileData, $rawData, "stud");
-
-  $studCollection->document($userId)->update($profileData);
+  $studCollection->document($userId)->set($profileData);
 
   return redirect('/matching/' . $userId);
-
-/*
-  $query = $studCollection->where('email', '=', $userEmail);
-  $documents = $query->documents();
-
-  foreach ($documents as $user) {
-    if ($document->exists()) {
-      to_console("Success");
-      $userId = $user.id();
-      $studCollection.doc($userId).update($rawData);
-      return redirect('/dashboard');
-
-    } else {
-        to_console('Document %s does not exist!' . PHP_EOL, $snapshot->id());
-        return redirect('/error');
-    }
-  }
-  */
-
 });
 
 // Universal ?? For now student and comp come back to this
@@ -170,47 +153,111 @@ $router->get('/editStudentProfile/{userId}', function($userId) use ($studCollect
   ]);
 });
 
+// Company sign up
+$router->get('/companyRegister', function(){
+  return view('comp_reg', [
+    'test' => null,
+  ]);
+});
+
+// Company profile setup
+$router->get('/companySetup/{userId}', function(){
+  return view('comp_setup', [
+    'test' => null,
+  ]);
+});
+
+// Company profile post
+$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection, $regCollection) {
+  $rawData = $request->all();
+  $regData = $regCollection->document($userId)->snapshot()->data();
+
+  $company = $regData["company"];
+  $fname = $regData["fname"];
+  $lname = $regData["lname"];
+  $email = $regData["email"];
+
+  $regCollection->document($userId)->delete();
+  // segmenting the raw data
+  // raw data in associative array, use array keys
+  /*
+  degree - 0
+  major - 1
+  loc - 2
+  year - 3
+
+ // force 5/3
+ can do something with array_keys and array_key_exists to find ?
+  primary (3)
+  sec (5)
+  emp (3)
+
+  tech (5)
+  soft (5)
+  work (3)
+
+  exp1
+  exp2
+  exp3
+  magic
+  */
+
+  $workTypes = workTypes($rawData, "comp");
+
+  $keys = array_keys($rawData);
+
+  $currTime = time();
+
+  $profileData = [
+    'fname' => $fname,
+    'lname' => $lname,
+    'email' => $email,
+    'company' => $company,
+    'postion' => $rawData['position'],
+    'size' => $rawData['size'],
+    'loc' => $rawData['loc'],
+    'site' => $rawData['site'],
+    'alma' => $rawData['alma'],
+    'latestSeen' => '',
+    'created' => $currTime,
+    'Primary' => ['prim1' => $rawData[$keys[6]], 'prim2' =>  $rawData[$keys[6]], 'prim3' => $rawData[$keys[7]]],
+    'Secondary' => ['sec1'=> $rawData[$keys[9]], 'sec2'=> $rawData[$keys[10]], 'sec3' => $rawData[$keys[11]], 'sec4'=> $rawData[$keys[12]], 'sec5'=> $rawData[$keys[13]]],
+    'Apart' => ['diff1' => $rawData[$keys[15]], 'diff2' => $rawData[$keys[16]], 'diff3' => $rawData[$keys[17]]],
+    'Tech' => ['tech1' => $rawData[$keys[19]], 'tech2' => $rawData[$keys[20]], 'tech3' => $rawData[$keys[21]], 'tech4' => $rawData[$keys[22]], 'tech5' => $rawData[$keys[23]]],
+    'Soft' => ['soft1' => $rawData[$keys[25]], 'soft2' => $rawData[$keys[26]], 'soft3' => $rawData[$keys[27]], 'soft4' => $rawData[$keys[28]], 'soft5' => $rawData[$keys[29]]],
+    'Info' => ['info1' => $rawData['info1'], 'info2' => $rawData['info2'], 'exp3' => $rawData['info3']],
+    'WorkType' => ['work1' => $workTypes[0], 'work2' => $workTypes[1], 'work3' => $workTypes[2]],
+  ];
+
+  $compCollection->document($userId)->set($profileData);
+
+  // redirect to edit page when matching is working
+  return redirect('/matching/' . $userId);
+
+});
+
 // Get possible matches
 $router->get('/matching/{userId}', function($userId) use ($compCollection, $studCollection, $notSeenCollection){
 
   // finding possible matches
-  if($studCollection->document($userId)->snapshot()->exists()){
-    // user is a student, get all companies
-      $type = "Student";
-      // get all companies the student hasn't seen
-      if($notSeenCollection->document($userId)->snapshot()->exists()){
-        $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
-        if(count($notSeen["notSeenIds"]) == 0){
-          // if notSeen go to noNewMatches page
-          return redirect('/noNewMatches/'.$userId);
-        }
-      } else {
-        to_console("notSeen doesn't exist");
-        // return redirect('/error');
-      }
+  $type = userType($compCollection, $studCollection, $userId);
 
-  } else if($compCollection->document($userId)->snapshot()->exists()){
-      $type = "Company";
-      if($notSeenCollection->document($userId)->snapshot()->exists()){
-        $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
-        if(count($notSeen["notSeenIds"]) == 0){
-          // if notSeen go to noNewMatches page
-          return redirect('/noNewMatches/'.$userId);
-        }
+  if($notSeenCollection->document($userId)->snapshot()->exists()){
+    $notSeen = $notSeenCollection->document($userId)->snapshot()->data();
+    $count = count($notSeen["notSeenIds"]);
 
-      } else {
-        to_console("notSeen doesn't exist");
-        // return redirect('/error');
-      }
-
+    if($count == 0){
+      // if notSeen go to noNewMatches page
+      return redirect('/noNewMatches/'.$userId);
+    }
   } else {
-    to_console("User doesn't exist in student or company collection");
-    //return redirect('/error');
+    return redirect('/error');
   }
 
   return view('matching', [
     'type' => $type,
     'show' => $notSeen,
+    'count' => $count
   ]);
 });
 
@@ -234,7 +281,8 @@ $router->post('/matching/{userId}', function (Request $request, $userId) use ($n
     if($interestCollection->document($prospectId)->snapshot()->exists()){
       $prospectLikes = $interestCollection->document($prospectId)->snapshot()->data();
       // if the prospect has already liked them
-      if(in_array($prospectLikes, $userId)){
+      if(in_array($userId, $prospectLikes["interests"])){
+        // send some sort of info to other user ? Notification maybe ?
         // match!
         return redirect('/matched/'.$userId);
       } else {
@@ -258,96 +306,73 @@ $router->post('/matching/{userId}', function (Request $request, $userId) use ($n
 });
 
 
-$router->get('noNewMatches/{userId}', function(){
-  return view('no_new', [
-    'test' => null,
-  ]);
-});
+$router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection, $studCollection, $compCollection){
 
-// Company sign up
-$router->get('/companyRegister', function(){
-  return view('comp_reg', [
-    'test' => null,
-  ]);
-});
+  //check if user is student or company
+  $type = userType($compCollection, $studCollection, $userId);
 
-// Company profile setup
-$router->get('/companySetup/{userId}', function(){
-  return view('comp_setup', [
-    'test' => null,
-  ]);
-});
+  // user is student, look for updates to company collection
+  if($type == "Student"){
+    //get timestamp of latest company seen
+    $studData = $studCollection->document($userId)->snapshot()->data();
+    $latest = $studData["latestSeen"];
 
-// Company profile post
-$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection) {
-  $rawData = $request->all();
-  // segmenting the raw data
-  // raw data in associative array, use array keys
-  /*
-  degree - 0
-  major - 1
-  loc - 2
-  year - 3
+    $query = $compCollection->where("created", ">", $latest);
+    $newComps = $query->documents();
+    $count=0;
 
- // force 5/3
- can do something with array_keys and array_key_exists to find ?
-  primary (3)
-  sec (5)
-  emp (3)
+    foreach($newComps as $newComp){
+      $count+=1;
+      $notSeenCollection->document($userId)->update([
+        ["path" => "notSeenIds", "value" => FieldValue::arrayUnion([$newComp->id()])]
+      ]);
+    }
 
-  tech (5)
-  soft (5)
-  work (3)
-
-  exp1
-  exp2
-  exp3
-  magic
-  */
-
-  $keys = array_keys($rawData);
-
-  $profileData = [
-    ['path' => 'position', 'value' => $rawData['position']],
-    ['path' => 'size', 'value' => $rawData['size']],
-    ['path' => 'loc', 'value' => $rawData['loc']],
-    ['path' => 'site', 'value' => $rawData['site']],
-    ['path' => 'alma', 'value' => $rawData['alma']],
-    ['path' => 'Primary.prim1', 'value' => $rawData[$keys[5]]],
-    ['path' => 'Primary.prim2', 'value' => $rawData[$keys[6]]],
-    ['path' => 'Primary.prim3', 'value' => $rawData[$keys[7]]],
-    ['path' => 'Secondary.sec1', 'value' => $rawData[$keys[9]]],
-    ['path' => 'Secondary.sec2', 'value' => $rawData[$keys[10]]],
-    ['path' => 'Secondary.sec3', 'value' => $rawData[$keys[11]]],
-    ['path' => 'Secondary.sec4', 'value' => $rawData[$keys[12]]],
-    ['path' => 'Secondary.sec5', 'value' => $rawData[$keys[13]]],
-    ['path' => 'Apart.diff1', 'value' => $rawData[$keys[15]]],
-    ['path' => 'Apart.diff2', 'value' => $rawData[$keys[16]]],
-    ['path' => 'Apart.diff3', 'value' => $rawData[$keys[17]]],
-    ['path' => 'Tech.tech1', 'value' => $rawData[$keys[19]]],
-    ['path' => 'Tech.tech2', 'value' => $rawData[$keys[20]]],
-    ['path' => 'Tech.tech3', 'value' => $rawData[$keys[21]]],
-    ['path' => 'Tech.tech4', 'value' => $rawData[$keys[22]]],
-    ['path' => 'Tech.tech5', 'value' => $rawData[$keys[23]]],
-    ['path' => 'Soft.soft1', 'value' => $rawData[$keys[25]]],
-    ['path' => 'Soft.soft2', 'value' => $rawData[$keys[26]]],
-    ['path' => 'Soft.soft3', 'value' => $rawData[$keys[27]]],
-    ['path' => 'Soft.soft4', 'value' => $rawData[$keys[28]]],
-    ['path' => 'Soft.soft5', 'value' => $rawData[$keys[29]]],
-    // work type ??
-    ['path' => 'Info.info1', 'value' => $rawData['info1']],
-    ['path' => 'Info.info2', 'value' => $rawData['info2']],
-    ['path' => 'Info.info3', 'value' => $rawData['info3']],
-  ];
+    //where new companies added, redirect to matching
+    if($count > 0){
+      return redirect('/matching/'.$userId);
+    } else {
+      return view('no_new', [
+        'test' => null,
+      ]);
+    }
 
 
-  $profileData = workTypes($profileData, $rawData, "comp");
+  } else if ($type == "Company"){
+    //get timestamp of latest company seen
+    $compData = $compCollection->document($userId)->snapshot()->data();
+    $latest = $compData["latestSeen"];
 
-  $compCollection->document($userId)->update($profileData);
+    //looking for new student documents
+    $query = $studCollection->where("created", ">", $latest);
+    $newStuds = $query->documents();
+    $count=0;
 
-  // redirect to edit page when matching is working
-  return redirect('/matching/' . $userId);
+    $notSeenCollection->document($userId)->set([
+      "interests" => [],
+    ]);
 
+    foreach($newStuds as $newStud){
+      $count+=1;
+      $notSeenCollection->document($userId)->update([
+        ["path" => "notSeenIds", "value" => FieldValue::arrayUnion([$newStud->id()])]
+      ]);
+    }
+
+    //where new companies added, redirect to matching
+    if($count > 0){
+      return redirect('/matching/'.$userId);
+    } else {
+      return view('no_new', [
+        'test' => null,
+      ]);
+    }
+
+  } else {
+    return view('no_new', [
+      'test' => null,
+    ]);
+  }
 });
 
 // Global Sign In
@@ -367,8 +392,9 @@ $router->get('/error', function(){
 
 // Helper functions
 
-function workTypes($profileData, $rawData, $user){
-
+// update method of workTypes
+//function workTypes($profileData, $rawData, $user){
+  /*
   $numFir;
   $numLas;
 
@@ -399,7 +425,51 @@ function workTypes($profileData, $rawData, $user){
 
   return $profileData;
 }
+*/
 
+function workTypes($rawData, $type){
+  $numFir;
+  $numLas;
+
+  if($type == "stud"){
+    $numFir = 28;
+    $numLas = 4;
+  } else if($type == "comp") {
+    $numFir = 29;
+    $numLas = 3;
+  }
+  $tmp = $rawData;
+  // getting rid of all elements that aren't in the
+  array_splice($tmp, 0, $numFir);
+  for($i = 0; $i < $numLas; $i++){
+    array_pop($tmp);
+  }
+
+  // append each thing to the array
+  $workTypes = array("", "", "");
+  foreach($tmp as $work){
+    if($work == "Internship"){
+      $workTypes[0] = "Internship";
+    } else if($work == "Full_Time"){
+      $workTypes[1] = "Full_Time";
+    } else if($work == "Contract"){
+      $workTypes[2] = "Contract";
+    }
+  }
+
+  return $workTypes;
+
+}
+
+function userType($compCollection, $studCollection, $userId){
+  if($studCollection->document($userId)->snapshot()->exists()){
+    return "Student";
+  } else if($compCollection->document($userId)->snapshot()->exists()){
+    return "Company";
+  } else {
+    return redirect('/error');
+  }
+}
 
 function to_console($data) {
     $output = $data;

@@ -6,7 +6,7 @@ include "inc/firebase_init.php";
 <html>
   <body>
 
-    <div id="show_companies">
+    <div id="show_companies" style="display: none;">
         <h2>Student page - showing companies</h2>
         <!-- Match cards -->
         <div class="compCard">
@@ -69,7 +69,7 @@ include "inc/firebase_init.php";
     </div>
 
 
-    <div id="show_students">
+    <div id="show_students" style="display: none;">
       <h2>Company page - showing students</h2>
       <div class="studCard">
         <div id="stud_overview">
@@ -139,51 +139,102 @@ include "inc/firebase_init.php";
 <script>
 
 var db = firebase.firestore();
+var studCollection = db.collection("student");
+var compCollection = db.collection("company");
+
 
 var type = "<?php echo $type ?>";
-
+var count = "<?php echo $count ?>";
 <?php
   $js_array = json_encode($show);
   echo "var notSeen = ". $js_array . ";\n";
 ?>
 
 if(type == "Student"){
-  document.getElementById("show_students").style.display = "none";
   document.getElementById("show_companies").style.display = "inline";
-
-
-  document.getElementById("compId").value = notSeen.notSeenIds[0];
-
-  // loop for all elements in notSeen
-  db.collection("company").doc(notSeen.notSeenIds[0]).get().then(function(doc){
-    if(doc.exists){
-      var docData = doc.data();
-      // set all card data
-      document.getElementById("comp_name").innerHTML = docData.fname;
-
-
-    } else {
-      console.log("Nope");
-    }
-  });
-
-} else if(type == "Company"){
-  console.log("Company Side");
-  document.getElementById("show_companies").style.display = "none";
+} else {
   document.getElementById("show_students").style.display = "inline";
-
-  document.getElementById("studId").value = notSeen.notSeenIds[0];
-
-  // loop for all elements in notSeen
-  db.collection("student").doc(notSeen.notSeenIds[0]).get().then(function(doc){
-    if(doc.exists){
-      var docData = doc.data();
-      // set all card data
-      document.getElementById("stud_name").innerHTML = docData.fname;
-    } else {
-      console.log("Nope");
-    }
-  });
 }
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    if(type == "Student"){
+      document.getElementById("compId").value = notSeen.notSeenIds[0];
+
+      // loop for all elements in notSeen
+      compCollection.doc(notSeen.notSeenIds[0]).get().then(function(doc){
+        if(doc.exists){
+          var docData = doc.data();
+          // set all card data
+          document.getElementById("comp_name").innerHTML = docData.fname;
+
+          // only set latest if the curr docs creation is older than the curr users latest
+          var compCreationTime = docData.created;
+          console.log(compCreationTime);
+
+          studCollection.doc(user.uid).get().then(function(userDoc) {
+            // get curr users latest
+            var userData = userDoc.data();
+            var currLatest = userData.latestSeen;
+            console.log(currLatest);
+
+            // if curr company was created after curr latest, or there isnt a current one listed
+            if(currLatest == "" || (compCreationTime >= currLatest)){
+              console.log("is greater or is empty");
+              // set new curr latest
+              studCollection.doc(user.uid).update({
+                latestSeen: compCreationTime,
+              });
+
+            }
+          });
+
+
+        } else {
+          console.log("Nope");
+        }
+      });
+
+    } else if(type == "Company"){
+      console.log("Company Side");
+
+      document.getElementById("studId").value = notSeen.notSeenIds[0];
+
+      // loop for all elements in notSeen
+      studCollection.doc(notSeen.notSeenIds[0]).get().then(function(doc){
+        if(doc.exists){
+          var docData = doc.data();
+
+          // set all card data
+          document.getElementById("stud_name").innerHTML = docData.fname;
+
+          var studCreationTime = docData.created;
+
+          compCollection.doc(user.uid).get().then(function(userDoc) {
+            // get curr users latest
+            var userData = userDoc.data();
+            var currLatest = userData.latestSeen;
+
+            // if curr company was created after curr latest, or there isnt a current one listed
+            if(currLatest == "" || (studCreationTime >= currLatest)){
+              // set new curr latest
+              var newLatest = docData.created;
+              compCollection.doc(user.uid).update({
+                latestSeen: newLatest,
+              });
+
+            }
+          });
+        } else {
+          console.log("Nope");
+        }
+      });
+    }
+
+  } else {
+    console.log(error);
+  }
+});
+
 
  </script>
