@@ -444,9 +444,9 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zo
 
     }
 
-
     return view('new_match', [
       'match' => $matchName,
+      'zoomLink' => $zoom
     ]);
 
 

@@ -16,12 +16,20 @@ function signin(){
   var email = document.getElementById("email").value;
   var pass = document.getElementById("password").value;
 
-  firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
+  firebase.auth().signInWithEmailAndPassword(email, pass).then(function() {
+
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    var url = "/matching/"+uid;
+    window.location = url;
+
+  }).catch(function(error){
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
   });
+
 }
 
 </script>
