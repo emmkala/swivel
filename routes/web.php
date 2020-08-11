@@ -304,7 +304,7 @@ $router->post('/matching/{userId}', function (Request $request, $userId) use ($n
   return redirect('/matching/' . $userId);
 });
 
-
+// populating notSeen with any users made while user was swiping
 $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection, $studCollection, $compCollection){
 
   //check if user is student or company
@@ -448,15 +448,55 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zo
       'match' => $matchName,
       'zoomLink' => $zoom
     ]);
+});
+
+// set the times the user is available for
+$router->post('/newMatch/{userId}/{matchId}', function (Request $request, $userId, $matchId) use ($timeCollection) {
+  $rawData = $request->all();
+
+  if($timeCollection->document($userId)->snapshot()->exists()){
+    $emptyArr = array();
+    $timeCollection->document($userId)->set([
+        $matchId => $emptyArr,
+    ]);
+
+    foreach($rawData as $time){
+      $timeCollection->document($userId)-update([
+        ["path" => $matchId, "value" => FieldValue::arrayUnion($time)]
+      ]);
+    }
+    // not first match, UPDATE
+  } else {
+    // first match, SET
+    $timeArr = array();
+    foreach($rawData as $time){
+      $timeArr[] = $time;
+    }
+
+    $timeCollection->document($userId)->set([
+      $matchId => $timeArr
+    ]);
+
+  }
+  // return redirect("/matches/".$userId);
+  return redirect("/matches/".$userId);
 
 
 
+});
 
+// show all matches and let the user choose times available
+$router->get('matches/{userId}', function($userId) use ($matchCollection){
 
+  if($matchCollection->document($userId)->snapshot()->exists()){
+    $allMatches = $matchCollection->document($userId)->snapshot()->data()
+  } else {
+    $allMatches = array();
+  }
 
-
-
-
+  return view('matches', [
+    'matches' => $allMatches,
+  ]);
 });
 
 // Global Sign In
