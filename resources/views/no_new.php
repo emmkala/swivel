@@ -23,34 +23,43 @@ include 'inc/firebase_init.php';
     if (user) {
       var uid = user.uid;
       // check if theyre a student or a companyIds
-      studCollection.doc(uid).get().then(function(doc){
+      studCollection.doc(uid).get().then(function(studDoc){
         // user is a student
-        if(doc.exists){
-          // listen for change in company collection
-          // var userLatest = get latest of currentUser
-          // compCollection.where("created", ">", "")
-          compCollection.onSnapshot(function(querySnapshot){
-            // empty list for new comp
-            var newComp = [];
+        if(studDoc.exists){
+          var docData = studDoc.data();
+          var userLatest = docData.latestSeen;
 
+          compCollection.where('created', '>', userLatest).onSnapshot(function(querySnapshot){
+            // empty list for new comp
             querySnapshot.forEach(function(doc) {
-              // get latest of current userId
-              // get current doc created
-              // query
-              newComp.push(doc.id);
+              db.collection("notSeen").doc(uid).update({
+                notSeenIds: firebase.firestore.FieldValue.arrayUnion(doc.id)
+              });
             });
-            console.log("Current cities in CA: ", newComp.join(", "));
+            var url = "/matching/"+uid;
+            window.location = url;
           });
         } else {
-          db.collection("company").doc(uid).get().then(function(doc){
+          db.collection("company").doc(uid).get().then(function(compDoc){
             // user is a company
-            if(doc.exists){
-              // create event listener for new students
-                // add new student to company notSeen
-                // redirect back to matching
+            if(compDoc.exists){
+              var docData = compDoc.data();
+              var userLatest = docData.latestSeen;
+
+              studCollection.where('created', '>', userLatest).onSnapshot(function(querySnapshot){
+                // empty list for new comp
+                querySnapshot.forEach(function(doc) {
+                  db.collection("notSeen").doc(uid).update({
+                    notSeenIds: firebase.firestore.FieldValue.arrayUnion(doc.id)
+                  });
+                  var url = "/matching/"+uid;
+                  window.location = url;
+              });
+            });
 
             } else {
-              console.log("User isn't in student or company");
+              var url = "/noNewMatches/"+uid;
+              window.location = url;
             }
           });
         }

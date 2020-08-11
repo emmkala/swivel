@@ -170,17 +170,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
           // only set latest if the curr docs creation is older than the curr users latest
           var compCreationTime = docData.created;
-          console.log(compCreationTime);
 
           studCollection.doc(user.uid).get().then(function(userDoc) {
             // get curr users latest
             var userData = userDoc.data();
             var currLatest = userData.latestSeen;
-            console.log(currLatest);
 
             // if curr company was created after curr latest, or there isnt a current one listed
             if(currLatest == "" || (compCreationTime >= currLatest)){
-              console.log("is greater or is empty");
               // set new curr latest
               studCollection.doc(user.uid).update({
                 latestSeen: compCreationTime,
