@@ -38,8 +38,6 @@ $notSeenCollection = $firestore->collection('notSeen');
 $interestCollection = $firestore->collection('interested');
 $skipCollection = $firestore->collection('skipped');
 $regCollection = $firestore->collection('reg');
-$matchCollection = $firestore->collection('matches');
-$timeCollection = $firestore->collection('times');
 
 // zoomLinks - $GLOBALS['zoomLinks']
 $zoomLinks = array("test1", "test2", "test3", "test4");
@@ -257,7 +255,7 @@ $router->get('/matching/{userId}', function($userId) use ($compCollection, $stud
   return view('matching', [
     'type' => $type,
     'show' => $notSeen,
-    'count' => $count
+    'uid' => $userId
   ]);
 });
 
@@ -375,26 +373,51 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
 });
 
 // page user gets when they initiate a match
-$router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zoomLinks, $notSeenCollection, $compCollection, $studCollection, $matchCollection){
+$router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zoomLinks, $notSeenCollection, $compCollection, $studCollection){
 
     $userType = userType($compCollection, $studCollection, $userId);
+
     // $zoom = first elem in array, zoomLinks removes first elem
     $zoom = array_shift($zoomLinks);
 
     if($userType == "Student"){
       $userData = $studCollection->document($userId)->snapshot()->data();
       $matchData = $compCollection->document($matchId)->snapshot()->data();
+
+      $uMatchesSub = $studCollection->document($userId)->collection("matches");
+      $mMatchesSub = $compCollection->document($matchId)->collection("matches");
+
     } else {
       $userData = $compCollection->document($userId)->snapshot()->data();
       $matchData = $studCollection->document($matchId)->snapshot()->data();
+
+      $uMatchesSub = $compCollection->document($userId)->collection("matches");
+      $mMatchesSub = $studCollection->document($matchId)->collection("matches");
     }
 
     // set userEmail and match Email
     $userEmail = $userData["email"];
     $matchEmail = $matchData["email"];
 
-    $matchName = $matchData["fname"];
+    $matchName = $matchData["fname"]." ".$matchData["lname"];
+    $userName = $userData["fname"]." ".$userData["lname"];
 
+    $uMatchesSub->document($matchId)->set([
+      "zoomLink" => $zoom,
+      "matchEmail" => $matchEmail,
+      "matchName" => $matchName,
+      "userEmail" => $userEmail
+    ]);
+
+    $mMatchesSub->document($userId)->set([
+      "zoomLink" => $zoom,
+      "matchEmail" => $userEmail,
+      "matchName" => $userName,
+      "userEmail" => $matchEmail
+    ]);
+
+
+    /*
     if($matchCollection->document($userId)->snapshot()->exists()){
       // USER: match -> update
       $pathZoom = $matchId.".zoomLink";
@@ -443,55 +466,63 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zo
       ]);
 
     }
+    */
 
     return view('new_match', [
-      'match' => $matchName,
+      'matchName' => $matchName,
       'zoomLink' => $zoom
     ]);
 });
 
 // set the times the user is available for
-$router->post('/newMatch/{userId}/{matchId}', function (Request $request, $userId, $matchId) use ($timeCollection) {
+$router->post('/newMatch/{userId}/{matchId}', function (Request $request, $userId, $matchId) use ($compCollection, $studCollection) {
   $rawData = $request->all();
 
-  if($timeCollection->document($userId)->snapshot()->exists()){
-    $emptyArr = array();
-    $timeCollection->document($userId)->set([
-        $matchId => $emptyArr,
-    ]);
+  $userType = userType($compCollection, $studCollection, $userId);
 
-    foreach($rawData as $time){
-      $timeCollection->document($userId)-update([
-        ["path" => $matchId, "value" => FieldValue::arrayUnion($time)]
-      ]);
-    }
-    // not first match, UPDATE
+  if($userType == "Student"){
+    $uMatchesSub = $studCollection->document($userId)->collection("matches");
+    $mMatchesSub = $compCollection->document($matchId)->collection("matches");
+
   } else {
-    // first match, SET
-    $timeArr = array();
-    foreach($rawData as $time){
-      $timeArr[] = $time;
-    }
+    $uMatchesSub = $compCollection->document($userId)->collection("matches");
+    $mMatchesSub = $studCollection->document($matchId)->collection("matches");
+  }
 
-    $timeCollection->document($userId)->set([
-      $matchId => $timeArr
+  $emptyArr = array();
+  $uMatchesSub->document($matchId)->update([
+    ["path" => "times", "value" => $emptyArr]
+  ]);
+
+  $mMatchesSub->document($userId)->update([
+    ["path" => "times", "value" => $emptyArr]
+  ]);
+
+  foreach($rawData as $time){
+    $uMatchesSub->document($matchId)->update([
+      ["path" => "times", "value" => FieldValue::arrayUnion([$time])]
     ]);
 
+    $mMatchesSub->document($userId)->update([
+      ["path" => "times", "value" => FieldValue::arrayUnion([$time])]
+    ]);
   }
-  // return redirect("/matches/".$userId);
+
   return redirect("/matches/".$userId);
 
 
 
 });
 
-// show all matches and let the user choose times available
-$router->get('matches/{userId}', function($userId) use ($matchCollection){
+// send all matches and let the user choose times available
+$router->get('matches/{userId}', function($userId) use ($compCollection, $studCollection){
 
-  if($matchCollection->document($userId)->snapshot()->exists()){
-    $allMatches = $matchCollection->document($userId)->snapshot()->data()
+  $userType = userType($compCollection, $studCollection, $userId);
+
+  if($userType == "Student"){
+    $allMatches = $studCollection->document($userId)->collection("matches")->documents();
   } else {
-    $allMatches = array();
+    $allMatches = $compCollection->document($userId)->collection("matches")->documents();
   }
 
   return view('matches', [

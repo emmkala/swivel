@@ -5,6 +5,7 @@ include "inc/firebase_init.php";
 
 <html>
   <body>
+    <button type="button" id="matches_button" onclick="matches()">Matches</button>
 
     <div id="show_companies" style="display: none;">
         <h2>Student page - showing companies</h2>
@@ -142,13 +143,17 @@ var db = firebase.firestore();
 var studCollection = db.collection("student");
 var compCollection = db.collection("company");
 
-
+var uid = "<?php echo $uid ?>"
 var type = "<?php echo $type ?>";
-var count = "<?php echo $count ?>";
+
 <?php
   $js_array = json_encode($show);
   echo "var notSeen = ". $js_array . ";\n";
 ?>
+
+function matches(){
+  window.location = '/matches/'+uid;
+}
 
 if(type == "Student"){
   document.getElementById("show_companies").style.display = "inline";

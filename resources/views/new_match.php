@@ -2,9 +2,9 @@
 
 <h5> MATCH </h5>
 
-<h3> You and <?php $matchName ?> Matched!</h3>
+<h3> You and <?= $matchName ?> Matched!</h3>
 <h4> Here's your Zoom Link! (You'll be able to come back to it on you Matches page) </h4>
-<?php $zoomLink ?>
+<?= $zoomLink ?>
 
 <h2> Please indicate the times you're available to have a 20 minute coffee chat!</h2>
 
@@ -100,4 +100,4 @@
   <input type="submit">
 </form>
 
-<p> Check back on your matches page after <?php $matchName ?> indicates their avalabilities! </p>
+<p> Check back on your matches page after <?= $matchName ?> indicates their avalabilities! </p>
