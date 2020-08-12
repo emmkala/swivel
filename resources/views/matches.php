@@ -4,6 +4,11 @@ include 'inc/firebase_init.php';
  ?>
 <body>
 <h5> Matches </h5>
+
+<form action="/matching/<?= $userId ?>">
+    <input type="submit" value="Matching" />
+</form>
+
 <?php foreach($allMatches as $i => $match):?>
 <div class="matchInfo">
   <p class="matchName"> <?= $match->get('matchName') ?> </p>

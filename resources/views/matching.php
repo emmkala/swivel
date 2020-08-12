@@ -5,7 +5,9 @@ include "inc/firebase_init.php";
 
 <html>
   <body>
-    <button type="button" id="matches_button" onclick="matches('<?= $uid ?>')">Matches</button>
+    <form action="/matches/<?= $uid ?>">
+        <input type="submit" value="Matches" />
+    </form>
 
     <div id="show_companies" style="display: none;">
         <h2>Student page - showing companies</h2>
@@ -150,10 +152,6 @@ var type = "<?php echo $type ?>";
   $js_array = json_encode($show);
   echo "var notSeen = ". $js_array . ";\n";
 ?>
-
-function matches(uid){
-  window.location = '/matches/'+uid;
-}
 
 if(type == "Student"){
   document.getElementById("show_companies").style.display = "inline";
