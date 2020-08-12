@@ -4,6 +4,7 @@ listener for changes to student or company collection -->
 include 'inc/firebase_init.php';
  ?>
 
+ <button type="button" id="matches_button" onclick="matches('<?= $uid ?>')">Matches</button>
 
 <div id="no_new">
   <h3 id="header">You're all Swivelled Out!</h3>
@@ -16,6 +17,10 @@ include 'inc/firebase_init.php';
   var studCollection = db.collection("student");
   var compCollection = db.collection("company");
   //var currTime = firebase.firestore.Timestamp.now();
+
+  function matches(uid){
+    window.location = '/matches/'+uid;
+  }
 
   // get currentUser
   //var user = firebase.auth().currentUser;

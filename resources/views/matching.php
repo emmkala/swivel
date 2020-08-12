@@ -5,7 +5,7 @@ include "inc/firebase_init.php";
 
 <html>
   <body>
-    <button type="button" id="matches_button" onclick="matches()">Matches</button>
+    <button type="button" id="matches_button" onclick="matches('<?= $uid ?>')">Matches</button>
 
     <div id="show_companies" style="display: none;">
         <h2>Student page - showing companies</h2>
@@ -151,7 +151,7 @@ var type = "<?php echo $type ?>";
   echo "var notSeen = ". $js_array . ";\n";
 ?>
 
-function matches(){
+function matches(uid){
   window.location = '/matches/'+uid;
 }
 

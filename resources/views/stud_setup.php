@@ -26,13 +26,13 @@ include 'inc/firebase_init.php';
   <!-- School Information -->
   <div class="tab">
     <p>What is your degree?
-      <input placeholder="Bachelor of Applied Sciences" id="degree" oninput="this.className = ''" name="degree">
+      <input placeholder="Bachelor of Applied Sciences" oninput="this.className = ''" name="degree" value="testDegree">
     </p>
     <p>What is you major/specification?
-      <input placeholder="Mechanincal Engineering" oninput="this.className = ''" name="major">
+      <input placeholder="Mechanincal Engineering" oninput="this.className = ''" name="major" value="testMajor">
     </p>
     <p>Where are you located?
-      <input placeholder="Toronto, ON" oninput="this.className = ''" name="loc">
+      <input placeholder="Toronto, ON" oninput="this.className = ''" name="loc" value="Kingston">
     </p>
     <p>What is your graduation year?
       <select oninput="this.className = ''" name="year">
@@ -52,11 +52,11 @@ include 'inc/firebase_init.php';
      new emps when enough people add them in other-->
     <p>What are some of you primary values and motivations?
       <span>Choose up to 3</span>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim1" value="Creativity">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim1" value="Creativity" value="primCheck1" checked>
         <label for="prim1"> Creativity </label>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim2" value="Adventure">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim2" value="Adventure" value="primCheck2" checked>
         <label for="prim2"> Adventure </label>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim3" value="Achievement">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim3" value="Achievement" value="primCheck3" checked>
         <label for="prim3"> Achievement </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim4" value="Learning">
         <label for="prim4"> Learning </label>
@@ -96,15 +96,15 @@ include 'inc/firebase_init.php';
     </p>
     <p>What are some of you secondary values and motivations?
       <span>Choose up to 5</span>
-      <input type="checkbox" oninput="this.className = ''" name="sec1" value="Creativity">
+      <input type="checkbox" oninput="this.className = ''" name="sec1" value="Creativity" value="secCheck1" checked>
         <label for="sec1"> Creativity </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec2" value="Adventure">
+      <input type="checkbox" oninput="this.className = ''" name="sec2" value="Adventure" value="secCheck2" checked>
         <label for="sec2"> Adventure </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec3" value="Achievement">
+      <input type="checkbox" oninput="this.className = ''" name="sec3" value="Achievement" value="secCheck3" checked>
         <label for="sec3"> Achievement </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec4" value="Learning">
+      <input type="checkbox" oninput="this.className = ''" name="sec4" value="Learning" value="secCheck4" checked>
         <label for="sec4"> Learning </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec5" value="Security">
+      <input type="checkbox" oninput="this.className = ''" name="sec5" value="Security" value="secCheck5" checked>
         <label for="sec5"> Security </label>
       <input type="checkbox" oninput="this.className = ''" name="sec6" value="Social_Impact">
         <label for="sec6"> Social Impact </label>
@@ -141,11 +141,11 @@ include 'inc/firebase_init.php';
     <!-- These are gonna change based on Al's mockup-->
     <p>What are some important aspects to you when considering an employer?
       <span>Choose up to 3</span>
-      <input type="checkbox" oninput="this.className = ''" name="emp1" value="Flexible">
+      <input type="checkbox" oninput="this.className = ''" name="emp1" value="Flexible" value="empCheck1" checked>
         <label for="emp1"> Flexible Work Hours </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp2" value="Purpose">
+      <input type="checkbox" oninput="this.className = ''" name="emp2" value="Purpose" value="empCheck2" checked>
         <label for="emp2"> Purposeful Work </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp3" value="Company_Rep">
+      <input type="checkbox" oninput="this.className = ''" name="emp3" value="Company_Rep" value="empCheck3" checked>
         <label for="emp3"> Company Reputation </label>
       <input type="checkbox" oninput="this.className = ''" name="emp4" value="Sustainable">
         <label for="emp4"> Sustainable Practices </label>
@@ -167,15 +167,15 @@ include 'inc/firebase_init.php';
   <div class="tab">
     <p>What are some of your technical skills?
       <span>Choose up to 5</span>
-      <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web_Dev">
+      <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web_Dev" value="techCheck1" checked>
         <label for="tech1"> Web Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech2" value="Android">
+      <input type="checkbox" oninput="this.className = ''" name="tech2" value="Android" value="techCheck2" checked>
         <label for="tech2"> Andriod Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech3" value="iOS">
+      <input type="checkbox" oninput="this.className = ''" name="tech3" value="iOS" value="techCheck3" checked>
         <label for="tech3"> iOS Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech4" value="Front_End">
+      <input type="checkbox" oninput="this.className = ''" name="tech4" value="Front_End" value="techCheck4" checked>
         <label for="tech4"> Front End </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech5" value="Back_End">
+      <input type="checkbox" oninput="this.className = ''" name="tech5" value="Back_End" value="techCheck5" checked>
         <label for="tech5"> Back End </label>
       <input type="checkbox" oninput="this.className = ''" name="tech6" value="Data_Science">
         <label for="tech6"> Data Science </label>
@@ -211,15 +211,15 @@ include 'inc/firebase_init.php';
     </p>
     <p>What are some of your soft skills?
       <span>Choose up to 5</span>
-      <input type="checkbox" oninput="this.className = ''" name="soft1" value="Leadership">
+      <input type="checkbox" oninput="this.className = ''" name="soft1" value="Leadership" value="softCheck1" checked>
         <label for="soft1"> Leadership </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft2" value="Adaptability">
+      <input type="checkbox" oninput="this.className = ''" name="soft2" value="Adaptability" value="softCheck2" checked>
         <label for="soft2"> Adaptability </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft3" value="Innovation">
+      <input type="checkbox" oninput="this.className = ''" name="soft3" value="Innovation" value="softCheck3" checked>
         <label for="soft3"> Innovation </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft4" value="Presenting">
+      <input type="checkbox" oninput="this.className = ''" name="soft4" value="Presenting" value="softCheck4" checked>
         <label for="soft4"> Presenting </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft5" value="Communication">
+      <input type="checkbox" oninput="this.className = ''" name="soft5" value="Communication" value="softCheck5" checked>
         <label for="soft5"> Communication </label>
       <input type="checkbox" oninput="this.className = ''" name="soft6" value="Team_Work">
         <label for="soft6"> Team Work </label>
@@ -245,7 +245,7 @@ include 'inc/firebase_init.php';
     </p>
     <p> What type of work are you looking for?
       <span> Choose all that apply </span>
-      <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship">
+      <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship" value="typeCheck1" checked>
         <label for="work1"> Internship/Co-op </label>
       <input type="checkbox" oninput="this.className = ''" name="work2" value="Full_Time">
         <label for="work2"> Full Time </label>
@@ -260,13 +260,13 @@ include 'inc/firebase_init.php';
     <span> Please write 1 sentence about 3 experiences listed on your resume </span>
     <!-- Very hack probably unsafe way to do this, see if you can figure it out with security rules -->
     <!-- <p><input type="text" id="uid" name="uid" value="" style="display:none;"></p> -->
-    <p><textarea placeholder="Summer Data Science internship with RBC" oninput="this.className = ''" name="exp1"></textarea></p>
-    <p><textarea placeholder="Research Assistant with Queen's University" oninput="this.className = ''" name="exp2"></textarea></p>
-    <p><textarea placeholder="Varsity soccer team captian" oninput="this.className = ''" name="exp3"></textarea></p>
+    <p><textarea placeholder="Summer Data Science internship with RBC" oninput="this.className = ''" name="exp1" value="experience1"></textarea></p>
+    <p><textarea placeholder="Research Assistant with Queen's University" oninput="this.className = ''" name="exp2" value="experience2"></textarea></p>
+    <p><textarea placeholder="Varsity soccer team captian" oninput="this.className = ''" name="exp3" value="experience3"></textarea></p>
 
     <span> Tell us something that isn't on your resume. </span>
     <span> This is your space to wow! What is something that helps you stand out? </span>
-    <p><textarea placeholder="I've travelled to 25 different countries" oninput="this.className = ''" name="magic"></textarea></p>
+    <p><textarea placeholder="I've travelled to 25 different countries" oninput="this.className = ''" name="magic" value="wowFactor"></textarea></p>
   </div>
 
   <div style="overflow:auto;">

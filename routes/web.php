@@ -330,7 +330,7 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
       return redirect('/matching/'.$userId);
     } else {
       return view('no_new', [
-        'test' => null,
+        'uid' => $userId,
       ]);
     }
 
@@ -361,13 +361,13 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
       return redirect('/matching/'.$userId);
     } else {
       return view('no_new', [
-        'test' => null,
+        'uid' => $userId,
       ]);
     }
 
   } else {
     return view('no_new', [
-      'test' => null,
+      'uid' => $userId,
     ]);
   }
 });
@@ -406,67 +406,19 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zo
       "zoomLink" => $zoom,
       "matchEmail" => $matchEmail,
       "matchName" => $matchName,
-      "userEmail" => $userEmail
+      "userEmail" => $userEmail,
+      "init" => true,
+      "meeting" => ""
     ]);
 
     $mMatchesSub->document($userId)->set([
       "zoomLink" => $zoom,
       "matchEmail" => $userEmail,
       "matchName" => $userName,
-      "userEmail" => $matchEmail
+      "userEmail" => $matchEmail,
+      "init" => false,
+      "meeting" => ""
     ]);
-
-
-    /*
-    if($matchCollection->document($userId)->snapshot()->exists()){
-      // USER: match -> update
-      $pathZoom = $matchId.".zoomLink";
-      $pathMatchEmail = $matchId.".matchEmail";
-      $pathUserEmail = $matchId.".userEmail";
-
-      $matchCollection->document($userId)->update([
-        ["path" => $pathZoom, "value" => $zoom],
-        ["path" => $pathMatchEmail, "value" => $matchEmail],
-        ["path" => $pathUserEmail, "value" => $userEmail],
-      ]);
-
-    } else {
-      // USER: first match, match -> set
-      $matchCollection->document($userId)->set([
-        $matchId => [
-          "zoomLink" => $zoom,
-          //time
-          "matchEmail" => $matchEmail,
-          "userEmail" => $userEmail
-        ],
-      ]);
-    }
-
-    if($matchCollection->document($matchId)->snapshot()->exists()){
-      // MATCH: match -> update
-      $pathZoom = $userId.".zoomLink";
-      $pathMatchEmail = $userId.".matchEmail";
-      $pathUserEmail = $userId.".userEmail";
-
-      $matchCollection->document($userId)->update([
-        ["path" => $pathZoom, "value" => $zoom],
-        ["path" => $pathMatchEmail, "value" => $userEmail],
-        ["path" => $pathUserEmail, "value" => $matchEmail],
-      ]);
-
-    } else {
-      // MATCH: first match, match -> set
-      $matchCollection->document($matchId)->set([
-        $userId => [
-          "zoomLink" => $zoom,
-          //time
-          "matchEmail" => $userEmail,
-          "userEmail" => $matchEmail
-        ],
-      ]);
-
-    }
-    */
 
     return view('new_match', [
       'matchName' => $matchName,
@@ -510,8 +462,6 @@ $router->post('/newMatch/{userId}/{matchId}', function (Request $request, $userI
 
   return redirect("/matches/".$userId);
 
-
-
 });
 
 // send all matches and let the user choose times available
@@ -526,8 +476,40 @@ $router->get('matches/{userId}', function($userId) use ($compCollection, $studCo
   }
 
   return view('matches', [
-    'matches' => $allMatches,
+    'allMatches' => $allMatches,
+    'userId' => $userId,
+    'type' => $userType
   ]);
+});
+
+// set meeting Time based off options
+$router->post('/matches/{userId}', function (Request $request, $userId) use ($compCollection, $studCollection) {
+  $matchId = $request->input('matchId');
+  $meeting = $request->input('time');
+
+  $userType = userType($compCollection, $studCollection, $userId);
+
+  if($userType == "Student"){
+    $uMatchesSub = $studCollection->document($userId)->collection("matches");
+    $mMatchesSub = $compCollection->document($matchId)->collection("matches");
+
+  } else {
+    $uMatchesSub = $compCollection->document($userId)->collection("matches");
+    $mMatchesSub = $studCollection->document($matchId)->collection("matches");
+  }
+
+  $uMatchesSub->document($matchId)->update([
+    ["path" => "meeting", "value" => $meeting]
+  ]);
+
+  $mMatchesSub->document($userId)->update([
+    ["path" => "meeting", "value" => $meeting]
+  ]);
+
+  return redirect("/matches/".$userId);
+
+
+
 });
 
 // Global Sign In

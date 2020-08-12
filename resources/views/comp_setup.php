@@ -26,19 +26,19 @@ include 'inc/firebase_init.php';
   <!-- Company Information -->
   <div class="tab">
     <p>What is your position?
-      <input placeholder="CEO & Co-Founder" id="position" oninput="this.className = ''" name="position">
+      <input placeholder="CEO & Co-Founder" id="position" oninput="this.className = ''" name="position" value="CTO">
     </p>
     <p>What is your company size?
-      <input placeholder="15" oninput="this.className = ''" name="size">
+      <input placeholder="15" oninput="this.className = ''" name="size" value="15">
     </p>
     <p>Where are you located?
-      <input placeholder="Toronto, ON" oninput="this.className = ''" name="loc">
+      <input placeholder="Toronto, ON" oninput="this.className = ''" name="loc" value="Toronto">
     </p>
     <p>What is you company's website?
-      <input placeholder="www.swivelnetwork.com" oninput="this.className = ''" name="site">
+      <input placeholder="www.swivelnetwork.com" oninput="this.className = ''" name="site" value="www.swivelnetwork.com">
     </p>
     <p>Where post secondary/graduate school did you attend?
-      <input placeholder="Queen's University" oninput="this.className = ''" name="alma">
+      <input placeholder="Queen's University" oninput="this.className = ''" name="alma" value="Queen's">
     </p>
   </div>
 
@@ -49,11 +49,11 @@ include 'inc/firebase_init.php';
      new emps when enough people add them in other-->
     <p>What are your company's primary values?
       <span>Choose 3 values from the list</span>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim1" value="Creativity">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim1" value="Creativity" value="primCheck1" checked>
         <label for="prim1"> Creativity </label>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim2" value="Adventure">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim2" value="Adventure" value="primCheck2" checked>
         <label for="prim2"> Adventure </label>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim3" value="Achievement">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim3" value="Achievement" value="primCheck3" checked>
         <label for="prim3"> Achievement </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim4" value="Learning">
         <label for="prim4"> Learning </label>
@@ -93,15 +93,15 @@ include 'inc/firebase_init.php';
     </p>
     <p>What are your company's secondary values?
       <span>Choose 5 values from the list</span>
-      <input type="checkbox" oninput="this.className = ''" name="sec1" value="Creativity">
+      <input type="checkbox" oninput="this.className = ''" name="sec1" value="Creativity" value="secCheck1" checked>
         <label for="sec1"> Creativity </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec2" value="Adventure">
+      <input type="checkbox" oninput="this.className = ''" name="sec2" value="Adventure" value="secCheck2" checked>
         <label for="sec2"> Adventure </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec3" value="Achievement">
+      <input type="checkbox" oninput="this.className = ''" name="sec3" value="Achievement" value="secCheck3" checked>
         <label for="sec3"> Achievement </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec4" value="Learning">
+      <input type="checkbox" oninput="this.className = ''" name="sec4" value="Learning" value="secCheck4" checked>
         <label for="sec4"> Learning </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec5" value="Security">
+      <input type="checkbox" oninput="this.className = ''" name="sec5" value="Security" value="secCheck5" checked>
         <label for="sec5"> Security </label>
       <input type="checkbox" oninput="this.className = ''" name="sec6" value="Social_Impact">
         <label for="sec6"> Social Impact </label>
@@ -136,13 +136,13 @@ include 'inc/firebase_init.php';
       <input placeholder="Other" oninput="this.className = ''" name="secOther">
     </p>
     <!-- These are gonna change based on Al's mockup-->
-    <p>What are some important aspects to you when considering an employer?
+    <p>What are some aspects of your company that set you apart?
       <span>Choose 3 attributes from the list</span>
-      <input type="checkbox" oninput="this.className = ''" name="diff1" value="Flexible">
+      <input type="checkbox" oninput="this.className = ''" name="diff1" value="Flexible" value="empCheck1" checked>
         <label for="diff1"> Flexible Work Hours </label>
-      <input type="checkbox" oninput="this.className = ''" name="diff2" value="Purpose">
+      <input type="checkbox" oninput="this.className = ''" name="diff2" value="Purpose" value="empCheck2" checked>
         <label for="diff2"> Purposeful Work </label>
-      <input type="checkbox" oninput="this.className = ''" name="diff3" value="Company_Rep">
+      <input type="checkbox" oninput="this.className = ''" name="diff3" value="Company_Rep" value="empCheck3" checked>
         <label for="diff3"> Company Reputation </label>
       <input type="checkbox" oninput="this.className = ''" name="diff4" value="Sustainable">
         <label for="diff4"> Sustainable Practices </label>
@@ -164,15 +164,15 @@ include 'inc/firebase_init.php';
   <div class="tab">
     <p>What technical skills are you looking for?
       <span>Choose 5 skills from the list</span>
-      <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web_Dev">
+      <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web_Dev" value="techCheck1" checked>
         <label for="tech1"> Web Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech2" value="Android">
+      <input type="checkbox" oninput="this.className = ''" name="tech2" value="Android" value="techCheck2" checked>
         <label for="tech2"> Andriod Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech3" value="iOS">
+      <input type="checkbox" oninput="this.className = ''" name="tech3" value="iOS" value="techCheck3" checked>
         <label for="tech3"> iOS Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech4" value="Front_End">
+      <input type="checkbox" oninput="this.className = ''" name="tech4" value="Front_End" value="techCheck4" checked>
         <label for="tech4"> Front End </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech5" value="Back_End">
+      <input type="checkbox" oninput="this.className = ''" name="tech5" value="Back_End" value="techCheck5" checked>
         <label for="tech5"> Back End </label>
       <input type="checkbox" oninput="this.className = ''" name="tech6" value="Data_Science">
         <label for="tech6"> Data Science </label>
@@ -208,15 +208,15 @@ include 'inc/firebase_init.php';
     </p>
     <p>What soft skills are you looking for?
       <span>Choose 5 skills from the list</span>
-      <input type="checkbox" oninput="this.className = ''" name="soft1" value="Leadership">
+      <input type="checkbox" oninput="this.className = ''" name="soft1" value="Leadership" value="softCheck1" checked>
         <label for="soft1"> Leadership </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft2" value="Adaptability">
+      <input type="checkbox" oninput="this.className = ''" name="soft2" value="Adaptability" value="softCheck2" checked>
         <label for="soft2"> Adaptability </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft3" value="Innovation">
+      <input type="checkbox" oninput="this.className = ''" name="soft3" value="Innovation" value="softCheck3" checked>
         <label for="soft3"> Innovation </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft4" value="Presenting">
+      <input type="checkbox" oninput="this.className = ''" name="soft4" value="Presenting" value="softCheck4" checked>
         <label for="soft4"> Presenting </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft5" value="Communication">
+      <input type="checkbox" oninput="this.className = ''" name="soft5" value="Communication" value="softCheck5" checked>
         <label for="soft5"> Communication </label>
       <input type="checkbox" oninput="this.className = ''" name="soft6" value="Team_Work">
         <label for="soft6"> Team Work </label>
@@ -242,7 +242,7 @@ include 'inc/firebase_init.php';
     </p>
     <p> Employment Type?
       <span> Choose all that apply </span>
-      <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship">
+      <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship" value="typeCheck1" checked>
         <label for="work1"> Internship/Co-op </label>
       <input type="checkbox" oninput="this.className = ''" name="work2" value="Full_Time">
         <label for="work2"> Full Time </label>
@@ -255,15 +255,15 @@ include 'inc/firebase_init.php';
   <div class="tab">
     <span> Give us a brief description of your company </span>
     <span> In 50 words or less </span>
-    <p><textarea placeholder="Swivels purpose is to..." oninput="this.className = ''" name="info1"></textarea></p>
+    <p><textarea placeholder="Swivels purpose is to..." oninput="this.className = ''" name="info1" value="purpose"></textarea></p>
 
     <span> Give us a brief description of life at your company </span>
     <span> In 50 words or less </span>
-    <p><textarea placeholder="Life at Swivel is filled with learning, teamwork and ..." oninput="this.className = ''" name="info2"></textarea></p>
+    <p><textarea placeholder="Life at Swivel is filled with learning, teamwork and ..." oninput="this.className = ''" name="info2" value="life"></textarea></p>
 
     <span> Give us a brief description of yourself </span>
     <span> In 50 words or less </span>
-    <p><textarea placeholder="I am an entrepreneur at heart ..." oninput="this.className = ''" name="info3"></textarea></p>
+    <p><textarea placeholder="I am an entrepreneur at heart ..." oninput="this.className = ''" name="info3" value="bio"></textarea></p>
 
   </div>
 
