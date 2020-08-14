@@ -62,7 +62,7 @@ include 'inc/firebase_init.php';
         <label for="prim4"> Learning </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim5" value="Security">
         <label for="prim5"> Security </label>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim6" value="Social_Impact">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim6" value="Social Impact">
         <label for="prim6"> Social Impact </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim7" value="Intelligence">
         <label for="prim7"> Intelligence </label>
@@ -80,7 +80,7 @@ include 'inc/firebase_init.php';
         <label for="prim13"> Accountability </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim14" value="Innovation">
         <label for="prim14"> Innovation </label>
-      <input type="checkbox" oninput="this.className = 'prim'" name="prim15" value="Team_Work">
+      <input type="checkbox" oninput="this.className = 'prim'" name="prim15" value="Team Work">
         <label for="prim15"> Team Work </label>
       <input type="checkbox" oninput="this.className = 'prim'" name="prim16" value="Quality">
         <label for="prim16"> Quality </label>
@@ -106,7 +106,7 @@ include 'inc/firebase_init.php';
         <label for="sec4"> Learning </label>
       <input type="checkbox" oninput="this.className = ''" name="sec5" value="Security" value="secCheck5" checked>
         <label for="sec5"> Security </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec6" value="Social_Impact">
+      <input type="checkbox" oninput="this.className = ''" name="sec6" value="Social Impact">
         <label for="sec6"> Social Impact </label>
       <input type="checkbox" oninput="this.className = ''" name="sec7" value="Intelligence">
         <label for="sec7"> Intelligence </label>
@@ -124,7 +124,7 @@ include 'inc/firebase_init.php';
         <label for="sec13"> Accountability </label>
       <input type="checkbox" oninput="this.className = ''" name="sec14" value="Innovation">
         <label for="sec14"> Innovation </label>
-      <input type="checkbox" oninput="this.className = ''" name="sec15" value="Team_Work">
+      <input type="checkbox" oninput="this.className = ''" name="sec15" value="Team Work">
         <label for="sec15"> Team Work </label>
       <input type="checkbox" oninput="this.className = ''" name="sec16" value="Quality">
         <label for="sec16"> Quality </label>
@@ -145,7 +145,7 @@ include 'inc/firebase_init.php';
         <label for="emp1"> Flexible Work Hours </label>
       <input type="checkbox" oninput="this.className = ''" name="emp2" value="Purpose" value="empCheck2" checked>
         <label for="emp2"> Purposeful Work </label>
-      <input type="checkbox" oninput="this.className = ''" name="emp3" value="Company_Rep" value="empCheck3" checked>
+      <input type="checkbox" oninput="this.className = ''" name="emp3" value="Company Reputation" value="empCheck3" checked>
         <label for="emp3"> Company Reputation </label>
       <input type="checkbox" oninput="this.className = ''" name="emp4" value="Sustainable">
         <label for="emp4"> Sustainable Practices </label>
@@ -167,29 +167,29 @@ include 'inc/firebase_init.php';
   <div class="tab">
     <p>What are some of your technical skills?
       <span>Choose up to 5</span>
-      <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web_Dev" value="techCheck1" checked>
+      <input type="checkbox" oninput="this.className = ''" name="tech1" value="Web Dev" value="techCheck1" checked>
         <label for="tech1"> Web Development </label>
       <input type="checkbox" oninput="this.className = ''" name="tech2" value="Android" value="techCheck2" checked>
         <label for="tech2"> Andriod Development </label>
       <input type="checkbox" oninput="this.className = ''" name="tech3" value="iOS" value="techCheck3" checked>
         <label for="tech3"> iOS Development </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech4" value="Front_End" value="techCheck4" checked>
+      <input type="checkbox" oninput="this.className = ''" name="tech4" value="Front End" value="techCheck4" checked>
         <label for="tech4"> Front End </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech5" value="Back_End" value="techCheck5" checked>
+      <input type="checkbox" oninput="this.className = ''" name="tech5" value="Back End" value="techCheck5" checked>
         <label for="tech5"> Back End </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech6" value="Data_Science">
+      <input type="checkbox" oninput="this.className = ''" name="tech6" value="Data Science">
         <label for="tech6"> Data Science </label>
       <input type="checkbox" oninput="this.className = ''" name="tech7" value="DevOps">
         <label for="tech7"> DevOps </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech8" value="Machine_Learning">
+      <input type="checkbox" oninput="this.className = ''" name="tech8" value="Machine Learning">
         <label for="tech8"> Machine Learning </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech9" value="Cloud_Computing">
+      <input type="checkbox" oninput="this.className = ''" name="tech9" value="Cloud Computing">
         <label for="tech9"> Cloud Computing </label>
       <input type="checkbox" oninput="this.className = ''" name="tech10" value="Blockchain">
         <label for="tech10"> Blockchain </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech11" value="Operating_Systems">
+      <input type="checkbox" oninput="this.className = ''" name="tech11" value="Operating Systems">
         <label for="tech11"> Operating Systems </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech12" value="Network_Security">
+      <input type="checkbox" oninput="this.className = ''" name="tech12" value="Network Security">
         <label for="tech12"> Network and Info Security </label>
       <input type="checkbox" oninput="this.className = ''" name="tech13" value="Machining">
         <label for="tech13"> Machining </label>
@@ -203,7 +203,7 @@ include 'inc/firebase_init.php';
         <label for="tech17"> Quality Assurance </label>
       <input type="checkbox" oninput="this.className = ''" name="tech18" value="UI">
         <label for="tech18"> UI/UX </label>
-      <input type="checkbox" oninput="this.className = ''" name="tech19" value="Computer_Vision">
+      <input type="checkbox" oninput="this.className = ''" name="tech19" value="Computer Vision">
         <label for="tech19"> Computer Vision </label>
       <input type="checkbox" oninput="this.className = ''" name="tech20" value="eCommerce">
         <label for="tech20"> eCommerce </label>
@@ -221,13 +221,13 @@ include 'inc/firebase_init.php';
         <label for="soft4"> Presenting </label>
       <input type="checkbox" oninput="this.className = ''" name="soft5" value="Communication" value="softCheck5" checked>
         <label for="soft5"> Communication </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft6" value="Team_Work">
+      <input type="checkbox" oninput="this.className = ''" name="soft6" value="Team Work">
         <label for="soft6"> Team Work </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft7" value="Conflict_Res">
+      <input type="checkbox" oninput="this.className = ''" name="soft7" value="Conflict Resolution">
         <label for="soft7"> Conflict Resolution </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft8" value="Decision_Making">
+      <input type="checkbox" oninput="this.className = ''" name="soft8" value="Decision Making">
         <label for="soft8"> Decision Making </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft9" value="Critical_Thinkng">
+      <input type="checkbox" oninput="this.className = ''" name="soft9" value="Critical Thinkng">
         <label for="soft9"> Critical Thinking </label>
       <input type="checkbox" oninput="this.className = ''" name="soft10" value="Persuasion">
         <label for="soft10"> Persuasion </label>
@@ -235,11 +235,11 @@ include 'inc/firebase_init.php';
         <label for="soft11"> Collaboration </label>
       <input type="checkbox" oninput="this.className = ''" name="soft12" value="Organization">
         <label for="soft12"> Organization </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft13" value="Problem_Solving">
+      <input type="checkbox" oninput="this.className = ''" name="soft13" value="Problem Solving">
         <label for="soft13"> Problem Solving </label>
       <input type="checkbox" oninput="this.className = ''" name="soft14" value="Learning">
         <label for="soft14"> Willingness to Learn </label>
-      <input type="checkbox" oninput="this.className = ''" name="soft15" value="Open_Mindness">
+      <input type="checkbox" oninput="this.className = ''" name="soft15" value="Open Mindedness">
         <label for="soft15"> Open-Mindedness </label>
       <input placeholder="Other" oninput="this.className = ''" name="softOther">
     </p>
@@ -247,7 +247,7 @@ include 'inc/firebase_init.php';
       <span> Choose all that apply </span>
       <input type="checkbox" oninput="this.className = ''" name="work1" value="Internship" value="typeCheck1" checked>
         <label for="work1"> Internship/Co-op </label>
-      <input type="checkbox" oninput="this.className = ''" name="work2" value="Full_Time">
+      <input type="checkbox" oninput="this.className = ''" name="work2" value="Full Time">
         <label for="work2"> Full Time </label>
       <input type="checkbox" oninput="this.className = ''" name="work3" value="Contract">
         <label for="work3"> Contract Work </label>

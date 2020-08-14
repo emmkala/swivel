@@ -211,7 +211,7 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
     'lname' => $lname,
     'email' => $email,
     'company' => $company,
-    'postion' => $rawData['position'],
+    'position' => $rawData['position'],
     'size' => $rawData['size'],
     'loc' => $rawData['loc'],
     'site' => $rawData['site'],
@@ -223,7 +223,7 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
     'Apart' => ['diff1' => $rawData[$keys[15]], 'diff2' => $rawData[$keys[16]], 'diff3' => $rawData[$keys[17]]],
     'Tech' => ['tech1' => $rawData[$keys[19]], 'tech2' => $rawData[$keys[20]], 'tech3' => $rawData[$keys[21]], 'tech4' => $rawData[$keys[22]], 'tech5' => $rawData[$keys[23]]],
     'Soft' => ['soft1' => $rawData[$keys[25]], 'soft2' => $rawData[$keys[26]], 'soft3' => $rawData[$keys[27]], 'soft4' => $rawData[$keys[28]], 'soft5' => $rawData[$keys[29]]],
-    'Info' => ['info1' => $rawData['info1'], 'info2' => $rawData['info2'], 'exp3' => $rawData['info3']],
+    'Info' => ['compBio' => $rawData['info1'], 'life' => $rawData['info2'], 'personalBio' => $rawData['info3']],
     'WorkType' => ['work1' => $workTypes[0], 'work2' => $workTypes[1], 'work3' => $workTypes[2]],
   ];
 
@@ -346,7 +346,7 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
     $count=0;
 
     $notSeenCollection->document($userId)->set([
-      "interests" => [],
+      "notSeenIds" => [],
     ]);
 
     foreach($newStuds as $newStud){
@@ -529,41 +529,6 @@ $router->get('/error', function(){
 
 // Helper functions
 
-// update method of workTypes
-//function workTypes($profileData, $rawData, $user){
-  /*
-  $numFir;
-  $numLas;
-
-  if($user == "stud"){
-    $numFir = 28;
-    $numLas = 4;
-  } else if($user == "comp") {
-    $numFir = 29;
-    $numLas = 3;
-  }
-  $tmp = $rawData;
-  // getting rid of all elements that aren't in the
-  array_splice($tmp, 0, $numFir);
-  for($i = 0; $i < $numLas; $i++){
-    array_pop($tmp);
-  }
-
-  // append each thing to the array
-  foreach($tmp as $work){
-    if($work == "Internship"){
-      $profileData[] = ['path' => 'WorkType.work1', 'value' => "Internship"];
-    } else if($work == "Full_Time"){
-      $profileData[] = ['path' => 'WorkType.work2', 'value' => "Full_Time"];
-    } else if($work == "Contract"){
-      $profileData[] = ['path' => 'WorkType.work3', 'value' => "Contract"];
-    }
-  }
-
-  return $profileData;
-}
-*/
-
 function workTypes($rawData, $type){
   $numFir;
   $numLas;
@@ -587,8 +552,8 @@ function workTypes($rawData, $type){
   foreach($tmp as $work){
     if($work == "Internship"){
       $workTypes[0] = "Internship";
-    } else if($work == "Full_Time"){
-      $workTypes[1] = "Full_Time";
+    } else if($work == "Full Time"){
+      $workTypes[1] = "Full Time";
     } else if($work == "Contract"){
       $workTypes[2] = "Contract";
     }

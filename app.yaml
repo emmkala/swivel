@@ -11,4 +11,4 @@ handlers:
   static_dir: stylesheets
 
 - url: /images
-  static_dir: img
+  static_dir: images

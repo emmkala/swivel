@@ -12,83 +12,83 @@
   <!-- dummy times, will change -->
   <div id="day_1">
     <h6 class="day">Saturday, August 15th at:</h6>
-    <input type="checkbox" name="day1_1" value="10:30am_EST">
+    <input type="checkbox" name="day1_1" value="August 15th 10:30am EST">
       <label for="day1_1"> 10:30am EST </label>
-    <input type="checkbox" name="day1_2" value="11:00am_EST">
+    <input type="checkbox" name="day1_2" value="August 15th 11:00am EST">
       <label for="day1_2"> 11:00am EST </label>
-    <input type="checkbox" name="day1_3" value="11:30am_EST">
+    <input type="checkbox" name="day1_3" value="August 15th 11:30am EST">
       <label for="day1_3"> 11:30am EST </label>
-    <input type="checkbox" name="day1_4" value="12:00pm_EST">
+    <input type="checkbox" name="day1_4" value="August 15th 12:00pm EST">
       <label for="day1_4"> 12:00pm EST </label>
-    <input type="checkbox" name="day1_5" value="12:30pm_EST">
+    <input type="checkbox" name="day1_5" value="August 15th 12:30pm EST">
       <label for="day1_5"> 12:30pm EST </label>
-    <input type="checkbox" name="day1_6" value="1:00pm_EST">
+    <input type="checkbox" name="day1_6" value="August 15th 1:00pm EST">
       <label for="day1_6"> 1:00pm EST </label>
-    <input type="checkbox" name="day1_7" value="1:30pm_EST">
+    <input type="checkbox" name="day1_7" value="August 15th 1:30pm EST">
       <label for="day1_7"> 1:30pm EST </label>
-    <input type="checkbox" name="day1_8" value="2:00pm_EST">
+    <input type="checkbox" name="day1_8" value="August 15th 2:00pm EST">
       <label for="day1_8"> 2:00pm EST </label>
-    <input type="checkbox" name="day1_9" value="2:30pm_EST">
+    <input type="checkbox" name="day1_9" value="August 15th 2:30pm EST">
       <label for="day1_9"> 2:30pm EST </label>
-    <input type="checkbox" name="day1_10" value="3:00pm_EST">
+    <input type="checkbox" name="day1_10" value="August 15th 3:00pm EST">
       <label for="day1_10"> 3:00pm EST </label>
-    <input type="checkbox" name="day1_11" value="3:30pm_EST">
+    <input type="checkbox" name="day1_11" value="August 15th 3:30pm EST">
       <label for="day1_11"> 3:30pm EST </label>
-    <input type="checkbox" name="day1_12" value="4:00pm_EST">
+    <input type="checkbox" name="day1_12" value="August 15th 4:00pm EST">
       <label for="day1_12"> 4:00pm EST </label>
   </div>
   <div id="day_2">
     <h6 class="day">Sunday, August 16th at:</h6>
-    <input type="checkbox" name="day2_1" value="10:30am_EST">
+    <input type="checkbox" name="day2_1" value="August 16th 10:30am EST">
       <label for="day2_1"> 10:30am EST </label>
-    <input type="checkbox" name="day2_2" value="11:00am_EST">
+    <input type="checkbox" name="day2_2" value="August 16th 11:00am EST">
       <label for="day2_2"> 11:00am EST </label>
-    <input type="checkbox" name="day2_3" value="11:30am_EST">
+    <input type="checkbox" name="day2_3" value="August 16th 11:30am EST">
       <label for="day2_3"> 11:30am EST </label>
-    <input type="checkbox" name="day2_4" value="12:00pm_EST">
+    <input type="checkbox" name="day2_4" value="August 16th 12:00pm EST">
       <label for="day2_4"> 12:00pm EST </label>
-    <input type="checkbox" name="day2_5" value="12:30pm_EST">
+    <input type="checkbox" name="day2_5" value="August 16th 12:30pm EST">
       <label for="day2_5"> 12:30pm EST </label>
-    <input type="checkbox" name="day2_6" value="1:00pm_EST">
+    <input type="checkbox" name="day2_6" value="August 16th 1:00pm EST">
       <label for="day2_6"> 1:00pm EST </label>
-    <input type="checkbox" name="day2_7" value="1:30pm_EST">
+    <input type="checkbox" name="day2_7" value="August 16th 1:30pm EST">
       <label for="day2_7"> 1:30pm EST </label>
-    <input type="checkbox" name="day2_8" value="2:00pm_EST">
+    <input type="checkbox" name="day2_8" value="August 16th 2:00pm EST">
       <label for="day2_8"> 2:00pm EST </label>
-    <input type="checkbox" name="day2_9" value="2:30pm_EST">
+    <input type="checkbox" name="day2_9" value="August 16th 2:30pm EST">
       <label for="day2_9"> 2:30pm EST </label>
-    <input type="checkbox" name="day2_10" value="3:00pm_EST">
+    <input type="checkbox" name="day2_10" value="August 16th 3:00pm EST">
       <label for="day2_10"> 3:00pm EST </label>
-    <input type="checkbox" name="day2_11" value="3:30pm_EST">
+    <input type="checkbox" name="day2_11" value="August 16th 3:30pm EST">
       <label for="day2_11"> 3:30pm EST </label>
-    <input type="checkbox" name="day2_12" value="4:00pm_EST">
+    <input type="checkbox" name="day2_12" value="August 16th 4:00pm EST">
       <label for="day2_12"> 4:00pm EST </label>
   </div>
   <div id="day_3">
     <h6 class="day">Monday, August 17th at:</h6>
-    <input type="checkbox" name="day3_1" value="10:30am_EST">
+    <input type="checkbox" name="day3_1" value="August 17th 10:30am EST">
       <label for="day3_1"> 10:30am EST </label>
-    <input type="checkbox" name="day3_2" value="11:00am_EST">
+    <input type="checkbox" name="day3_2" value="August 17th 11:00am EST">
       <label for="day3_2"> 11:00am EST </label>
-    <input type="checkbox" name="day3_3" value="11:30am_EST">
+    <input type="checkbox" name="day3_3" value="August 17th 11:30am EST">
       <label for="day3_3"> 11:30am EST </label>
-    <input type="checkbox" name="day3_4" value="12:00pm_EST">
+    <input type="checkbox" name="day3_4" value="August 17th 12:00pm EST">
       <label for="day3_4"> 12:00pm EST </label>
-    <input type="checkbox" name="day3_5" value="12:30pm_EST">
+    <input type="checkbox" name="day3_5" value="August 17th 12:30pm EST">
       <label for="day3_5"> 12:30pm EST </label>
-    <input type="checkbox" name="day3_6" value="1:00pm_EST">
+    <input type="checkbox" name="day3_6" value="August 17th 1:00pm EST">
       <label for="day3_6"> 1:00pm EST </label>
-    <input type="checkbox" name="day3_7" value="1:30pm_EST">
+    <input type="checkbox" name="day3_7" value="August 17th 1:30pm EST">
       <label for="day3_7"> 1:30pm EST </label>
-    <input type="checkbox" name="day3_8" value="2:00pm_EST">
+    <input type="checkbox" name="day3_8" value="August 17th 2:00pm EST">
       <label for="day3_8"> 2:00pm EST </label>
-    <input type="checkbox" name="day3_9" value="2:30pm_EST">
+    <input type="checkbox" name="day3_9" value="August 17th 2:30pm EST">
       <label for="day3_9"> 2:30pm EST </label>
-    <input type="checkbox" name="day3_10" value="3:00pm_EST">
+    <input type="checkbox" name="day3_10" value="August 17th 3:00pm EST">
       <label for="day3_10"> 3:00pm EST </label>
-    <input type="checkbox" name="day3_11" value="3:30pm_EST">
+    <input type="checkbox" name="day3_11" value="August 17th 3:30pm EST">
       <label for="day3_11"> 3:30pm EST </label>
-    <input type="checkbox" name="day3_12" value="4:00pm_EST">
+    <input type="checkbox" name="day3_12" value="August 17th 4:00pm EST">
       <label for="day3_12"> 4:00pm EST </label>
   </div>
   <!-- maybe later
