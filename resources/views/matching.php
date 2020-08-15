@@ -388,8 +388,6 @@ firebase.auth().onAuthStateChanged(function(user) {
           var emp2Icon = "<i class='material-icons'>free_breakfast</i>"+employer.emp2;
           var emp3Icon = "<i class='material-icons'>insert_emoticon</i>"+employer.emp3;
 
-
-
           document.getElementById("stud_name").innerHTML = name;
           document.getElementById("stud_location").innerHTML = docData.loc;
           document.getElementById("degree_major").innerHTML = degMaj;
@@ -430,6 +428,13 @@ firebase.auth().onAuthStateChanged(function(user) {
           document.getElementById("stu_sec4").innerHTML = secVals.sec4;
           document.getElementById("stu_sec5").innerHTML = secVals.sec5;
 
+          if(docData.WorkType.work1 == "Internship"){
+            document.getElementById("internship").innerHTML = "Internship/Co-Op";
+          } else if (docData.WorkType.work2 == "Full Time"){
+            document.getElementById("full").innerHTML = "Full Time";
+          } else if(docData.WorkType.work3 == "Contract"){
+            document.getElementById("contract").innerHTML = "Contract";
+          }
 
           document.getElementById("stu_emp1").innerHTML = emp1Icon;
           document.getElementById("stu_emp2").innerHTML = emp2Icon;

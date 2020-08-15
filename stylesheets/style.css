@@ -801,7 +801,7 @@ input[type="checkbox"]:checked::after {
   margin-top: 3%;
   margin-right: 15%;
   margin-bottom: 5%;
-  border-radius: 3%;
+  border-radius: 8px;
   box-shadow: 5px 10px 8px #d5d4d9;
 }
 
@@ -811,7 +811,7 @@ input[type="checkbox"]:checked::after {
   margin-top: 3%;
   margin-right: 15%;
   margin-bottom: 5%;
-  border-radius: 3%;
+  border-radius: 8px;
   box-shadow: 5px 10px 8px #d5d4d9;
 }
 
@@ -974,7 +974,7 @@ input[type="checkbox"]:checked::after {
   border-style: solid;
   border-color: #FD6160;
   background-color: #FD6160;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: white;
 }
@@ -986,7 +986,7 @@ input[type="checkbox"]:checked::after {
   border-color: #FD6160;
   background-color: white;
   color: #FD6160;
-  border-radius: 5%;
+  border-radius: 5px;
   padding: 1%;
   margin-top: -5%;
 }
@@ -997,7 +997,7 @@ input[type="checkbox"]:checked::after {
   border-style: solid;
   border-color: #FD6160;
   background-color: #FD6160;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: white;
 }
@@ -1009,7 +1009,7 @@ input[type="checkbox"]:checked::after {
   border-color: #FD6160;
   background-color: white;
   color: #FD6160;
-  border-radius: 5%;
+  border-radius: 5px;
   padding: 1%;
   margin-top: -5%;
 }
@@ -1020,7 +1020,7 @@ input[type="checkbox"]:checked::after {
   border-style: solid;
   border-color: #FD6160;
   background-color: #FD6160;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: white;
 }
@@ -1032,7 +1032,7 @@ input[type="checkbox"]:checked::after {
   border-color: #FD6160;
   background-color: white;
   color: #FD6160;
-  border-radius: 5%;
+  border-radius: 5px;
   padding: 1%;
   margin-top: -5%;
 }
@@ -1043,7 +1043,7 @@ input[type="checkbox"]:checked::after {
   border-style: solid;
   border-color: #00d8c6;
   background-color: #00d8c6;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: white;
 }
@@ -1055,7 +1055,7 @@ input[type="checkbox"]:checked::after {
   border-color: #00d8c6;
   background-color: white;
   color: #00d8c6;
-  border-radius: 5%;
+  border-radius: 5px;
   padding: 1%;
   margin-top: -5%;
 }
@@ -1066,7 +1066,7 @@ input[type="checkbox"]:checked::after {
   border-style: solid;
   border-color: #00d8c6;
   background-color: #00d8c6;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: white;
 }
@@ -1078,7 +1078,7 @@ input[type="checkbox"]:checked::after {
   border-color: #00d8c6;
   background-color: white;
   color: #00d8c6;
-  border-radius: 5%;
+  border-radius: 5px;
   padding: 1%;
   margin-top: -5%;
 }
@@ -1088,7 +1088,7 @@ input[type="checkbox"]:checked::after {
   border-width: thick;
   border-style: solid;
   border-color: #fbfaff;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: #FD6160;
 }
@@ -1098,7 +1098,7 @@ input[type="checkbox"]:checked::after {
   border-width: thick;
   border-style: solid;
   border-color: #fbfaff;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: #FD6160;
 }
@@ -1109,7 +1109,7 @@ input[type="checkbox"]:checked::after {
   border-style: solid;
   border-color: #00d8c6;
   background-color: #00d8c6;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: white;
 }
@@ -1119,7 +1119,7 @@ input[type="checkbox"]:checked::after {
   border-width: thick;
   border-style: solid;
   border-color: #fbfaff;
-  border-radius: 5%;
+  border-radius: 5px;
   margin-top: -5%;
   color: #00d8c6;
 }
@@ -1278,3 +1278,134 @@ input[type="checkbox"]:checked::after {
   background-color: #00d8c6;
   color: white;
 }
+/* Matches view */
+.matchCardComp {
+  margin-left: 21%;
+  margin-bottom: 5%;
+  background-color: #fbfaff;
+  width: 74%;
+  padding: 2%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.userInfoComp {
+  border-left: 3px solid #E9E9F0;
+  width: 50%;
+  padding-left: 3%;
+  padding-right: 5%;
+}
+
+.userInfoComp img{
+  height: 45%;
+  padding-left: 10%;
+}
+
+.userInfoComp a:hover{
+  color: #fd6160;
+}
+
+.matchInfoComp {
+  border-bottom: 3px solid #E9E9F0;
+}
+
+.matchesComp {
+  width: 45%;
+}
+
+.getTimesComp {
+  margin-bottom: 2%;
+  padding: 1%;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5px;
+  border-color: #fd6160;
+  background-color: #fd6160;
+  color: white;
+  width: 50%;
+  box-shadow: 1px 1px 1px #d5d4d9;
+  cursor: pointer;
+}
+
+.getTimesComp:hover{
+  border-color: #ffafaf;
+  background-color: #ffafaf;
+}
+
+.timeSelection {
+  z-index: 2;
+  background-color: #fbfaff;
+  box-shadow: 5px 10px 8px #d5d4d9;
+  border-style: solid;
+  border-width: medium;
+  border-color: #00d8c6;
+  border-radius: 5px;
+  padding: 5%;
+  position: fixed;
+  margin-left: 5%;
+  margin-top: -10%;
+  margin-right: 5%;
+}
+
+#time_form input[type=radio]{
+  margin-left: 3%;
+}
+
+#schedule_meeting{
+  margin-left: 12%;
+  width: 75%;
+  background-color: #00d8c6;
+  color: white;
+  border-style: none;
+  padding: 1%;
+}
+
+#schedule_meeting:hover{
+  background-color: #a5dad5;
+  color: white;
+  cursor: pointer;
+}
+
+#close_time{
+  float: right;
+}
+
+#close_time:hover{
+  cursor: pointer;
+}
+
+.waiting{
+  font-size: 15px;
+  padding-right: 2%;
+  color: #3d3d3d;
+}
+
+.meetingTime {
+  border-style: solid;
+  border-color: #00d8c6;
+  color: #00d8c6;
+  border-radius: 5px;
+  width: 75%;
+  padding: 1%;
+}
+
+
+
+/*
+#time_form input[type=radio] checked{
+  width: 35%;
+  border-style: solid;
+  border-color: #00d8c6;
+  background-color: #00d8c6;
+  padding: 1%;
+}
+
+#time_input label{
+  border-style: solid;
+  border-color: #00d8c6;
+  padding: 1%;
+  margin-left: 5%;
+  margin-top: 50px;
+}*/

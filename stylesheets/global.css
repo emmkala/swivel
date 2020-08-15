@@ -23,7 +23,7 @@ body{
 h1,h2,h3,h6{
     font-family: SofiaPro-Black;
 }
-h4,h5{
+h4,h5,label,button{
     font-family: SofiaPro-Medium;
 }
 p{

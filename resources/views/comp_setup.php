@@ -969,7 +969,7 @@ include 'inc/firebase_init.php';
     <!-- already made form -->
 
     <body>
-
+<!--
         <script>
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
@@ -1074,8 +1074,9 @@ else {
             }
         });
         </script>
-
+-->
         <script>
+
           // ------------step-wizard-------------
 $(document).ready(function () {
     $('.nav-tabs > li a[title]').tooltip();

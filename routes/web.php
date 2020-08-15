@@ -38,9 +38,7 @@ $notSeenCollection = $firestore->collection('notSeen');
 $interestCollection = $firestore->collection('interested');
 $skipCollection = $firestore->collection('skipped');
 $regCollection = $firestore->collection('reg');
-
-// zoomLinks - $GLOBALS['zoomLinks']
-$zoomLinks = array("test1", "test2", "test3", "test4");
+$zoomCollection = $firestore->collection('zoomLinks');
 
 $storage = new StorageClient([
   'projectid' => $projectid,
@@ -166,7 +164,7 @@ $router->get('/companySetup/{userId}', function(){
 });
 
 // Company profile post
-$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection, $regCollection) {
+$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection, $regCollection, $zoomCollection) {
   $rawData = $request->all();
   $regData = $regCollection->document($userId)->snapshot()->data();
 
@@ -204,6 +202,19 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
 
   $keys = array_keys($rawData);
 
+  // Get the first link in the zoom collection, set it to company collection and delete
+  $allLinks = $zoomCollection->documents();
+  // doing it as foreach cause i dont wanna figure it out the other way
+  foreach($allLinks as $link){
+    if($link->exists()){
+      $firstLinkId = $link->id();
+      $compZoom = $link["link"];
+      $zoomCollection->document($firstLinkId)->delete();
+      break;
+    }
+  }
+
+
   $currTime = time();
 
   $profileData = [
@@ -218,7 +229,8 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
     'alma' => $rawData['alma'],
     'latestSeen' => '',
     'created' => $currTime,
-    'Primary' => ['prim1' => $rawData[$keys[6]], 'prim2' =>  $rawData[$keys[6]], 'prim3' => $rawData[$keys[7]]],
+    'companyZoom' => $compZoom,
+    'Primary' => ['prim1' => $rawData[$keys[5]], 'prim2' =>  $rawData[$keys[6]], 'prim3' => $rawData[$keys[7]]],
     'Secondary' => ['sec1'=> $rawData[$keys[9]], 'sec2'=> $rawData[$keys[10]], 'sec3' => $rawData[$keys[11]], 'sec4'=> $rawData[$keys[12]], 'sec5'=> $rawData[$keys[13]]],
     'Apart' => ['diff1' => $rawData[$keys[15]], 'diff2' => $rawData[$keys[16]], 'diff3' => $rawData[$keys[17]]],
     'Tech' => ['tech1' => $rawData[$keys[19]], 'tech2' => $rawData[$keys[20]], 'tech3' => $rawData[$keys[21]], 'tech4' => $rawData[$keys[22]], 'tech5' => $rawData[$keys[23]]],
@@ -373,16 +385,17 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
 });
 
 // page user gets when they initiate a match
-$router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zoomLinks, $notSeenCollection, $compCollection, $studCollection){
+$router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($notSeenCollection, $compCollection, $studCollection){
 
     $userType = userType($compCollection, $studCollection, $userId);
 
     // $zoom = first elem in array, zoomLinks removes first elem
-    $zoom = array_shift($zoomLinks);
+    // $zoom = array_shift($zoomLinks);
 
     if($userType == "Student"){
       $userData = $studCollection->document($userId)->snapshot()->data();
       $matchData = $compCollection->document($matchId)->snapshot()->data();
+      $zoom = $matchZoom["companyZoom"];
 
       $uMatchesSub = $studCollection->document($userId)->collection("matches");
       $mMatchesSub = $compCollection->document($matchId)->collection("matches");
@@ -390,6 +403,7 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($zo
     } else {
       $userData = $compCollection->document($userId)->snapshot()->data();
       $matchData = $studCollection->document($matchId)->snapshot()->data();
+      $zoom = $userData["companyZoom"];
 
       $uMatchesSub = $compCollection->document($userId)->collection("matches");
       $mMatchesSub = $studCollection->document($matchId)->collection("matches");
@@ -469,16 +483,21 @@ $router->get('matches/{userId}', function($userId) use ($compCollection, $studCo
 
   $userType = userType($compCollection, $studCollection, $userId);
 
+  $compZoom = "";
+
   if($userType == "Student"){
     $allMatches = $studCollection->document($userId)->collection("matches")->documents();
   } else {
     $allMatches = $compCollection->document($userId)->collection("matches")->documents();
+    $getZoom = $compCollection->document($userId)->snapshot()->data();
+    $compZoom = $getZoom["companyZoom"];
   }
 
   return view('matches', [
     'allMatches' => $allMatches,
     'userId' => $userId,
-    'type' => $userType
+    'type' => $userType,
+    'compZoom' => $compZoom
   ]);
 });
 
