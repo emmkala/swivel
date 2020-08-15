@@ -11,7 +11,13 @@
   padding-left: 60px !important;
   color: white;
 }
-.nav-logIn {
+
+.navbar-nav .nav-link:hover {
+  color: #cfd4d4;
+  cursor: pointer;
+}
+
+.nav-signUp {
   padding-right: 40px !important;
   padding-left: 40px !important;
   border: 2px solid white;
@@ -19,6 +25,12 @@
   padding-bottom: 8px;
   border-radius: 6px;
   color: white;
+}
+
+.nav-signUp:hover {
+  background-color: white;
+  cursor: pointer;
+  color: #241714;
 }
 
 /* Hero Section */
@@ -43,11 +55,17 @@
 }
 
 .demo-today-form input[type="submit"] {
+  margin-left: 50%;
   border: none;
   background-color: var(--primary-color);
   color: white;
   padding: 5px 30px;
   border-radius: 5px;
+}
+
+.demo-today-form input[type="submit"]:hover {
+  background-color: #a5dad5;
+  cursor: pointer;
 }
 
 /* How it works section */
@@ -203,6 +221,68 @@ footer p {
 footer ul li a {
   color: white;
 }
+
+/* Student or startup */
+.fakeNav img{
+  height: 100px;
+  margin-left: 3%;
+}
+
+.fakeNav a{
+  font-size: 12px;
+  margin-top: 2%;
+  margin-right: 3%;
+  width: 10%;
+}
+
+.fakeNav a:hover{
+  color: #a5dad5;
+}
+
+.fakeNav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.studentChoice {
+  background-color: #fd6160;
+}
+
+.companyChoice {
+  background-color: #00d8c6;
+}
+
+.studentChoice:hover {
+  background-color: #ffafaf;
+}
+
+.companyChoice:hover {
+  background-color: #a5dad5;
+}
+
+
+.choice {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  height: 100%;
+}
+
+.choice img {
+  height: 40%;
+}
+
+.choice p{
+  margin-left: 15%;
+  margin-right: 15%;
+  color: white;
+}
+
+.choice h1{
+  color: white;
+}
+
 
 /* Comp_setup css */
 

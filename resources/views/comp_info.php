@@ -11,19 +11,14 @@
                 <h1>Build your team with<br> quality emerging talent.</h1>
                 <p>Startups have a difficult time sourcing top, emerging talent in an<br> efficient manner.</p>
                 <p>We are a machine learning networking platform that personally<br> connects you with relevant, high
-                    calibre students and recent<br> graduates to help find an optimal two-way fit.</p>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="offset-md-1"></div>
-            <div class="col-md-5">
+                    calibre students and recent<br> graduates to help find an optimal two-way fit.</p><br>
                 <form class="demo-today-form" action="companyRegister">
                     <input type="submit" value="Register today." />
                 </form>
             </div>
-            <div class="offset-md-6"></div>
         </div>
     </div>
+    <br><br><br><br>
 </section>
 
 <!----- How it Works Section ----->
@@ -141,6 +136,8 @@
 <!----- Review section ----->
 <section class="review-section">
     <div class="slideshow-container">
+      <br>
+      <center><h2> See what our customers have to say. </h2></center><br><br>
         <div class="mySlides">
             <p><q>Swivel saved my summer. Within minutes, I was connected to a startup I didn’t even know existed. The
                     one on one time allowed me to connect comfortably and ultimately landed me a summer internship.</q>
@@ -177,6 +174,7 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
+    <br><br><br>
 </section>
 
 <!----- Start today section ----->

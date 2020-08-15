@@ -12,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-md">
   <div class="container">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/">
     <img src="../../images/Logo.png" alt="" class="logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -21,21 +21,18 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Students</a>
+        <a class="nav-link" href="/">Students</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Startups</a>
+        <a class="nav-link" href="/startups">Startups</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="nav-link" href="/signin">Log In</a>
       </li>
     </ul>
     <ul class="ml-auto navbar-nav">
       <li class="nav-item">
-        <a class="nav-logIn" href="#">Log In</a>
+        <a class="nav-signUp" href="/studentCompany">Sign Up</a>
       </li>
     </ul>
   </div>

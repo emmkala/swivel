@@ -105,54 +105,52 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>How we will help you.</h1>
+                <h1>Key Features.</h1>
             </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-md-4 text-center help-section-content">
-                <img src="../../images/help_icon_1.png" alt="">
-                <h5>Grant Identification.</h5>
-                <p>Knowing what grants student talent, nevertheless and your own company applies for can be difficult
-                    and timely to find. Swivel automates the identification and application for these grants.</p>
+                <img src="../../images/clock.png" alt="">
+                <h5>Quick onboarding.</h5>
+                <p>Sign up and create your free profile within 2 minutes.</p>
             </div>
             <div class="col-md-4 text-center help-section-content">
-                <img src="../../images/help_icon_2.png" alt="">
-                <h5>Incognito Mode.</h5>
-                <p>Reduce unconscious bias through turning on incognito mode to blindly select who you want to connect
-                    with.</p>
+                <img src="../../images/camera.png" alt="">
+                <h5>Instant video calls.</h5>
+                <p>Connect via video call as soon as you match to create an elevated personal connection.</p>
             </div>
             <div class="col-md-4 text-center help-section-content">
-                <img src="../../images/help_icon_3.png" alt="">
-                <h5>Talent Pipeline Dashboard.</h5>
-                <p>Efficiently build a talent pipeline with post call analytics and metrics.</p>
+                <img src="../../images/diamond.png" alt="">
+                <h5>Access to startups.</h5>
+                <p>Uncover new opportunities through our extensive list of growing startups that you would not find on your typical job board. </p>
             </div>
 
             <div class="col-md-4 text-center help-section-content">
-                <img src="../../images/help_icon_4.png" alt="">
+                <img src="../../images/face.png" alt="">
                 <h5>Personalized profiles.</h5>
-                <p>Get to know students as more than just a standard resume and cover letter. Customizable profiles will
-                    spark meaningful, unique conversations.</p>
+                <p>Customize what and how you want to convey yourself to employers.</p>
             </div>
             <div class="col-md-4 text-center help-section-content">
-                <img src="../../images/help_icon_5.png" alt="">
+                <img src="../../images/matching.png" alt="">
                 <h5>AI Matching System.</h5>
-                <p>Our matching system will drive long term employee fit through producing relevant matches based on
-                    your company’s interests, values, and skill requirements.</p>
+                <p>Our matching system will continue to learn who you want to match with to produce relevant matches based on your interests, values, and skills. </p>
             </div>
             <div class="col-md-4 text-center help-section-content">
-                <img src="../../images/help_icon_6.png" alt="">
+                <img src="../../images/bell.png" alt="">
                 <h5>Response System.</h5>
-                <p>Our notification system and posted response rates and times ensure timely conversations and will
-                    remind you of well suited talent when new positions open.</p>
+                <p>Our notification system and posted response rates and times ensure timely conversations.</p>
             </div>
         </div>
     </div>
+    <br><br><br>
 </section>
 
 <!----- Review section ----->
 <section class="review-section">
     <div class="slideshow-container">
+      <br>
+      <center><h2> See what our customers have to say. </h2></center><br><br>
         <div class="mySlides">
             <p><q>Swivel saved my summer. Within minutes, I was connected to a startup I didn’t even know existed. The
                     one on one time allowed me to connect comfortably and ultimately landed me a summer internship.</q>
@@ -189,6 +187,7 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
+    <br><br><br>
 </section>
 
 <!----- Start today section ----->
@@ -201,7 +200,7 @@
         </div>
         <div class="row pt-3">
             <div class="col-md-12 d-flex justify-content-center">
-                <a href="/companyRegister" class="pricing-btn">Join now.</a>
+                <a href="/studentRegister" class="pricing-btn">Join now.</a>
             </div>
         </div>
     </div>

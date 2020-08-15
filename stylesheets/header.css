@@ -3,11 +3,11 @@
   width: 180px;
 }
 .navbar-nav .nav-link {
-  padding-right: 60px !important;
-  padding-left: 60px !important;
+  padding-right: 90px !important;
+  padding-left: 90px !important;
   color: white;
 }
-.nav-logIn {
+.nav-signUp {
   padding-right: 40px !important;
   padding-left: 40px !important;
   border: 2px solid white;

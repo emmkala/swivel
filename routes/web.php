@@ -45,9 +45,30 @@ $storage = new StorageClient([
 ]);
 //$gcsBucket = $storage->bucket($projectid.'_bucket';);
 
-// Landing page, no info
+// Landing page, student
 $router->get('/', function(){
   return view('landing', [
+    'test' => null,
+  ]);
+});
+
+// Company Info
+$router->get('/startups', function(){
+  return view('comp_info', [
+    'test' => null,
+  ]);
+});
+
+// Global Sign In
+$router->get('/sigin', function(){
+  return view('signin', [
+    'test' => null,
+  ]);
+});
+
+// Global Sign In
+$router->get('/studentCompany', function(){
+  return view('stud_comp', [
     'test' => null,
   ]);
 });
@@ -58,7 +79,6 @@ $router->get('/studentRegister', function(){
     'test' => null,
   ]);
 });
-
 
 // Student profile set up
 $router->get('/studentSetup/{userId}', function(){
@@ -534,13 +554,6 @@ $router->post('/matches/{userId}', function (Request $request, $userId) use ($co
 
 
 
-});
-
-// Global Sign In
-$router->get('/sigin', function(){
-  return view('signin', [
-    'test' => null,
-  ]);
 });
 
 // Error Page
