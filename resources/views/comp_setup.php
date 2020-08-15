@@ -733,8 +733,7 @@ include 'inc/firebase_init.php';
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <h3 class="text-center">What are some important aspects to you when
-                                                    considering an employer?</h3>
+                                                <h3 class="text-center">What are some things about your company that set you apart?</h3>
                                                 <p class="text-center">Choose 3 attributes from the list</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
