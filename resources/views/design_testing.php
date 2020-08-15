@@ -1,110 +1,157 @@
-<!-- Shows all matches, allows time picking and shows info -->
+<!-- when there's no new matches to view, show this page which has a
+listener for changes to student or company collection -->
 <?php
 include 'inc/firebase_init.php';
  ?>
-<body>
-<h5> Matches </h5>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- <link rel="stylesheet" href="<https://use.typekit.net/qhr5ddp.css">-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <!-- <link rel="stylesheet" href="<https://use.typekit.net/qhr5ddp.css">-->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body class="matchingBody">
   <div id="side_nav">
-    <form action="/matches">
+    <form action="/matches/">
       <!-- <i class="material-icons">group</i> -->
-        <input type="submit" value="Matches">
+        <input type="button" value="Matches">
     </form>
 
     <form action="/matching/">
      <!-- <i class="material-icons">redo</i> -->
-        <input type="submit" value="Matching">
+        <input type="button" value="Matching">
     </form>
   </div>
 
+  <div id="match_display">
+    <center>
+    <h2> You and MATCHNAME Want to Meet!</h2>
 
-  <div class="matchCardStud" id="user_stud" style="display: none">
-    <div class="matchesStud">
-      <div class="matchInfoStud">
-        <p class="matchNameStud"> MatchName </p>
-        <p class="matchEmailStud"> MatchEmail </p>
-        <a class="zoomLink" href="#"> Zoom Link: MATCHZOOMLINK</a>
+    <h3> Please indicate the times you're available to have a 20 minute coffee chat!</h3>
 
-        <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
-          <button type="button" class="getTimes" >Schedule Meeting</button>
-        <!-- If the user initiated the match and a meeting time hasn't be scheduled
-          <p class="waiting"> A meeting time wil be set when MATCHNAME confirms with your schedule. </p> -->
-        <!-- If a meeting as been set
-          <p class="meetingTime">Meeting Time: MEETINGTIME </p> -->
-
+    <form class="submitTimes" method="post" enctype="multipart/form-data">
+      <div class="days">
+        <div class="timeTab" id="day_1">
+          <h4 class="day">Monday, August 17th at:</h4>
+          <input type="checkbox" name="day3_0" value="August 17th 9:30am EST">
+            <label for="day3_1"> 9:30am EST </label>
+          <input type="checkbox" name="day3_1" value="August 17th 10:00am EST">
+            <label for="day3_1"> 10:00am EST </label>
+          <input type="checkbox" name="day3_2" value="August 17th 10:30am EST">
+            <label for="day3_2"> 10:30am EST </label>
+          <input type="checkbox" name="day3_3" value="August 17th 11:00am EST">
+            <label for="day3_3"> 11:00am EST </label>
+          <input type="checkbox" name="day3_4" value="August 17th 11:30am EST">
+            <label for="day3_4"> 11:30am EST </label>
+          <input type="checkbox" name="day3_5" value="August 17th 12:00pm EST">
+            <label for="day3_5"> 12:00pm EST </label>
+          <input type="checkbox" name="day3_6" value="August 17th 12:30pm EST">
+            <label for="day3_6"> 12:30pm EST </label>
+          <input type="checkbox" name="day3_7" value="August 17th 1:00pm EST">
+            <label for="day3_7"> 1:00pm EST </label>
+          <input type="checkbox" name="day3_8" value="August 17th 1:30pm EST">
+            <label for="day3_8"> 1:30pm EST </label>
+          <input type="checkbox" name="day3_9" value="August 17th 2:00pm EST">
+            <label for="day3_9"> 2:00pm EST </label>
+          <input type="checkbox" name="day3_10" value="August 17th 2:30pm EST">
+            <label for="day3_10"> 2:30pm EST </label>
+          <input type="checkbox" name="day3_11" value="August 17th 3:00pm EST">
+            <label for="day3_11"> 3:00pm EST </label>
+          <input type="checkbox" name="day3_12" value="August 17th 3:30pm EST">
+            <label for="day3_12"> 3:30pm EST </label>
+          <input type="checkbox" name="day3_13" value="August 17th 4:00pm EST">
+            <label for="day3_13"> 4:00pm EST </label>
+        </div>
+        <div class="timeTab" id="day_2">
+          <h4 class="day">Tuesday, August 18th at:</h4>
+          <input type="checkbox" name="day2_0" value="August 18th 9:30am EST">
+            <label for="day2_1"> 9:30am EST </label>
+          <input type="checkbox" name="day2_1" value="August 18th 10:00am EST">
+            <label for="day2_1"> 10:00am EST </label>
+          <input type="checkbox" name="day2_2" value="August 18th 10:30am EST">
+            <label for="day2_2"> 10:30am EST </label>
+          <input type="checkbox" name="day2_3" value="August 18th 11:00am EST">
+            <label for="day2_3"> 11:00am EST </label>
+          <input type="checkbox" name="day2_4" value="August 18th 11:30am EST">
+            <label for="day2_4"> 11:30am EST </label>
+          <input type="checkbox" name="day2_5" value="August 18th 12:00pm EST">
+            <label for="day2_5"> 12:00pm EST </label>
+          <input type="checkbox" name="day2_6" value="August 18th 12:30pm EST">
+            <label for="day2_6"> 12:30pm EST </label>
+          <input type="checkbox" name="day2_7" value="August 18th 1:00pm EST">
+            <label for="day2_7"> 1:00pm EST </label>
+          <input type="checkbox" name="day2_8" value="August 18th 1:30pm EST">
+            <label for="day2_8"> 1:30pm EST </label>
+          <input type="checkbox" name="day2_9" value="August 18th 2:00pm EST">
+            <label for="day2_9"> 2:00pm EST </label>
+          <input type="checkbox" name="day2_10" value="August 18th 2:30pm EST">
+            <label for="day2_10"> 2:30pm EST </label>
+          <input type="checkbox" name="day2_11" value="August 18th 3:00pm EST">
+            <label for="day2_11"> 3:00pm EST </label>
+          <input type="checkbox" name="day2_12" value="August 18th 3:30pm EST">
+            <label for="day2_12"> 3:30pm EST </label>
+          <input type="checkbox" name="day2_13" value="August 18th 4:00pm EST">
+            <label for="day2_13"> 4:00pm EST </label>
+        </div>
+        <div class="timeTab" id="day_3">
+          <h4 class="day">Wednesday, August 19th at:</h4>
+          <input type="checkbox" name="day3_0" value="August 19th 9:30am EST">
+            <label for="day3_1"> 9:30am EST </label>
+          <input type="checkbox" name="day3_1" value="August 19th 10:00am EST">
+            <label for="day3_1"> 10:00am EST </label>
+          <input type="checkbox" name="day3_2" value="August 19th 10:30am EST">
+            <label for="day3_2"> 10:30am EST </label>
+          <input type="checkbox" name="day3_3" value="August 19th 11:00am EST">
+            <label for="day3_3"> 11:00am EST </label>
+          <input type="checkbox" name="day3_4" value="August 19th 11:30am EST">
+            <label for="day3_4"> 11:30am EST </label>
+          <input type="checkbox" name="day3_5" value="August 19th 12:00pm EST">
+            <label for="day3_5"> 12:00pm EST </label>
+          <input type="checkbox" name="day3_6" value="August 19th 12:30pm EST">
+            <label for="day3_6"> 12:30pm EST </label>
+          <input type="checkbox" name="day3_7" value="August 19th 1:00pm EST">
+            <label for="day3_7"> 1:00pm EST </label>
+          <input type="checkbox" name="day3_8" value="August 19th 1:30pm EST">
+            <label for="day3_8"> 1:30pm EST </label>
+          <input type="checkbox" name="day3_9" value="August 19th 2:00pm EST">
+            <label for="day3_9"> 2:00pm EST </label>
+          <input type="checkbox" name="day3_10" value="August 19th 2:30pm EST">
+            <label for="day3_10"> 2:30pm EST </label>
+          <input type="checkbox" name="day3_11" value="August 19th 3:00pm EST">
+            <label for="day3_11"> 3:00pm EST </label>
+          <input type="checkbox" name="day3_12" value="August 19th 3:30pm EST">
+            <label for="day3_12"> 3:30pm EST </label>
+          <input type="checkbox" name="day3_13" value="August 19th 4:00pm EST">
+            <label for="day3_13"> 4:00pm EST </label>
+        </div>
       </div>
+      <br>
 
-      <div class="matchInfoStud">
-        <p class="matchNameStud"> MatchName </p>
-        <p class="matchEmailStud"> MatchEmail </p>
-        <a class="zoomLink" href="#"> Zoom Link: MATCHZOOMLINK</a>
+      <label for="other"> If none of these times work, please indicate a time: </label>
+      <input id="other_time" type="text" name="other" placeholder="August 19th at 12:15pm EST"><br><br>
+      <input type="submit">
+    </form>
 
-        <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
-        <!-- If the user initiated the match and a meeting time hasn't be scheduled -->
-          <p class="waiting"> A meeting time wil be set when MATCHNAME confirms with your schedule. </p>
-        <!-- If a meeting as been set
-          <p class="meetingTime">Meeting Time: MEETINGTIME </p> -->
+  </center>
 
-      </div>
+</div>
 
-      <div class="matchInfoStud">
-        <p class="matchNameStud"> MatchName </p>
-        <p class="matchEmailStud"> MatchEmail </p>
-        <a class="zoomLink" href="#"> Zoom Link: MATCHZOOMLINK</a>
-
-        <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
-        <!-- If the user initiated the match and a meeting time hasn't be scheduled
-          <p class="waiting"> A meeting time wil be set when MATCHNAME confirms with your schedule. </p> -->
-        <!-- If a meeting as been set -->
-          <p class="meetingTime">Meeting Time: MEETINGTIME </p>
-
-      </div>
-      <!-- overlay with a z value -->
-      <!--
-      <div class="timeSelection" id="id" style="display: none;">
-        <i class="material-icons" id="close_time" onclick="exitTime()">close</i>
-        <form method="post" id="time_form" enctype="multipart/form-data">
-          <div id="time_input">
-            <p> Please choose a time below that works to meet with for 15 minutes </p>
-            <input type="password" name="matchId" value= style="display: none;">
-            <p> If no times work, please email your match  to discuss alternate times </p>
-            <input type="submit" id="schedule_meeting" value="Submit">
-          </div>
-        </form>
-      </div>
--->
-    </div>
-
-  </div>
 </body>
 
 <script>
-var type = "Student";
+
+var type = "Company";
 
 if(type == "Student"){
   document.getElementById("side_nav").className = "sidenavStud";
-  document.getElementById("user_stud").style.display = "flex";
+  document.getElementById("match_display").className = "displayStud";
+
 } else if(type == "Company") {
   document.getElementById("side_nav").className = "sidenavComp";
-  document.getElementById("user_comp").style.display = "flex";
+  document.getElementById("match_display").className = "displayComp";
+
 }
 
-function showTimes(){
-  var timeDiv = document.getElementsByClassName("timeSelection");
-  timeDiv[0].style.display = "inline";
-}
-
-// Exit the schedule div
-function exitTime(){
-  document.getElementsByClassName("timeSelection")[0].style.display = "none";
-}
 
 </script>

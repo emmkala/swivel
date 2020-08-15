@@ -1,0 +1,166 @@
+/* New Match */
+.displayStud {
+  margin-top: 2%;
+  margin-left: 21%;
+  margin-right: 2%;
+  padding: 1%;
+  background-color: #fbfaff;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #00d8c6;
+}
+
+.displayComp {
+  margin-top: 2%;
+  margin-left: 21%;
+  margin-right: 2%;
+  padding: 1%;
+  background-color: #fbfaff;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fd6160;
+}
+
+.displayStud input[type=submit] {
+  width: 70%;
+  margin-left: 5%;
+  padding: 1%;
+  background-color: #00d8c6;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #00d8c6;
+  color: white;
+}
+
+.displayComp input[type=submit] {
+  width: 70%;
+  margin-left: 5%;
+  padding: 1%;
+  background-color: #fd6160;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fd6160;
+  color: white;
+}
+
+.displayStud input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #a5dad5;
+}
+
+.displayComp input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #ffafaf;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+
+.displayStud .timeTab {
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fd6160;
+  background-color: white;
+  margin-right: 1%;
+  padding: 1%;
+}
+
+.displayComp .timeTab {
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #00d8c6;
+  background-color: white;
+  margin-right: 1%;
+  padding: 1%;
+}
+
+.timeTab input[type=checkbox]{
+  margin: 4%;
+}
+
+#other_time{
+  background-color: #fbfaff;
+  border: none;
+  width: 35%;
+  border-bottom: 2px solid #00d8c6;
+}
+
+.sidenavStud {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #FD6160;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenavComp {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #00d8c6;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.sidenavComp input {
+  /*padding: 6px 6px 6px 32px;*/
+  padding-left: 27%;
+  padding-right: 30%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color:  #00d8c6;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  /*color: #818181;
+  display: block;*/
+}
+
+
+.sidenavStud input {
+  /*padding: 6px 6px 6px 32px;*/
+  padding-left: 27%;
+  padding-right: 30%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: #FD6160;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  /*color: #818181;
+  display: block;*/
+}
+
+.sidenavStud input:hover {
+  color: #f1f1f1;
+  background-color: #FFAFAF;
+}
+
+.sidenavComp input:hover {
+  color: #f1f1f1;
+  background-color: #a5dad5;
+}
+
+#nav_logo {
+  height: 15%;
+  z-index: 3;
+  float: right;
+  padding-right: 1%;
+}
+
+.matchingBody {
+  background-color: #E9E9F0;
+}

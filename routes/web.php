@@ -342,7 +342,8 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
       return redirect('/matching/'.$userId);
     } else {
       return view('no_new', [
-        'uid' => $userId,
+        'type' => $type,
+        'userId' => $userId,
       ]);
     }
 
@@ -373,13 +374,15 @@ $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection,
       return redirect('/matching/'.$userId);
     } else {
       return view('no_new', [
-        'uid' => $userId,
+        'type' => $type,
+        'userId' => $userId,
       ]);
     }
 
   } else {
     return view('no_new', [
-      'uid' => $userId,
+      'userId' => $userId,
+      'type' => $type
     ]);
   }
 });
@@ -436,7 +439,9 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($no
 
     return view('new_match', [
       'matchName' => $matchName,
-      'zoomLink' => $zoom
+      'zoomLink' => $zoom,
+      'userType' => $userType,
+      'userId' => $userId
     ]);
 });
 

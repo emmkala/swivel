@@ -22,7 +22,7 @@ include "inc/firebase_init.php";
              <input type="submit" value="Matches">
          </form>
 
-         <form action="/matching/"<?= $uid ?>>
+         <form action="/matching/<?= $uid ?>">
           <!-- <i class="material-icons">redo</i> -->
              <input type="submit" value="Matching">
          </form>
@@ -124,7 +124,7 @@ include "inc/firebase_init.php";
             <input type="submit" value="Matches">
         </form>
 
-        <form action="/matching/"<?= $uid ?>>
+        <form action="/matching/<?= $uid ?>">
          <!-- <i class="material-icons">redo</i> -->
             <input type="submit" value="Matching">
         </form>

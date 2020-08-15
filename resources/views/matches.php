@@ -17,16 +17,19 @@ include 'inc/firebase_init.php';
       <input type="submit" value="Matches">
   </form>
 
-  <form action="/matching/"<?= $userId ?>>
+  <form action="/matching/<?= $userId ?>">
    <!-- <i class="material-icons">redo</i> -->
       <input type="submit" value="Matching">
   </form>
 </div>
 
+<?php $count = 0; ?>
+
 <div class="matchCardComp" id="user_comp" style="display: none">
   <div class="matchesComp">
     <?php if($type == "Company"): ?>
     <?php foreach($allMatches as $i => $match):?>
+      <?php $count++; ?>
     <div class="matchInfoComp">
       <p class="matchNameComp"> <?= $match->get('matchName') ?> </p>
       <p class="matchEmailComp"> <?= $match->get('matchEmail') ?> </p>
@@ -78,6 +81,7 @@ include 'inc/firebase_init.php';
   <div class="matchesStud">
     <?php if($type == "Student"): ?>
     <?php foreach($allMatches as $i => $match):?>
+      <?php $count++; ?>
     <div class="matchInfoStud">
       <p class="matchNameStud"> <?= $match->get('matchName') ?> </p>
       <p class="matchEmailStud"> <?= $match->get('matchEmail') ?> </p>
@@ -114,6 +118,17 @@ include 'inc/firebase_init.php';
   <?php endif ?>
   </div>
 
+  <div class="userInfoStud">
+    <img id="nav_logo" src="../../images/swivellogo.png">
+    <a class="feedback" href="#"> Give us any feedback you have on the MVP</a>
+    <p class="thanks">Thanks so much for being a test user! We hope you met some interesting people and hopefully expanded your network</p>
+  </div>
+
+</div>
+
+<div id="no_matches" style="display: none;">
+  <img src="../../images/swivellogo.png">
+  <p> No matches yet! Keep Swiveling and come back later when more users sign up! </p>
 </div>
 
 </body>
@@ -123,6 +138,11 @@ include 'inc/firebase_init.php';
 
 var db = firebase.firestore();
 var type = "<?php echo $type ?>";
+var count = "<?php echo $count ?>";
+
+if(count == 0){
+  document.getElementById("no_matches").style.display = "inline";
+}
 
 if(type == "Student"){
   document.getElementById("side_nav").className = "sidenavStud";
