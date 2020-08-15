@@ -328,7 +328,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
           document.getElementById("life_title").innerHTML = lifeTitle;
-          //document.getElementById("life_info").innerHTML =life;
+          document.getElementById("life_info").innerHTML =life;
 
           // add "apart" data as p tags
           document.getElementById("diff1").innerHTML = apartIcon1;

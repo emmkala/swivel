@@ -127,8 +127,10 @@ include 'inc/firebase_init.php';
 </div>
 
 <div id="no_matches" style="display: none;">
-  <img src="../../images/swivellogo.png">
-  <p> No matches yet! Keep Swiveling and come back later when more users sign up! </p>
+  <center>
+    <img src="../../images/swivellogo.png">
+    <p id="no_matches_message"> No matches yet! Keep Swiveling and come back later when more users sign up! </p>
+  </center>
 </div>
 
 </body>

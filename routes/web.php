@@ -398,7 +398,7 @@ $router->get('newMatch/{userId}/{matchId}', function($userId, $matchId) use ($no
     if($userType == "Student"){
       $userData = $studCollection->document($userId)->snapshot()->data();
       $matchData = $compCollection->document($matchId)->snapshot()->data();
-      $zoom = $matchZoom["companyZoom"];
+      $zoom = $matchData["companyZoom"];
 
       $uMatchesSub = $studCollection->document($userId)->collection("matches");
       $mMatchesSub = $compCollection->document($matchId)->collection("matches");

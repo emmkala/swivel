@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-md">
   <div class="container">
   <a class="navbar-brand" href="#">
-    <img src="../../../images/Logo.png" alt="" class="logo">
+    <img src="../../images/Logo.png" alt="" class="logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>

@@ -5,7 +5,7 @@ include 'inc/firebase_init.php';
  ?>
 
 <head>
- <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
+ <link rel="stylesheet" type="text/css" href="../../stylesheets/match.css">
  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
  <!-- <link rel="stylesheet" href="<https://use.typekit.net/qhr5ddp.css">-->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
