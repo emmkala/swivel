@@ -1,0 +1,68 @@
+/* navbar */
+.logo {
+  width: 180px;
+}
+.navbar-nav .nav-link {
+  padding-right: 60px !important;
+  padding-left: 60px !important;
+  color: white;
+}
+.nav-logIn {
+  padding-right: 40px !important;
+  padding-left: 40px !important;
+  border: 2px solid white;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 6px;
+  color: white;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+@font-face{
+    font-family: 'SofiaPro-Black';
+    src: url(../fonts/SofiaPro-Black/SofiaPro-Black.ttf);
+    font-weight: 100;
+}
+@font-face{
+    font-family: 'SofiaPro-Light';
+    src: url(../fonts/sofiapro-light.otf);
+    font-weight: 100;
+}
+@font-face{
+    font-family: 'SofiaPro-Medium';
+    src: url(../fonts/SofiaPro-Medium.ttf);
+    font-weight: 100;
+}
+h1,h2,h3,h6{
+    font-family: SofiaPro-Black;
+}
+h4,h5,label,button{
+    font-family: SofiaPro-Medium;
+}
+p{
+    font-family: SofiaPro-Light;
+}
+a{
+    text-decoration: none;
+    font-family: SofiaPro-Medium;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+section{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    height: auto;
+}
+ul li{
+    list-style-type: none;
+}
+input{
+    font-family: SofiaPro-Light;
+}
+span{
+    font-family: SofiaPro-Light !important;
+}

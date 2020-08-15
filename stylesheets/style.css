@@ -41,26 +41,16 @@
 .hero-content p {
   color: white;
 }
-.demo-today-form {
-  width: 100%;
-  padding: 13px;
-  background: white;
-  border-radius: 6px;
-}
-.demo-today-form input[type="text"] {
-  border: none;
-  width: 70%;
-}
+
 .demo-today-form input[type="submit"] {
   border: none;
   background-color: var(--primary-color);
   color: white;
-  padding: 5px 10px;
+  padding: 5px 30px;
   border-radius: 5px;
 }
 
 /* How it works section */
-
 .how_it_works_img img {
   height: 137px;
   width: 132px;

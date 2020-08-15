@@ -1,76 +1,33 @@
-<link rel="stylesheet" href="../../stylesheets/studon.css">
+<link rel="stylesheet" href="../../stylesheets/style.css">
 
 <section class="hero-section">
     <!----- Header Navbar ----->
-    <?php include "inc/firebase_init.php" ?>
     <?php include "inc/header.php" ?>
 
     <!----- Hero Section ----->
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-right hero-content pt-5">
-                <h1>Start making real <br> impact now.</h1>
+                <h1>Build your team with<br> quality emerging talent.</h1>
+                <p>Startups have a difficult time sourcing top, emerging talent in an<br> efficient manner.</p>
+                <p>We are a machine learning networking platform that personally<br> connects you with relevant, high
+                    calibre students and recent<br> graduates to help find an optimal two-way fit.</p>
             </div>
         </div>
-        <br> <br>
         <div class="row mt-5">
             <div class="offset-md-1"></div>
             <div class="col-md-5">
-              <p>Many students don’t know their range of options when it comes to internships and full-time positions. </p>
-              <p>Our networking platform will personally connect you with opportunities at startups to help you reach your full potential.  </p>
-                <form class="demo-today-form" action="/studentRegister">
+                <form class="demo-today-form" action="companyRegister">
                     <input type="submit" value="Register today." />
                 </form>
-                <br> <br> <br> <br>
             </div>
             <div class="offset-md-6"></div>
         </div>
     </div>
-
 </section>
-
-<div class="line2_bg"></div>
 
 <!----- How it Works Section ----->
 <section class="how-it-works">
-    <div class="container">
-        <div class="information">
-          <h2> Connecting you with new opportunities </h2>
-          <div class="opportunities">
-            <!-- picture -->
-            <img src="../../images/pinkBlob.png">
-            <div class="words">
-              <p class="orangeTitle">We have observed</p>
-              <p> Many students don’t know their range of options when it comes to internships and full-time positions.
-                Your school’s career support can’t help with what you want, networks are hard with limited connections, and job boards, well they are job boards.
-                <br> <br> Building out your own network is the key the expanding your employment options. </p>
-            </div>
-          </div>
-          <h2 id="left_title"> Kickstart your career.</h2>
-          <div class="kickstart">
-            <!-- picture -->
-            <div class="greenBlob"></div>
-            <div class="words">
-              <p class="greenTitle">We want to help.</p>
-              <p>Our networking platform will personally connect you with opportunities at startups to help you reach your full potential and kickstart your career.</p>
-              <div class="checksParagraph">
-                <div class="checkImg"><img src="../../images/check.png"></div>
-                <div class="checkP"><p>Create two-way fit through personal conversations.</p></div>
-                <div class="checkImg"><img src="../../images/check.png"></div>
-                <div class="checkP"><p>Differentiate yourself as more than just a resume.</p></div>
-                <div class="checkImg"><img src="../../images/check.png"></div>
-                <div class="checkP"><p>Match with employers that have the same values as you.</p></div>
-                <div class="checkImg"><img src="../../images/check.png"></div>
-                <div class="checkP"><p>Receive timely responses from employers.</p></div>
-              </div>
-            </div>
-            <img src="../../images/greenBlob.png">
-
-
-
-          </div>
-        </div>
-    </div>
     <div class="line1_bg"></div>
     <div class="container">
         <div class="row">
@@ -80,20 +37,51 @@
         </div>
         <div class="row mt-4">
             <div class="col-md-4 text-center how_it_works_img">
-                <img src="../../images/student_profile.png" alt="" class="img-fluid">
-                <h3>Create Profile.</h3>
-                <p>Take 2 minutes to create a personalized profile so we can find the best fit for you.</p>
+                <img src="../../images/how_it_works_1.png" alt="" class="img-fluid">
+                <h3>Efficient Onboarding.</h3>
+                <p>Take 2 minutes to create a personalized company profile so we can find you well suited student
+                    talent.</p>
             </div>
             <div class="col-md-4 text-center how_it_works_img">
                 <img src="../../images/how_it_works_2.png" alt="" class="img-fluid">
-                <h3>Start Matching.</h3>
-                <p>Behind the scenes, filtering algorithm will create a curated list of startups that we think are a good fit.
-                   Select the ones you are interested in. </p>
+                <h3>Receive matches.</h3>
+                <p>Behind the scenes, our filtering algorithm will create a curated list of students that we think are a
+                    good fit. Select the ones you are interested in and we will schedule a video call.</p>
             </div>
             <div class="col-md-4 text-center how_it_works_img">
-                <img src="../../images/student_briefcase.png" alt="" class="img-fluid">
-                <h3>Unlock career opportunities.</h3>
-                <p>Have one on one video conversations with startups to grow your network and accelerate your job hunt.</p>
+                <img src="../../images/how_it_works_3.png" alt="" class="img-fluid">
+                <h3>Build student talent pipeline.</h3>
+                <p>Have one on one video conversations with students and keep track of all potential hires on your
+                    dashboard.</p>
+            </div>
+        </div>
+    </div>
+    <div class="line2_bg"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="heading-with-color">Build your brand<br> in the student community.</h2>
+                <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco.</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="heading-with-color">Ensure new hire<br> retention through<br> two- way fit.</h2>
+                <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco.</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="heading-with-color">Enable diverse<br> & equitable<br> hiring.</h2>
+                <p class="pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco.</p>
+            </div>
+        </div>
+
+        <div class="row pt-4">
+            <div class="col-md-12 d-flex justify-content-center">
+                <a href="" class="pricing-btn">View pricing plans</a>
             </div>
         </div>
     </div>

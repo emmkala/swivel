@@ -354,3 +354,41 @@ Stack trace:
 #52 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
 #53 {main}
 "} 
+[2020-08-15 16:36:35] production.ERROR: InvalidArgumentException: View [landing] not found. in C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\FileViewFinder.php:137
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\FileViewFinder.php(79): Illuminate\View\FileViewFinder->findInPaths('landing', Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Factory.php(131): Illuminate\View\FileViewFinder->find('landing')
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\helpers.php(422): Illuminate\View\Factory->make('landing', Array, Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\routes\web.php(51): view('landing', Array)
+#4 [internal function]: Closure->{closure}()
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(78): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\BoundMethod.php(34): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Object(Closure), Object(Closure))
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\container\Container.php(576): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Object(Closure), Array, NULL)
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Illuminate\Container\Container->call(Object(Closure), Array)
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#13 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#15 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#16 {main} {"exception":"[object] (InvalidArgumentException(code: 0): View [landing] not found. at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\FileViewFinder.php:137)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('landing', Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Factory.php(131): Illuminate\\View\\FileViewFinder->find('landing')
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\helpers.php(422): Illuminate\\View\\Factory->make('landing', Array, Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\outes\\web.php(51): view('landing', Array)
+#4 [internal function]: Closure->{closure}()
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(32): call_user_func_array(Object(Closure), Array)
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(78): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 

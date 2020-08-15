@@ -23,7 +23,7 @@
 
 /* Hero Section */
 .hero-section {
-  background-image: url("../images/landing_hero_bg.png");
+  background-image: url("../images/top_picture.png");
   background-repeat: no-repeat;
   height: auto;
   padding-bottom: 3%;
@@ -38,25 +38,21 @@
   color: white;
   font-size: 8vh;
 }
-.hero-content p {
+.col-md-5 p {
   color: white;
 }
-.demo-today-form {
-  width: 100%;
-  padding: 13px;
-  background: white;
-  border-radius: 6px;
-}
-.demo-today-form input[type="text"] {
-  border: none;
-  width: 70%;
-}
+
 .demo-today-form input[type="submit"] {
   border: none;
   background-color: var(--primary-color);
   color: white;
-  padding: 5px 10px;
+  padding: 5px 30px;
   border-radius: 5px;
+}
+
+.demo-today-form input[type="submit"]:hover {
+  background-color: #ffafaf;
+  cursor: pointer;
 }
 
 /* How it works section */
@@ -89,7 +85,7 @@
 }
 .line2_bg {
   background-image: url("../images/line2.png");
-  padding-top: 13%;
+  padding-top: 3%;
   padding-bottom: 10%;
   height: auto;
   background-repeat: no-repeat;
@@ -103,6 +99,71 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 1% 1%;
+}
+
+.information img{
+  height: 350px;
+}
+
+#left_title{
+  margin-left: 65%;
+  margin-top: 1%;
+}
+
+.opportunities .words {
+  margin-top: 3%;
+  margin-right: 15%;
+  font-size: 14px;
+}
+
+.opportunities{
+  display: flex;
+  justify-content: space-between;
+}
+
+.kickstart .words {
+  margin-top: 1%;
+  margin-left: 5%;
+  font-size: 14px;
+}
+
+.kickstart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.information h2{
+  margin-right: 6%;
+  margin-left: 6%;
+
+}
+
+.orangeTitle {
+  color: #fd6160;
+  font-size: 16px;
+}
+
+.greenTitle {
+  color: #00d8c6;
+  font-size: 16px;
+}
+
+.checksParagraph{
+  margin-right: 18%;
+}
+
+.checksParagraph img{
+  height: 25px;
+}
+
+.checkImg{
+  float: left;
+  padding-left: 10%;
+  padding-right: 2%;
+}
+
+.checkP{
+  float:left;
 }
 
 /* how we help section */
