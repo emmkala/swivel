@@ -2,13 +2,14 @@
 <?php
 include 'inc/firebase_init.php';
  ?>
-<body>
   <head>
     <link rel="stylesheet" type="text/css" href="../../stylesheets/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- <link rel="stylesheet" href="<https://use.typekit.net/qhr5ddp.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
+
+<body class="matchingBody">
 
 <div id="side_nav">
   <form action="/matches/<?= $userId ?>">
@@ -32,7 +33,7 @@ include 'inc/firebase_init.php';
 
       <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
       <?php if(!$match->get('init') && $match->get('meeting') == ""): ?>
-        <button type="button" class="getTimesComp" onclick="getTimes('<?= $match->id() ?>', '<?= $userId ?>');">Schedule Meeting</button>
+        <button type="button" class="getTimes" onclick="getTimes('<?= $match->id() ?>', '<?= $userId ?>');">Schedule Meeting</button>
       <?php endif ?>
       <!-- If the user initiated the match and a meeting time hasn't be scheduled -->
       <?php if($match->get('init') && $match->get('meeting') == ""): ?>
@@ -84,7 +85,7 @@ include 'inc/firebase_init.php';
 
       <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
       <?php if(!$match->get('init') && $match->get('meeting') == ""): ?>
-        <button type="button" class="getTimesStud" onclick="getTimes('<?= $match->id() ?>', '<?= $userId ?>');">Schedule Meeting</button>
+        <button type="button" class="getTimes" onclick="getTimes('<?= $match->id() ?>', '<?= $userId ?>');">Schedule Meeting</button>
       <?php endif ?>
       <!-- If the user initiated the match and a meeting time hasn't be scheduled -->
       <?php if($match->get('init') && $match->get('meeting') == ""): ?>

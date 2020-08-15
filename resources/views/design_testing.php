@@ -13,55 +13,85 @@ include 'inc/firebase_init.php';
 </head>
 
 <body class="matchingBody">
+  <div id="side_nav">
+    <form action="/matches">
+      <!-- <i class="material-icons">group</i> -->
+        <input type="submit" value="Matches">
+    </form>
+
+    <form action="/matching/">
+     <!-- <i class="material-icons">redo</i> -->
+        <input type="submit" value="Matching">
+    </form>
+  </div>
+
+
   <div class="matchCardStud" id="user_stud" style="display: none">
     <div class="matchesStud">
-      <?php if($type == "Student"): ?>
-      <?php foreach($allMatches as $i => $match):?>
       <div class="matchInfoStud">
         <p class="matchNameStud"> MatchName </p>
         <p class="matchEmailStud"> MatchEmail </p>
         <a class="zoomLink" href="#"> Zoom Link: MATCHZOOMLINK</a>
 
         <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
-        <?php if(!$match->get('init') && $match->get('meeting') == ""): ?>
-          <button type="button" class="getTimesStud" onclick="getTimes('<?= $match->id() ?>', '<?= $userId ?>');">Schedule Meeting</button>
-        <?php endif ?>
+          <button type="button" class="getTimes" >Schedule Meeting</button>
+        <!-- If the user initiated the match and a meeting time hasn't be scheduled
+          <p class="waiting"> A meeting time wil be set when MATCHNAME confirms with your schedule. </p> -->
+        <!-- If a meeting as been set
+          <p class="meetingTime">Meeting Time: MEETINGTIME </p> -->
+
+      </div>
+
+      <div class="matchInfoStud">
+        <p class="matchNameStud"> MatchName </p>
+        <p class="matchEmailStud"> MatchEmail </p>
+        <a class="zoomLink" href="#"> Zoom Link: MATCHZOOMLINK</a>
+
+        <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
         <!-- If the user initiated the match and a meeting time hasn't be scheduled -->
-        <?php if($match->get('init') && $match->get('meeting') == ""): ?>
-          <p class="waiting"> A meeting time wil be set when <?= $match->get('matchName') ?> confirms with your schedule. </p>
-        <?php endif ?>
+          <p class="waiting"> A meeting time wil be set when MATCHNAME confirms with your schedule. </p>
+        <!-- If a meeting as been set
+          <p class="meetingTime">Meeting Time: MEETINGTIME </p> -->
+
+      </div>
+
+      <div class="matchInfoStud">
+        <p class="matchNameStud"> MatchName </p>
+        <p class="matchEmailStud"> MatchEmail </p>
+        <a class="zoomLink" href="#"> Zoom Link: MATCHZOOMLINK</a>
+
+        <!-- If the user didn't initiate the match and a meeting time hasn't be scheduled -->
+        <!-- If the user initiated the match and a meeting time hasn't be scheduled
+          <p class="waiting"> A meeting time wil be set when MATCHNAME confirms with your schedule. </p> -->
         <!-- If a meeting as been set -->
-        <?php if($match->get('meeting') != ""): ?>
-          <p class="meetingTime">Meeting Time: <?= $match->get('meeting') ?> </p>
-        <?php endif ?>
+          <p class="meetingTime">Meeting Time: MEETINGTIME </p>
 
       </div>
       <!-- overlay with a z value -->
-      <div class="timeSelection" id="<?= $match->id() ?>" style="display: none;">
+      <!--
+      <div class="timeSelection" id="id" style="display: none;">
         <i class="material-icons" id="close_time" onclick="exitTime()">close</i>
         <form method="post" id="time_form" enctype="multipart/form-data">
           <div id="time_input">
-            <p> Please choose a time below that works to meet with <?= $match->get('matchName') ?> for 15 minutes </p>
-            <input type="password" name="matchId" value=<?= $match->id() ?> style="display: none;">
-            <!-- Create radio button for each time suggested -->
-            <p> If no times work, please email your match <?= $match->get('matchName') ?> at <?= $match->get('matchEmail') ?> to discuss alternate times </p>
+            <p> Please choose a time below that works to meet with for 15 minutes </p>
+            <input type="password" name="matchId" value= style="display: none;">
+            <p> If no times work, please email your match  to discuss alternate times </p>
             <input type="submit" id="schedule_meeting" value="Submit">
           </div>
         </form>
       </div>
-      <?php endforeach ?>
-    <?php endif ?>
+-->
     </div>
 
   </div>
 </body>
 
 <script>
-var type = "Company";
+var type = "Student";
 
 if(type == "Student"){
   document.getElementById("side_nav").className = "sidenavStud";
-  document.getElementById("matchCardComp").style.display = "flex";
+  document.getElementById("user_stud").style.display = "flex";
 } else if(type == "Company") {
   document.getElementById("side_nav").className = "sidenavComp";
   document.getElementById("user_comp").style.display = "flex";

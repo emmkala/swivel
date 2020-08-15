@@ -1291,6 +1291,15 @@ input[type="checkbox"]:checked::after {
   margin-top: 2%;
 }
 
+.matchCardStud {
+  margin-left: 21%;
+  margin-bottom: 5%;
+  background-color: #fbfaff;
+  width: 74%;
+  padding: 2%;
+  border-radius: 10px;
+}
+
 .userInfoComp {
   border-left: 3px solid #E9E9F0;
   width: 50%;
@@ -1311,11 +1320,19 @@ input[type="checkbox"]:checked::after {
   border-bottom: 3px solid #E9E9F0;
 }
 
+.matchInfoStud {
+  border-bottom: 3px solid #E9E9F0;
+}
+
 .matchesComp {
   width: 45%;
 }
 
-.getTimesComp {
+.matchesStud {
+  width: 70%;
+}
+
+.getTimes {
   margin-bottom: 2%;
   padding: 1%;
   border-style: solid;
@@ -1329,7 +1346,7 @@ input[type="checkbox"]:checked::after {
   cursor: pointer;
 }
 
-.getTimesComp:hover{
+.getTimes:hover{
   border-color: #ffafaf;
   background-color: #ffafaf;
 }
@@ -1390,22 +1407,3 @@ input[type="checkbox"]:checked::after {
   width: 75%;
   padding: 1%;
 }
-
-
-
-/*
-#time_form input[type=radio] checked{
-  width: 35%;
-  border-style: solid;
-  border-color: #00d8c6;
-  background-color: #00d8c6;
-  padding: 1%;
-}
-
-#time_input label{
-  border-style: solid;
-  border-color: #00d8c6;
-  padding: 1%;
-  margin-left: 5%;
-  margin-top: 50px;
-}*/

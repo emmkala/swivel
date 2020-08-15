@@ -1,0 +1,38 @@
+[2020-08-15 01:32:47] production.ERROR: ErrorException: Undefined variable: userId in C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php:17
+Stack trace:
+#0 C:\Users\Emma Landry\Desktop\Swivel\swivel\resources\views\landing.php(17): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(8, 'Undefined varia...', 'C:\\Users\\Emma L...', 17, Array)
+#1 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(43): include('C:\\Users\\Emma L...')
+#2 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\Engines\PhpEngine.php(21): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\Users\\Emma L...', Array)
+#3 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(142): Illuminate\View\Engines\PhpEngine->get('C:\\Users\\Emma L...', Array)
+#4 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(125): Illuminate\View\View->getContents()
+#5 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\view\View.php(90): Illuminate\View\View->renderContents()
+#6 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\illuminate\http\Response.php(42): Illuminate\View\View->render()
+#7 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\symfony\http-foundation\Response.php(205): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#8 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(436): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#9 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(289): Laravel\Lumen\Application->prepareResponse(Object(Illuminate\View\View))
+#10 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#12 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#13 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\Users\Emma Landry\Desktop\Swivel\swivel\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#15 C:\Users\Emma Landry\Desktop\Swivel\swivel\index.php(26): Laravel\Lumen\Application->run()
+#16 {main} {"exception":"[object] (ErrorException(code: 0): Undefined variable: userId at C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php:17)
+[stacktrace]
+#0 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\esources\\views\\landing.php(17): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(8, 'Undefined varia...', 'C:\\\\Users\\\\Emma L...', 17, Array)
+#1 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(43): include('C:\\\\Users\\\\Emma L...')
+#2 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\Engines\\PhpEngine.php(21): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\Users\\\\Emma L...', Array)
+#3 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(142): Illuminate\\View\\Engines\\PhpEngine->get('C:\\\\Users\\\\Emma L...', Array)
+#4 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(125): Illuminate\\View\\View->getContents()
+#5 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\view\\View.php(90): Illuminate\\View\\View->renderContents()
+#6 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\illuminate\\http\\Response.php(42): Illuminate\\View\\View->render()
+#7 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\symfony\\http-foundation\\Response.php(205): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#8 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(436): Symfony\\Component\\HttpFoundation\\Response->__construct(Object(Illuminate\\View\\View))
+#9 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(289): Laravel\\Lumen\\Application->prepareResponse(Object(Illuminate\\View\\View))
+#10 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#12 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 C:\\Users\\Emma Landry\\Desktop\\Swivel\\swivel\\index.php(26): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 
