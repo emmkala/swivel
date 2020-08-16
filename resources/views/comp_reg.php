@@ -1,24 +1,64 @@
 <?php
 include 'inc/firebase_init.php';
-//include 'inc/header.php';
 ob_start();
 ?>
 
-<h2> Startup Sign-Up </h2>
 
-<!-- register form, simple email password for testing -->
-<div class="register">
-  <!-- <form> -->
-  <!-- <form method="POST" enctype="multipart/form-data"> -->
-    <input type="text" id="fname" name="fname" placeholder="First Name">
-    <input type="text" id="lname" name="lname" placeholder="Last Name">
-    <!-- Can get company from email, not super important -->
-    <input type="text" id="company" placeholder="Company Name">
-    <input type="text" id="email" name="email" placeholder="Company Email">
-    <input type="password" id="password" name="email" placeholder="Password">
-    <input type="password" id="passwordCheck" placeholder="Confirm Password">
-    <input type="submit" value="submit" onclick="register()" >
-  <!-- </form> -->
+<head>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
+</head>
+
+<div class="Container">
+  <!--Header Icon -->
+  <div class="Signin_header">
+      <a href="/"><img src="../../images/LogoFinal_Cropped.png" alt="Swivel Logo"></a>
+      <p id="LoginBar">Already have an account? <a class="linkyes student" href="/studentCompany">Log in.</a></p>
+  </div>
+
+  <!--Main Graphic-->
+    <div class="block1"><img src="../../images/Untitled_Artwork5copy4.png" alt="Swivel Login Logo" width="90%"></div>
+  <!--Main Text Area-->
+    <div class="block1">
+        <h1 class="companyTitle">Let's find new opportunities.</h1>
+        <h3>Create a free account in just a few steps.</h3>
+        <!--Form Area-->
+        <form class="formgroup1">
+          <div class="register_formnames">
+            <input type="text" id="fname" name="fname" placeholder="First Name">
+            <input type="text" id="lname" name="lname" placeholder="Last Name">
+          </div>
+            <!-- Can get school from email, not super important -->
+          <div class="register_form1">
+             <input type="text" id="company" placeholder="Company Name">
+          </div>
+          <div class="register_form1">
+             <input type="text" id="email" name="email" placeholder="Company Email">
+          </div>
+          <div class="register_form1">
+            <input type="password" id="password" name="email" placeholder="Password">
+          </div>
+          <div class="register_form1">
+            <input type="password" id="passwordCheck" placeholder="Confirm Password">
+          </div>
+          <!-- <div class="register_form1">
+            <input type="checkbox" name="terms" value="I agree with terms and conditions.">   <label for="">I agree with the terms and conditions</label>
+          </div> -->
+          <div class="register_form2">
+            <input type="button" value="Join now." onclick="register()" >
+          </div>
+        </form>
+        <!-- <h4>Or</h4>
+        <h4>Sign up via <a class="linkyes student" href="/companyRegister">LinkedIn.</a></h4> -->
+
+    </div> <!--End of sign-in block -->
+
+<!--Footer-->
+  <div class="Signin_footer">
+    <footer>
+      <a class="linkno" href="">Thank you much</a>
+      <a class="linkno" href="">For being a tester!</a>
+    </footer>
+  </div>
 </div>
 
 <script>

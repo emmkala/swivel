@@ -1,22 +1,65 @@
 <?php
 include 'inc/firebase_init.php';
-//include 'inc/header.php';
 ob_start();
 ?>
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
-<h2> Student Sign-Up </h2>
+<div class="Container">
+  <!--Header Icon -->
+  <div class="Signin_header">
+      <a href="/"><img src="../../images/LogoFinal_Cropped.png" alt="Swivel Logo"></a>
+      <p id="LoginBar">Already have an account? <a class="linkyes company" href="/studentCompany">Log in.</a></p>
+  </div>
 
-<!-- register form, simple email password for testing -->
-<div class="register">
-    <input type="text" id="fname" name="fname" placeholder="First Name">
-    <input type="text" id="lname" name="lname" placeholder="Last Name">
-    <!-- Can get school from email, not super important -->
-    <input type="text" id="university" placeholder="School">
-    <input type="text" id="email" name="email" placeholder="School Email">
-    <input type="password" id="password" name="email" placeholder="Password">
-    <input type="password" id="passwordCheck" placeholder="Confirm Password">
-    <input type="submit" value="submit" onclick="register()" >
+  <!--Main Graphic-->
+    <div class="block1"><img src="../../images/Untitled_Artwork5copy4.png" alt="Swivel Login Logo" width="90%"></div>
+  <!--Main Text Area-->
+    <div class="block1">
+        <h1 class="studentTitle">Let's find new opportunities.</h1>
+        <h3>Create a free account in just a few steps.</h3>
+        <!--Form Area-->
+        <form class="formgroup1">
+          <div class="register_formnames">
+            <input type="text" id="fname" name="fname" placeholder="First Name">
+            <input type="text" id="lname" name="lname" placeholder="Last Name">
+          </div>
+            <!-- Can get school from email, not super important -->
+          <div class="register_form1">
+              <input type="text" id="university" placeholder="School">
+          </div>
+          <div class="register_form1">
+              <input type="text" id="email" name="email" placeholder="School Email">
+          </div>
+          <div class="register_form1">
+            <input type="password" id="password" name="email" placeholder="Password">
+          </div>
+          <div class="register_form1">
+            <input type="password" id="passwordCheck" placeholder="Confirm Password">
+          </div>
+          <!--<div class="register_form1">
+            <input type="checkbox" name="terms" value="I agree with terms and conditions.">   <label for="">I agree with the terms and conditions</label>
+          </div>-->
+          <div class="register_form1">
+            <input type="button" value="Join now." onclick="register()" >
+          </div>
+        </form>
+        <!-- <h4>Or</h4>
+        <h4>Sign up via <a class="linkyes company" href="swivelsignup.html">LinkedIn.</a></h4> -->
+
+    </div> <!--End of sign-in block -->
+
+
+<!--Footer-->
+  <div class="Signin_footer">
+    <footer>
+      <a class="linkno" href="">Thanks so much</a>
+      <a class="linkno" href="">For being a user!</a>
+    </footer>
+  </div>
 </div>
+
 
 <script>
   var db = firebase.firestore();

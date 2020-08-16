@@ -227,15 +227,15 @@
                     <div class="col-8">
                         <ul>
                             <li>
-                                <a href="#"><img src="../../images/insta.png" alt="" width="24px"><span
+                                <a href="https://www.instagram.com/swivelnetwork/"><img src="../../images/insta.png" alt="" width="24px"><span
                                         class="pl-4">Instagram</span></a>
                             </li>
                             <li>
-                                <a href="#"><img src="../../images/facebook.png" alt="" width="24px"><span
+                                <a href="https://www.linkedin.com/company/swivelnetwork"><img src="../../images/facebook.png" alt="" width="24px"><span
                                         class="pl-4">Facebook</span></a>
                             </li>
                             <li>
-                                <a href="#"><img src="../../images/indeed.png" alt="" width="24px"><span
+                                <a href="https://www.linkedin.com/company/swivelnetwork"><img src="../../images/indeed.png" alt="" width="24px"><span
                                         class="pl-4">Linkedln</span></a>
                             </li>
                         </ul>

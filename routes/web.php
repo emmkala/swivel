@@ -60,7 +60,7 @@ $router->get('/startups', function(){
 });
 
 // Global Sign In
-$router->get('/sigin', function(){
+$router->get('/signin', function(){
   return view('signin', [
     'test' => null,
   ]);

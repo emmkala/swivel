@@ -1640,3 +1640,183 @@ textarea{
   width: 35%;
   border-bottom: 2px solid #00d8c6;
 }
+
+/* Kurris CSS */
+
+.Signin_header img{
+height: 100px
+
+}
+.Signin_header{
+  display: flex;
+  justify-content: space-between;
+
+}
+.block1{
+float: left;
+width:50%;
+box-sizing: border-box;
+text-align: center;
+}
+
+.block_header{
+  float:left;
+  width: 50%;
+  box-sizing: border-box;
+}
+.block1 h1{
+  padding-top: 10%;
+}
+
+.studentTitle{
+  color: #fd6160;
+}
+
+.companyTitle {
+  color: #00D8C6;
+}
+
+.block1 h3{
+  font-size: 30px;
+  padding-top: 0%;
+  color:#242424
+}
+.formgroup1{
+  text-align:center;
+  width: 100%;
+}
+.signin_form1{
+  padding-bottom: 1%;
+}
+.signin_form1 input[type="text"], .signin_form1 textarea{
+  width: 40%;
+  height: 7%;
+  border: 1px solid #cccccc;
+}
+.signin_form1 input[type="password"], .signin_form1 textarea{
+  width: 40%;
+  height: 7%;
+  border: 1px solid #cccccc;
+}
+.signin_form1 input[type="button"], .signin_form1 textarea{
+  width: 15%;
+  height: 7%;
+  color:white;
+  background-color: #FD6160;
+  border: none;
+  border-radius: 5%;
+  font-size: 15px;
+}
+.signin_form1 input[type="button"]:hover{
+  cursor: pointer;
+  background-color: #ffafaf;
+}
+
+.block1 h4{
+  font-size: 15px;
+  padding-top: 0%;
+
+}
+.block1 h5{
+  font-family:Arial;
+  font-size: 15px;
+  padding-top: 0%;
+  padding-left: ;
+  color:#242424
+}
+.Signin_footer{
+  clear: both;
+  position: relative;
+  height: 200px;
+  margin-top: -200px;
+  text-align: center;
+}
+.linkno{
+  text-decoration: none;
+  color:#8e8e8e;
+}
+.linkyes{
+  text-decoration: underline;
+}
+
+.linkyes:hover{
+  color: #ffafaf;
+}
+
+.register_formnames{
+  padding-bottom: 1%;
+}
+.register_formnames input[type="text"]{
+  height: 6%;
+  border: 1px solid #cccccc;
+  width:19.79%
+}
+.register_form1{
+  padding-bottom: 1%;
+}
+.register_form1 input[type="text"]{
+  width: 40%;
+  height: 5%;
+  padding: 1%;
+  border: 1px solid #cccccc;
+}
+
+.register_form1 input[type="password"]{
+  width: 40%;
+  height: 5%;
+  border: 1px solid #cccccc;
+}
+.register_form1 label{
+  font-family:Arial;
+  font-size: 15px
+}
+.register_form1 input[type="button"]{
+  width: 15%;
+  height: 5%;
+  color:white;
+  background-color: #FD6160;
+  border: none;
+  border-radius: 5%;
+}
+
+.register_form1 input[type="button"]:hover{
+  cursor: pointer;
+  background-color: #ffafaf;
+}
+
+.register_form2 input[type="button"]{
+  width: 15%;
+  height: 5%;
+  color:white;
+  background-color: #00D8C6;
+  border: none;
+  border-radius: 5%;
+}
+
+.register_form2 input[type="button"]:hover{
+  cursor: pointer;
+  background-color: #a5dad5;
+
+}
+
+#LoginBar {
+  padding-left: 0%;
+  font-size: 15px;
+}
+.errorpage{
+  text-align: center;
+}
+.errorpage h2{
+  text-align: center;
+  font-size: 30px;
+  padding-top: 0%;
+}
+.errorpage input[type="button"]{
+  width: 15%;
+  height: 4%;
+  color:white;
+  background-color: #00D8C6;
+  border: #ccc;
+  border-radius: 5%;
+  font-size: 20px;
+}
