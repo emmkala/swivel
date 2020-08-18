@@ -42,6 +42,7 @@ ob_start();
             <input type="checkbox" name="terms" value="I agree with terms and conditions.">   <label for="">I agree with the terms and conditions</label>
           </div>-->
           <div class="register_form1">
+            <p id="updates"></p>
             <input type="button" value="Join now." onclick="register()" >
           </div>
         </form>
@@ -77,6 +78,9 @@ ob_start();
       // "Passwords don't match
       // Figure out how to do this without pressing submit
     }
+
+    var update = document.getElementById("updates");
+    update.innerHTML = "Creating Account";
 
     // Create a user account
     firebase.auth().createUserWithEmailAndPassword(email, pass).then(function() {
@@ -124,24 +128,24 @@ ob_start();
         }).catch(function(error) {
           var errorCode = error.code;
           var errorMessage = error.message;
-          console.log(errorMessage);
+          update.innerHTML = errorMessage;
         });
 
         }).catch(function(error) {
           var errorCode = error.code;
           var errorMessage = error.message;
-          console.log("Doc not created", errorMessage);
+          update.innerHTML = errorMessage;
         });
 
       }).catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log("Not logged in", errorMessage);
+        update.innerHTML = errorMessage;
       });
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log("Account not created", errorMessage);
+      update.innerHTML = errorMessage;
     });
   }
 

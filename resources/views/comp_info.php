@@ -137,18 +137,18 @@
 <section class="review-section">
     <div class="slideshow-container">
       <br>
-      <center><h2> See what our customers have to say. </h2></center><br><br>
+      <center><h2> See what people have to say. </h2></center><br><br>
         <div class="mySlides">
-            <p><q>Swivel saved my summer. Within minutes, I was connected to a startup I didn’t even know existed. The
-                    one on one time allowed me to connect comfortably and ultimately landed me a summer internship.</q>
+          <p><q>Swivel is a great idea! I’ve found it pretty hard googling niche start ups in Canada e.g. MedTech companies. So this definitely will bridge that gap!</q>
             </p>
             <div class="person">
                 <div class="media p-3">
-                    <img src="../../images/person1.png" alt="John Doe" class="mr-3 mt-3 rounded-circle"
-                        style="width:60px;">
+                    <!-- <img src="../../images/person1.png" alt="John Doe" class="mr-3 mt-3 rounded-circle"
+                        style="width:60px;"> -->
                     <div class="media-body pt-4">
-                        <h5>Alison Stewart, Talent Manager</h5>
-                        <p><img src="../../images/wealthsimple.png" alt="" class="client_company"></p>
+                      <h5>Zion Maynard, University of Guelph</h5><br>
+                      <h6>Biomedical Engineering</h6>
+                      <!--  <p><img src="../../images/wealthsimple.png" alt="" class="client_company"></p> -->
                     </div>
                 </div>
             </div>

@@ -9,7 +9,6 @@ include 'inc/firebase_init.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From</title>
     <link rel="stylesheet" href="../../stylesheets/style.css">
     <link rel="stylesheet" href="../../stylesheets/global.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -37,7 +36,6 @@ include 'inc/firebase_init.php';
 
             </div>
         </div>
-        <a href="#" class="log_out_btn">Log out</a>
     </section>
 
     <section class="signup-step-container">
@@ -106,7 +104,7 @@ include 'inc/firebase_init.php';
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <h6>What is you company's website?</h6>
+                                                <h6>What is your company's website?</h6>
                                                 <input class="form-control" placeholder="www.swivelnetwork.com"
                                                     oninput="this.className = ''" name="site">
                                             </div>
@@ -137,7 +135,7 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your company’s primary values?</h3>
-                                                <p class="text-center">Choose 3.</p>
+                                                <p class="text-center">Choose <b> exactly </b> 3.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">
@@ -333,7 +331,7 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your company’s secondary values?</h3>
-                                                <p class="text-center">Choose 5.</p>
+                                                <p class="text-center">Choose <b> exactly </b> 5.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">
@@ -528,7 +526,7 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center">What technical skills are you looking for?</h3>
-                                                <p class="text-center">Choose 5 skills from the list</p>
+                                                <p class="text-center">Choose <b> exactly </b> 5.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">
@@ -658,7 +656,7 @@ include 'inc/firebase_init.php';
                                                             <label>
                                                                 <input type="checkbox" oninput="this.className = ''"
                                                                     name="tech15" value="Databases"><span
-                                                                    class="text-center">Databases</span>
+                                                                    class="text-center">DB (MySQL/NoSQL)</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
@@ -689,19 +687,70 @@ include 'inc/firebase_init.php';
                                                 </div>
 
                                                 <div class="row">
+                                                    <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
+                                                        <div id="ck-button" class="mr-2">
+                                                            <label>
+                                                                <input type="checkbox" oninput="this.className = ''"
+                                                                    name="tech19" value="Unit Testing"><span
+                                                                    class="text-center">Unit Testing</span>
+                                                            </label>
+                                                        </div>
+                                                        <div id="ck-button">
+                                                            <label>
+                                                                <input type="checkbox" oninput="this.className = ''"
+                                                                    name="tech20" value="Java"><span
+                                                                    class="text-center">Java</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
+                                                        <div id="ck-button" class="mr-2">
+                                                            <label>
+                                                                <input type="checkbox" oninput="this.className = ''"
+                                                                    name="tech21" value="Python"><span
+                                                                    class="text-center">Python</span>
+                                                            </label>
+                                                        </div>
+                                                        <div id="ck-button">
+                                                            <label>
+                                                                <input type="checkbox" oninput="this.className = ''"
+                                                                    name="tech23" value="C"><span
+                                                                    class="text-center">C</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
+                                                        <div id="ck-button" class="mr-2">
+                                                            <label>
+                                                                <input type="checkbox" oninput="this.className = ''"
+                                                                    name="tech24" value="Command Line"><span
+                                                                    class="text-center">Command Line</span>
+                                                            </label>
+                                                        </div>
+                                                        <div id="ck-button">
+                                                            <label>
+                                                                <input type="checkbox" oninput="this.className = ''"
+                                                                    name="tech25" value="Mathematics"><span
+                                                                    class="text-center">Mathematics</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
                                                     <div class="offset-md-4"></div>
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" oninput="this.className = ''"
-                                                                    name="tech19" value="Computer Vision"><span
+                                                                    name="tech26" value="Computer Vision"><span
                                                                     class="text-center">Computer Vision</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" oninput="this.className = ''"
-                                                                    name="tech20" value="eCommerce"><span
+                                                                    name="tech27" value="eCommerce"><span
                                                                     class="text-center">eCommerce</span>
                                                             </label>
                                                         </div>
@@ -734,7 +783,7 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are some things about your company that set you apart?</h3>
-                                                <p class="text-center">Choose 3 attributes from the list</p>
+                                                <p class="text-center">Choose <b> exactly </b> 3.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">
@@ -840,7 +889,7 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center">What soft skills are you looking for?</h3>
-                                                <p class="text-center">Choose 5 skills from the list</p>
+                                                <p class="text-center">Choose <b> exactly </b>5.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">

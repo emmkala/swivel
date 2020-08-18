@@ -1,6 +1,6 @@
 <!-- Global sign in page -->
 <?php
-include 'inc\firebase_init.php';
+include 'inc/firebase_init.php';
  ?>
 
  <head>
@@ -70,8 +70,3 @@ function signin(){
 }
 
 </script>
-
-
- <?php
- include 'inc\footer.php';
-  ?>

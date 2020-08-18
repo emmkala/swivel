@@ -128,6 +128,11 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
   $workTypes = workTypes($rawData, "stud");
 
   $currTime = time();
+
+  if(count($rawData) < 33){
+    return redirect("/signupError");
+  }
+
   // set data
   $profileData = [
     'fname' => $fname,
@@ -221,6 +226,10 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
   $workTypes = workTypes($rawData, "comp");
 
   $keys = array_keys($rawData);
+
+  if(count($rawData) < 33){
+    return redirect("/signupError");
+  }
 
   // Get the first link in the zoom collection, set it to company collection and delete
   $allLinks = $zoomCollection->documents();
@@ -559,6 +568,13 @@ $router->post('/matches/{userId}', function (Request $request, $userId) use ($co
 // Error Page
 $router->get('/error', function(){
   return view('error', [
+    'test' => null,
+  ]);
+});
+
+//signup error, too many values
+$router->get('/signupError', function(){
+  return view('signupError', [
     'test' => null,
   ]);
 });

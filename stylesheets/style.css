@@ -1811,12 +1811,14 @@ text-align: center;
   font-size: 30px;
   padding-top: 0%;
 }
-.errorpage input[type="button"]{
-  width: 15%;
-  height: 4%;
-  color:white;
-  background-color: #00D8C6;
-  border: #ccc;
-  border-radius: 5%;
-  font-size: 20px;
+.errorpage a{
+  margin-bottom: 5%;
+}
+
+.errorpage img {
+  height: 45%;
+}
+
+.errorpage input{
+  margin-bottom: 5%;
 }

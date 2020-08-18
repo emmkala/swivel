@@ -26,6 +26,10 @@ include "inc/firebase_init.php";
           <!-- <i class="material-icons">redo</i> -->
              <input type="submit" value="Matching">
          </form>
+         <form>
+          <!-- <i class="material-icons">redo</i> -->
+             <input type="button" onclick="logout()" value="Log Out">
+         </form>
        </div>
          <!-- Match cards -->
          <div class="compCard">
@@ -127,6 +131,10 @@ include "inc/firebase_init.php";
         <form action="/matching/<?= $uid ?>">
          <!-- <i class="material-icons">redo</i> -->
             <input type="submit" value="Matching">
+        </form>
+        <form>
+         <!-- <i class="material-icons">redo</i> -->
+            <input type="button" onclick="logout()" value="Log Out">
         </form>
       </div>
       <div class="studCard">
@@ -239,6 +247,15 @@ if(type == "Student"){
 } else {
   document.getElementById("show_students").style.display = "inline";
 }
+
+function logout(){
+  firebase.auth().signOut().then(function() {
+    window.location = "/";
+  }).catch(function(error) {
+    window.location = "/error";
+  });
+}
+
 
 firebase.auth().onAuthStateChanged(function(user) {
   if(user){

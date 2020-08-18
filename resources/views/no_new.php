@@ -24,6 +24,10 @@ include 'inc/firebase_init.php';
      <!-- <i class="material-icons">redo</i> -->
         <input type="submit" value="Matching">
     </form>
+
+    <form>
+      <input type="button" onclick="logout()" value="Log Out">
+    </form>
   </div>
 
   <div id="no_new">
@@ -32,7 +36,7 @@ include 'inc/firebase_init.php';
       <h2 id="header">You're all Swivelled Out!</h2>
       <p id="message">Come back later when more users have joined the platform, or check on your current matches!</p>
       <p> Thank you for being a swivel tester, any feedback is greatly appriciated! </p>
-      <a href="GOOGLE FORM">Feedback form</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSenRN2DMjHaW_O7pEv_U215np_tIWnF7xMe4OK6TpvInzBhsQ/viewform?usp=sf_link">Feedback form</a>
     </center>
   </div>
 </body>
@@ -45,6 +49,14 @@ if(type == "Student"){
   document.getElementById("side_nav").className = "sidenavStud";
 } else if(type == "Company") {
   document.getElementById("side_nav").className = "sidenavComp";
+}
+
+function logout(){
+  firebase.auth().signOut().then(function() {
+    window.location = "/";
+  }).catch(function(error) {
+    window.location = "/error";
+  });
 }
 
 firebase.auth().onAuthStateChanged(function(user) {

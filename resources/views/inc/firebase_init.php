@@ -3,6 +3,11 @@
 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
 
+<head>
+  <title>Swivel</title>
+  <link rel="icon" href="../../../images/tabIcon.png" type="image/x-icon">
+ </head>
+
 <script>
 // Your web app's Firebase configuration
 var firebaseConfig = {
