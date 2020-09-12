@@ -97,7 +97,12 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
   $lname = $regData["lname"];
   $email = $regData["email"];
 
-  $primVals = $regData["primVals"];
+  $primVals = array_pad(explode(',', $rawData["primVals"]), 3, "");
+  $secVals = array_pad(explode(',', $rawData["secVals"]), 5, "");
+  $diffVals = array_pad(explode(',', $rawData["diffVals"]), 3, "");
+  $techSkills = array_pad(explode(',', $rawData["techSkills"]), 5, "");
+  $softSkills = array_pad(explode(',', $rawData["softSkills"]), 5, "");
+  $workTypes = array_pad(explode(',', $rawData["workTypeList"]), 3, "");
 
   $regCollection->document($userId)->delete();
 
@@ -127,13 +132,13 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
 
   $keys = array_keys($rawData);
 
-  $workTypes = workTypes($rawData, "stud");
+  //$workTypes = workTypes($rawData, "stud");
 
   $currTime = time();
 
-  if(count($rawData) < 33){
+  /*if(count($rawData) < 33){
     return redirect("/signupError");
-  }
+  }*/
 
   // set data
   $profileData = [
@@ -147,11 +152,11 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
     'year' => $rawData['year'],
     'latestSeen' => '',
     'created' => $currTime,
-    'Primary' => ['prim1' => $rawData[$keys[4]], 'prim2' =>  $rawData[$keys[5]], 'prim3' => $rawData[$keys[6]]],
-    'Secondary' => ['sec1'=> $rawData[$keys[8]], 'sec2'=> $rawData[$keys[9]], 'sec3' => $rawData[$keys[10]], 'sec4'=> $rawData[$keys[11]], 'sec5'=> $rawData[$keys[12]]],
-    'Tech' => ['tech1' => $rawData[$keys[14]], 'tech2' => $rawData[$keys[15]], 'tech3' => $rawData[$keys[16]], 'tech4' => $rawData[$keys[17]], 'tech5' => $rawData[$keys[18]]],
-    'Employer' => ['emp1' => $rawData[$keys[20]], 'emp2' => $rawData[$keys[21]], 'emp3' => $rawData[$keys[22]]],
-    'Soft' => ['soft1' => $rawData[$keys[24]], 'soft2' => $rawData[$keys[25]], 'soft3' => $rawData[$keys[26]], 'soft4' => $rawData[$keys[27]], 'soft5' => $rawData[$keys[28]]],
+    'Primary' => ['prim1' => $primVals[0], 'prim2' =>  $primVals[1], 'prim3' => $primVals[2]],
+    'Secondary' => ['sec1'=> $secVals[0], 'sec2'=> $secVals[1], 'sec3' => $secVals[2], 'sec4'=> $secVals[3], 'sec5'=> $secVals[4]],
+    'Tech' => ['tech1' => $techSkills[0], 'tech2' => $techSkills[1], 'tech3' => $techSkills[2], 'tech4' => $techSkills[3], 'tech5' => $techSkills[4]],
+    'Employer' => ['emp1' => $diffVals[0], 'emp2' => $diffVals[1], 'emp3' => $diffVals[2]],
+    'Soft' => ['soft1' => $softSkills[0], 'soft2' => $softSkills[1], 'soft3' => $softSkills[2], 'soft4' => $softSkills[3], 'soft5' => $softSkills[4]],
     'Experience' => ['exp1' => $rawData['exp1'], 'exp2' => $rawData['exp2'], 'exp3' => $rawData['exp3']],
     'WorkType' => ['work1' => $workTypes[0], 'work2' => $workTypes[1], 'work3' => $workTypes[2]],
     'magic' => $rawData['magic'],
