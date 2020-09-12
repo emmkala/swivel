@@ -119,7 +119,7 @@ include 'inc/firebase_init.php';
                                         </div>
 
                                         <div class="col-md-12 text-center">
-                                            <p>Term of use. Privacy policy</p>
+                                            <p>Terms of use. Privacy policy</p>
                                         </div>
 
 

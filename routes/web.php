@@ -97,6 +97,8 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
   $lname = $regData["lname"];
   $email = $regData["email"];
 
+  $primVals = $regData["primVals"];
+
   $regCollection->document($userId)->delete();
 
   // segmenting the raw data

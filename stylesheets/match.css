@@ -67,7 +67,7 @@
   border-color: #fd6160;
   background-color: white;
   margin-right: 1%;
-  padding: 1%;
+  padding: 2%;
 }
 
 .displayComp .timeTab {
@@ -76,7 +76,7 @@
   border-color: #00d8c6;
   background-color: white;
   margin-right: 1%;
-  padding: 1%;
+  padding: 2%;
 }
 
 .timeTab input[type=checkbox]{

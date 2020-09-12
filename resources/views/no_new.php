@@ -36,7 +36,7 @@ include 'inc/firebase_init.php';
       <h2 id="header">You're all Swivelled Out!</h2>
       <p id="message">Come back later when more users have joined the platform, or check on your current matches!</p>
       <p> Thank you for being a swivel tester, any feedback is greatly appriciated! </p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSenRN2DMjHaW_O7pEv_U215np_tIWnF7xMe4OK6TpvInzBhsQ/viewform?usp=sf_link">Feedback form</a>
+      <a id="feedback">Feedback form</a>
     </center>
   </div>
 </body>
@@ -47,8 +47,10 @@ var type = "<?php echo $type ?>";
 
 if(type == "Student"){
   document.getElementById("side_nav").className = "sidenavStud";
+  document.getElementById("feedback").href = "https://forms.gle/LCRJsAddWSTTsm428";
 } else if(type == "Company") {
   document.getElementById("side_nav").className = "sidenavComp";
+  document.getElementById("feedback").href = "https://forms.gle/ouoBT7vopPFwnu6i6";
 }
 
 function logout(){

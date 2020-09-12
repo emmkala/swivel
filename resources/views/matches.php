@@ -75,7 +75,7 @@ include 'inc/firebase_init.php';
     <a class="zoomLink" href="<?= $compZoom ?>"> Zoom Link: <?= $compZoom ?></a>
     <p id="link_descr">This is your own personal zoom link. You can use it for all your scheduled meetings during the testing period </p>
     <br> <br> <br> <br> <br> <br> <br> <br> <br>
-    <a class="feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSenRN2DMjHaW_O7pEv_U215np_tIWnF7xMe4OK6TpvInzBhsQ/viewform?usp=sf_link"> Give us any feedback you have on the MVP</a>
+    <a class="feedback" href="https://forms.gle/ouoBT7vopPFwnu6i6"> Give us any feedback you have on the MVP</a>
     <p class="thanks">Thanks so much for being a test user! We hope you met some interesting people and hopefully expanded your network</p>
   </div>
 </div>
@@ -124,7 +124,7 @@ include 'inc/firebase_init.php';
 
   <div class="userInfoStud">
     <img id="nav_logo" src="../../images/swivellogo.png">
-    <a class="feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSenRN2DMjHaW_O7pEv_U215np_tIWnF7xMe4OK6TpvInzBhsQ/viewform?usp=sf_link"> Give us any feedback you have on the MVP</a>
+    <a class="feedback" href="https://forms.gle/LCRJsAddWSTTsm428"> Give us any feedback you have on the MVP</a>
     <p class="thanks">Thanks so much for being a test user! We hope you met some interesting people and hopefully expanded your network</p>
   </div>
 
