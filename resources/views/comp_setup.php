@@ -132,7 +132,7 @@ include 'inc/firebase_init.php';
                                 <!-- Step 2 -->
                                 <div class="tab-pane" role="tabpanel" id="step2">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" id="primDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your company’s primary values?</h3>
                                                 <p id="primInstruct" class="text-center">Choose up to 3 values.</p>
@@ -323,14 +323,15 @@ include 'inc/firebase_init.php';
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                              <span id="primOtherspan">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                     name="primOther">
+                                                     id="primOther" onblur="onCheck('primOther', 'prim')" name="primOther"></span>
                                             </div>
                                         </div>
                                         <input type="password" id="primVals" name="primVals" style="display: none;">
 
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" id="secDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your company’s secondary values?</h3>
                                                 <p id="secInstruct" class="text-center">Choose up to 5 values.</p>
@@ -520,14 +521,15 @@ include 'inc/firebase_init.php';
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                              <span id="secOtherspan">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                     name="secOther">
+                                                    id="secOther" onblur="onCheck('secOther', 'sec')" name="secOther"></span>
                                             </div>
                                         </div>
                                         <input type="password" id="secVals" name="secVals" style="display: none;">
 
                                         <!-- Skills -->
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" id="techDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What technical skills are you looking for?</h3>
                                                 <p id="techInstruct" class="text-center">Choose up to 5 skills.</p>
@@ -766,8 +768,9 @@ include 'inc/firebase_init.php';
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                              <span id="techOtherspan">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                     name="techOther">
+                                                    id="techOther" onblur="onCheck('techOther', 'tech')" name="techOther"></span>
                                             </div>
                                         </div>
                                         <input type="password" id="techSkills" name="techSkills" style="display: none;">
@@ -785,7 +788,7 @@ include 'inc/firebase_init.php';
                                 <!-- Step 3 -->
                                 <div class="tab-pane" role="tabpanel" id="step3">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" id="diffDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are some things about your company that set you apart?</h3>
                                                 <p id="diffInstruct" class="text-center">Choose up to 3 things.</p>
@@ -885,15 +888,16 @@ include 'inc/firebase_init.php';
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                              <span id="diffOtherspan">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                     name="diffOther">
+                                                    id="diffOther" onblur="onCheck('diffOther', 'diff')"  name="diffOther"></span>
                                             </div>
                                         </div>
                                         <input type="password" id="diffVals" name="diffVals" style="display: none;">
 
 
                                         <!-- Soft Skills -->
-                                        <div class="col-md-12">
+                                        <div class="col-md-12" id="softDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What soft skills are you looking for?</h3>
                                                 <p id="softInstruct" class="text-center">Choose up to 5 skills.</p>
@@ -1050,8 +1054,9 @@ include 'inc/firebase_init.php';
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
+                                              <soan id="softOtherspan">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                     name="softOther">
+                                                    id="softOther" onblur="onCheck('softOther', 'soft')"  name="softOther"></span>
                                             </div>
                                         </div>
                                         <input type="password" id="softSkills" name="softSkills" style="display: none;">
@@ -1205,6 +1210,8 @@ include 'inc/firebase_init.php';
         $(this).addClass('active');
     });
 
+    /* --------------- Form handling --------------------- */
+
     // global arrays for each choice topic
     // max len 3
     var primArr = [];
@@ -1218,12 +1225,15 @@ include 'inc/firebase_init.php';
     var softArr = [];
     // max len 3
     var workTypeArr = [];
+    // any self inputted values
+    var otherArr = [];
 
     function onCheck(element, type){
       var typeArr = [];
       var maxLen;
       var setElem;
       var instruction;
+      var scrollDiv;
 
       var choice = document.getElementById(element);
       var value = choice.value;
@@ -1234,71 +1244,114 @@ include 'inc/firebase_init.php';
           maxLen = 3;
           setElem = document.getElementById("primVals");
           instruction = document.getElementById("primInstruct");
+          scrollDiv = document.getElementById("primDiv");
           break;
         case "sec":
           typeArr = secArr;
           maxLen = 5;
           setElem = document.getElementById("secVals");
           instruction = document.getElementById("secInstruct");
+          scrollDiv = document.getElementById("secDiv");
           break;
         case "diff":
           typeArr = diffArr;
           maxLen = 3;
           setElem = document.getElementById("diffVals");
           instruction = document.getElementById("diffInstruct");
+          scrollDiv = document.getElementById("diffDiv");
           break;
         case "tech":
           typeArr = techArr;
           maxLen = 5;
           setElem = document.getElementById("techSkills");
           instruction = document.getElementById("techInstruct");
+          scrollDiv = document.getElementById("techDiv");
           break;
         case "soft":
           typeArr = softArr;
           maxLen = 5;
           setElem = document.getElementById("softSkills");
           instruction = document.getElementById("softInstruct");
+          scrollDiv = document.getElementById("softDiv");
           break;
         case "workType":
           typeArr = workTypeArr;
           maxLen = 3;
           setElem = document.getElementById("workTypeList");
           instruction = document.getElementById("workInstruct");
+          scrollDiv = document.getElementById("workDiv");
           break;
       }
 
-      // if the choice is being unchecked
-      if(!document.getElementById(element).checked){
-        // remove it from the array
-        if(typeArr.includes(value)){
-          var i = typeArr.indexOf(value);
-          typeArr.splice(i, 1);
-          // reset the element that will be sent
-          setElem.value = typeArr;
+      // check if choice is a checkbox
+      if(choice.type == "checkbox"){
+        // if the choice is being unchecked
+        if(!document.getElementById(element).checked){
+          // remove it from the array
+          if(typeArr.includes(value)){
+            var i = typeArr.indexOf(value);
+            typeArr.splice(i, 1);
+            // reset the element that will be sent
+            setElem.value = typeArr;
+            return;
+          }
         }
+        // choice is a textField (other)
+      } else {
+        /*
+        if it's a textField and this has been triggered, either it's the users first time entering (for this section) or they've deleted something
+        if it's their first time, nothing will happen here because nothing in otherArr will be in typeArr
+        if they've deleted something, everything that has been added to typeArr from other should be deleted (because they're erasing it from the form)
+        */
+
+        var pastInputs = [];
+        // some checks for everything in the otherArr that appears in typeArr
+        otherArr.some(function (v) {
+          if(typeArr.indexOf(v) >= 0){
+            // create a list of anything in other thats in type (should only be 1 thing atm)
+            pastInputs.push(typeArr[typeArr.indexOf(v)]);
+          }
+        });
+
+        // if there are things in other that are in pastInputs
+        if(pastInputs.length > 0){
+          for(var i = 0; i < pastInputs.length; i++){
+            var j = typeArr.indexOf(pastInputs[i]);
+            // delete everything in typeArr and set it in the form arr
+            typeArr.splice(j, 1);
+            setElem.value = typeArr;
+          }
+
+        }
+
+        // if the field is empty or has empty space, whatever was previously entered has already been deleted
+        // and the function should stop since the empty space shouldn't be added to the form arr
+        if(choice.value.trim() == ''){
+          return;
+        }
+
       }
 
+
       // choice is being picked for the first time
-      else{
-        // havent reached max amount of choices
-        if(typeArr.length < maxLen){
-          typeArr.push(value);
-          setElem.value = typeArr;
-        } else {
-          // user is trying to choose more than allowed
-          //uncheck
-          choice.checked = false;
+      // havent reached max amount of choices
+      if(typeArr.length < maxLen){
+        if(choice.type != "checkbox") otherArr.push(value);
 
-          // shake instructions to bring attention
-          // turn choice red for 3 seconds
-          instruction.classList.add("animated");
-          var spanId = choice.id+"span";
-          var span = document.getElementById(spanId);
+        typeArr.push(value);
+        setElem.value = typeArr;
+      } else {
+        // user is trying to choose more than allowed
+        // shake instructions to bring attention
+        // turn choice red for 3 seconds
+        instruction.classList.add("animated");
+        var spanId = choice.id+"span";
+        var span = document.getElementById(spanId);
 
-          span.style.backgroundColor = "#1a6f67";
-          span.style.color = "white";
-          span.style.borderColor = "#1a6f67";
-          span.style.borderRadius = "4px";
+        span.style.backgroundColor = "#1a6f67";
+        span.style.color = "white";
+        span.style.borderColor = "#1a6f67";
+        span.style.borderRadius = "4px";
 
 
           setTimeout(function(){
@@ -1307,9 +1360,9 @@ include 'inc/firebase_init.php';
 
           }, 1000);
 
+          // uncheck or clear textArea (and scroll to that section to bring attention)
+          choice.type == "checkbox" ? choice.checked = false : (choice.value = "", scrollDiv.scrollIntoView() );
         }
-
-      }
 
     }
     </script>
