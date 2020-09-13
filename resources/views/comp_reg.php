@@ -56,7 +56,7 @@ ob_start();
 <!--Footer-->
   <div class="Signin_footer">
     <footer>
-      <a class="linkno" href="">Thank you much</a>
+      <a class="linkno" href="">Thank you so much</a>
       <a class="linkno" href="">For being a tester!</a>
     </footer>
   </div>

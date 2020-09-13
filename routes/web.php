@@ -102,7 +102,7 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
   $diffVals = array_pad(explode(',', $rawData["diffVals"]), 3, "");
   $techSkills = array_pad(explode(',', $rawData["techSkills"]), 5, "");
   $softSkills = array_pad(explode(',', $rawData["softSkills"]), 5, "");
-  $workTypes = array_pad(explode(',', $rawData["workTypeList"]), 3, "");
+  $workType = array_pad(explode(',', $rawData["workTypeList"]), 3, "");
 
   $regCollection->document($userId)->delete();
 
@@ -158,7 +158,7 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
     'Employer' => ['emp1' => $diffVals[0], 'emp2' => $diffVals[1], 'emp3' => $diffVals[2]],
     'Soft' => ['soft1' => $softSkills[0], 'soft2' => $softSkills[1], 'soft3' => $softSkills[2], 'soft4' => $softSkills[3], 'soft5' => $softSkills[4]],
     'Experience' => ['exp1' => $rawData['exp1'], 'exp2' => $rawData['exp2'], 'exp3' => $rawData['exp3']],
-    'WorkType' => ['work1' => $workTypes[0], 'work2' => $workTypes[1], 'work3' => $workTypes[2]],
+    'WorkType' => ['work1' => $workType[0], 'work2' => $workType[1], 'work3' => $workType[2]],
     'magic' => $rawData['magic'],
   ];
 
@@ -205,6 +205,13 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
   $lname = $regData["lname"];
   $email = $regData["email"];
 
+  $primVals = array_pad(explode(',', $rawData["primVals"]), 3, "");
+  $secVals = array_pad(explode(',', $rawData["secVals"]), 5, "");
+  $diffVals = array_pad(explode(',', $rawData["diffVals"]), 3, "");
+  $techSkills = array_pad(explode(',', $rawData["techSkills"]), 5, "");
+  $softSkills = array_pad(explode(',', $rawData["softSkills"]), 5, "");
+  $workType = array_pad(explode(',', $rawData["workTypeList"]), 3, "");
+
   $regCollection->document($userId)->delete();
   // segmenting the raw data
   // raw data in associative array, use array keys
@@ -230,13 +237,13 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
   magic
   */
 
-  $workTypes = workTypes($rawData, "comp");
+  /*$workTypes = workTypes($rawData, "comp");
 
   $keys = array_keys($rawData);
 
   if(count($rawData) < 33){
     return redirect("/signupError");
-  }
+  }*/
 
   // Get the first link in the zoom collection, set it to company collection and delete
   $allLinks = $zoomCollection->documents();
@@ -266,13 +273,13 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
     'latestSeen' => '',
     'created' => $currTime,
     'companyZoom' => $compZoom,
-    'Primary' => ['prim1' => $rawData[$keys[5]], 'prim2' =>  $rawData[$keys[6]], 'prim3' => $rawData[$keys[7]]],
-    'Secondary' => ['sec1'=> $rawData[$keys[9]], 'sec2'=> $rawData[$keys[10]], 'sec3' => $rawData[$keys[11]], 'sec4'=> $rawData[$keys[12]], 'sec5'=> $rawData[$keys[13]]],
-    'Tech' => ['tech1' => $rawData[$keys[15]], 'tech2' => $rawData[$keys[16]], 'tech3' => $rawData[$keys[17]], 'tech4' => $rawData[$keys[18]], 'tech5' => $rawData[$keys[19]]],
-    'Apart' => ['diff1' => $rawData[$keys[21]], 'diff2' => $rawData[$keys[22]], 'diff3' => $rawData[$keys[23]]],
-    'Soft' => ['soft1' => $rawData[$keys[25]], 'soft2' => $rawData[$keys[26]], 'soft3' => $rawData[$keys[27]], 'soft4' => $rawData[$keys[28]], 'soft5' => $rawData[$keys[29]]],
+    'Primary' => ['prim1' => $primVals[0], 'prim2' =>  $primVals[1], 'prim3' => $primVals[2]],
+    'Secondary' => ['sec1'=> $secVals[0], 'sec2'=> $secVals[1], 'sec3' => $secVals[2], 'sec4'=> $secVals[3], 'sec5'=> $secVals[4]],
+    'Tech' => ['tech1' => $techSkills[0], 'tech2' => $techSkills[1], 'tech3' => $techSkills[2], 'tech4' => $techSkills[3], 'tech5' => $techSkills[4]],
+    'Apart' => ['diff1' => $diffVals[0], 'diff2' => $diffVals[1], 'diff3' => $diffVals[2]],
+    'Soft' => ['soft1' => $softSkills[0], 'soft2' => $softSkills[1], 'soft3' => $softSkills[2], 'soft4' => $softSkills[3], 'soft5' => $softSkills[4]],
     'Info' => ['compBio' => $rawData['info1'], 'life' => $rawData['info2'], 'personalBio' => $rawData['info3']],
-    'WorkType' => ['work1' => $workTypes[0], 'work2' => $workTypes[1], 'work3' => $workTypes[2]],
+    'WorkType' => ['work1' => $workType[0], 'work2' => $workType[1], 'work3' => $workType[2]],
   ];
 
   $compCollection->document($userId)->set($profileData);

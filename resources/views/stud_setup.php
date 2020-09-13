@@ -323,7 +323,7 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                    id="primOther" onclick="onCheck('primOther', 'prim')" name="primOther">
+                                                    id="primOther" onclick="onCheck('other', 'prim')" name="primOther">
                                             </div>
                                         </div>
                                         <input type="password" id="primVals" name="primVals" style="display: none;">
@@ -764,10 +764,9 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                    id="techOther" onclick="onCheck('techOther', 'tech')" name="techOther">
+                                                     name="techOther">
                                             </div>
                                         </div>
-
                                         <input type="password" id="techSkills" name="techSkills" style="display: none;">
 
 
@@ -787,7 +786,7 @@ include 'inc/firebase_init.php';
                                             <div class="form-group">
                                                 <h3 class="text-center">What are some important aspects to you when
                                                     considering an employer?</h3>
-                                                <p id="diffInstruct" class="text-center">Choose 3 things that are important to you.</p>
+                                                <p id="diffInstruct" class="text-center">Choose up to 3.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
                                                         <div id="ck-button" class="mr-2">
@@ -885,11 +884,11 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                  id="diffOther" onclick="onCheck('diffOther', 'diff')" name="diffOther">
+                                                    oninput="this.className = 'prim'" name="diffOther">
                                             </div>
                                         </div>
-
                                         <input type="password" id="diffVals" name="diffVals" style="display: none;">
+
 
                                         <!-- Soft Skills -->
                                         <div class="col-md-12">
@@ -1043,15 +1042,16 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input class="form-control w-80" placeholder="Other:"
-                                                    id="softOther" onclick="onCheck('softOther', 'soft')" name="softOther">
+                                                     name="softOther">
                                             </div>
                                         </div>
                                         <input type="password" id="softSkills" name="softSkills" style="display: none;">
 
+
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center"> What type of work are you looking for?</h3>
-                                                <p class="text-center">Choose all that apply</p>
+                                                <p id="workInstruct" class="text-center">Choose all that apply</p>
                                                 <div class="row">
                                                     <div class="col-md-4 justify-content-center d-flex mt-2">
                                                         <div id="ck-button" class="mr-2">
@@ -1077,23 +1077,21 @@ include 'inc/firebase_init.php';
                                                                     class="text-center">Contract Work</span>
                                                             </label>
                                                         </div>
-                                                        <!--
-                                                        <div id="ck-button" style="border: none">
+                                                        <!--<div id="ck-button" style="border: none">
                                                             <label>
                                                                 <input type="checkbox" oninput="this.className = ''"
                                                                     name="" value="Contract"><span
                                                                     class="text-center"></span>
                                                             </label>
-                                                        </div>
-                                                      -->
+                                                        </div>-->
                                                     </div>
-                                                    <input type="password" id="workTypeList" name="workTypeList" style="display: none;">
-
 
 
                                                 </div>
                                             </div>
                                         </div>
+                                        <input type="password" id="workTypeList" name="workTypeList" style="display: none;">
+
 
                                     </div>
                                     <ul class="list-inline pull-right">
