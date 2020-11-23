@@ -19,7 +19,12 @@ include 'inc/firebase_init.php';
 
   <form action="/matching/<?= $userId ?>">
    <!-- <i class="material-icons">redo</i> -->
-      <input type="submit" value="Matching">
+      <input type="submit" value="General Network">
+  </form>
+
+  <form action="/curated/<?= $userId ?>">
+   <!-- <i class="material-icons">redo</i> -->
+      <input type="submit" value="Curated Matches">
   </form>
   <form>
    <!-- <i class="material-icons">redo</i> -->

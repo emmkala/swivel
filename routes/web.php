@@ -39,6 +39,8 @@ $interestCollection = $firestore->collection('interested');
 $skipCollection = $firestore->collection('skipped');
 $regCollection = $firestore->collection('reg');
 $zoomCollection = $firestore->collection('zoomLinks');
+$curatedCollection = $firestore->collection('curated');
+
 
 $storage = new StorageClient([
   'projectid' => $projectid,
@@ -88,7 +90,7 @@ $router->get('/studentSetup/{userId}', function(){
 });
 
 // Student profile post
-$router->post('/studentSetup/{userId}', function (Request $request, $userId) use ($studCollection, $regCollection) {
+$router->post('/studentSetup/{userId}', function (Request $request, $userId) use ($studCollection, $curatedCollection, $regCollection) {
   $rawData = $request->all();
   $regData = $regCollection->document($userId)->snapshot()->data();
 
@@ -164,7 +166,13 @@ $router->post('/studentSetup/{userId}', function (Request $request, $userId) use
 
   $studCollection->document($userId)->set($profileData);
 
-  return redirect('/matching/' . $userId);
+  $curated = [
+    'curatedMatches' => array()
+  ];
+  $curatedCollection->document($userId)->set($curated);
+
+  // redirect to edit page when matching is working
+  return redirect('/curated/' . $userId);
 });
 
 // Universal ?? For now student and comp come back to this
@@ -196,7 +204,7 @@ $router->get('/companySetup/{userId}', function(){
 });
 
 // Company profile post
-$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection, $regCollection, $zoomCollection) {
+$router->post('/companySetup/{userId}', function (Request $request, $userId) use ($compCollection, $curatedCollection, $regCollection, $zoomCollection) {
   $rawData = $request->all();
   $regData = $regCollection->document($userId)->snapshot()->data();
 
@@ -282,10 +290,15 @@ $router->post('/companySetup/{userId}', function (Request $request, $userId) use
     'WorkType' => ['work1' => $workType[0], 'work2' => $workType[1], 'work3' => $workType[2]],
   ];
 
+  $curated = [
+    'curatedMatches' => array()
+  ];
+
   $compCollection->document($userId)->set($profileData);
+  $curatedCollection->document($userId)->set($curated);
 
   // redirect to edit page when matching is working
-  return redirect('/matching/' . $userId);
+  return redirect('/curated/' . $userId);
 
 });
 
@@ -356,6 +369,92 @@ $router->post('/matching/{userId}', function (Request $request, $userId) use ($n
 
   return redirect('/matching/' . $userId);
 });
+
+// Get all curated matches
+$router->get('/curated/{userId}', function($userId) use ($compCollection, $studCollection, $curatedCollection){
+
+  // finding possible matches
+  $type = userType($compCollection, $studCollection, $userId);
+
+  if($curatedCollection->document($userId)->snapshot()->exists()){
+    $curated = $curatedCollection->document($userId)->snapshot()->data();
+    $count = count($curated["curatedMatches"]);
+
+    if($count == 0){
+      // if notSeen go to noNewMatches page
+      return redirect('/noNewCurated/'.$userId);
+    }
+  } else {
+    return redirect('/error');
+  }
+
+  return view('curated', [
+    'type' => $type,
+    'show' => $curated,
+    'uid' => $userId
+  ]);
+});
+
+// move id from curated and notSeen array to interest/skip array
+$router->post('/curated/{userId}', function (Request $request, $userId) use ($curatedCollection, $notSeenCollection, $interestCollection, $skipCollection) {
+
+  $rawData = $request->all();
+  $prospectId = $request->input("prospectId");
+
+  //remove from $notSeen
+  $notSeenCollection->document($userId)->update([
+    ['path' => 'notSeenIds', 'value' => FieldValue::arrayRemove([$prospectId])]
+  ]);
+
+  // remove from $curated
+  $curatedCollection->document($userId)->update([
+    ['path' => 'curatedMatches', 'value' => FieldValue::arrayRemove([$prospectId])]
+  ]);
+
+  if($rawData["choice"] == "Interested"){
+    // add to interested array
+    $interestCollection->document($userId)->update([
+      ['path' => 'interests', 'value' => FieldValue::arrayUnion([$prospectId])]
+    ]);
+
+    if($interestCollection->document($prospectId)->snapshot()->exists()){
+      $prospectLikes = $interestCollection->document($prospectId)->snapshot()->data();
+      // if the prospect has already liked them
+      if(in_array($userId, $prospectLikes["interests"])){
+        // can do all match db set in newMatch
+        return redirect('/newMatch/'.$userId.'/'.$prospectId);
+      } else {
+        // hasn't been liked back
+        return redirect('/curated/'.$userId);
+      }
+    } else {
+      to_console("error");
+    }
+
+  } else if($rawData["choice"] == "Skip"){
+    $skipCollection->document($userId)->update([
+      ['path' => 'skips', 'value' => FieldValue::arrayUnion([$prospectId])]
+    ]);
+    return redirect('/curated/'.$userId);
+  } else {
+    to_console("error");
+  }
+
+  return redirect('/curated/' . $userId);
+});
+
+// swipped through all curated matches, tell them to come back for more
+$router->get('noNewCurated/{userId}', function($userId) use ($notSeenCollection, $studCollection, $compCollection){
+
+  //check if user is student or company
+  $type = userType($compCollection, $studCollection, $userId);
+
+  return view('no_new_curated', [
+    'type' => $type,
+    'userId' => $userId,
+  ]);
+});
+
 
 // populating notSeen with any users made while user was swiping
 $router->get('noNewMatches/{userId}', function($userId) use ($notSeenCollection, $studCollection, $compCollection){

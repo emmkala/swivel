@@ -1844,3 +1844,54 @@ text-align: center;
 .errorpage input{
   margin-bottom: 5%;
 }
+
+/* Forget password */
+#popup-div-forget{
+  border-color: #cfd4d4;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 50%;
+  height: 50%;
+  /*background-color: #f7f7f7;*/
+  background-color: white;
+  padding: 1%;
+  box-shadow: 2px 2px 6px 2px #cfd4d4;
+}
+
+#forget{
+  color: #cfd4d4;
+  cursor: pointer;
+}
+
+#forget:hover{
+  color: #00D8C6;
+}
+
+#emailPass{
+  border: none;
+  border-bottom: 1px solid #00D8C6;
+  width: 50%;
+  height: 5%;
+  font-size: 16px;
+}
+
+#forgetSubmit{
+  background-color: #00D8C6;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+#forgetSubmit:hover{
+  background-color: #2febdb;
+}

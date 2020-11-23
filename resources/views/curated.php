@@ -24,9 +24,8 @@ include "inc/firebase_init.php";
 
          <form action="/matching/<?= $uid ?>">
           <!-- <i class="material-icons">redo</i> -->
-             <input type="submit" value="General Network">
+             <input type="submit" value="Gerenal Network">
          </form>
-
          <form action="/curated/<?= $uid ?>">
           <!-- <i class="material-icons">redo</i> -->
              <input type="submit" value="Curated Matches">
@@ -137,7 +136,6 @@ include "inc/firebase_init.php";
          <!-- <i class="material-icons">redo</i> -->
             <input type="submit" value="General Network">
         </form>
-
         <form action="/curated/<?= $uid ?>">
          <!-- <i class="material-icons">redo</i> -->
             <input type="submit" value="Curated Matches">
@@ -249,7 +247,7 @@ var type = "<?php echo $type ?>";
 
 <?php
   $js_array = json_encode($show);
-  echo "var notSeen = ". $js_array . ";\n";
+  echo "var curated = ". $js_array . ";\n";
 ?>
 
 if(type == "Student"){
@@ -270,10 +268,10 @@ function logout(){
 firebase.auth().onAuthStateChanged(function(user) {
   if(user){
     if(type == "Student"){
-      document.getElementById("compId").value = notSeen.notSeenIds[0];
+      document.getElementById("compId").value = curated.curatedMatches[0];
 
-      // loop for all elements in notSeen
-      compCollection.doc(notSeen.notSeenIds[0]).get().then(function(doc){
+      // loop for all elements in curated
+      compCollection.doc(curated.curatedMatches[0]).get().then(function(doc){
         if(doc.exists){
           var docData = doc.data();
           // set all card data
@@ -370,10 +368,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     } else if(type == "Company"){
 
-      document.getElementById("studId").value = notSeen.notSeenIds[0];
+      document.getElementById("studId").value = curated.curatedMatches[0];
 
-      // loop for all elements in notSeen
-      studCollection.doc(notSeen.notSeenIds[0]).get().then(function(doc){
+      // loop for all elements in curated
+      studCollection.doc(curated.curatedMatches[0]).get().then(function(doc){
         if(doc.exists){
           var docData = doc.data();
 

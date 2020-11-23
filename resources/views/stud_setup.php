@@ -134,6 +134,8 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12" id="primDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are some of you primary values and motivations?</h3>
+                                                <p class="text-center">These are your top 3 values that are important to you in and out of your
+                                                work life. These are things you'd like to see a company and their employees operate with.</p>
                                                 <p id="primInstruct" class="text-center">Choose up to 3 values.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
@@ -157,8 +159,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="prim3" onclick="onCheck('prim3', 'prim')"
-                                                                    name="prim3" value="Achievement"><span id="prim3span"
-                                                                    class="text-center">Achievement</span>
+                                                                    name="prim3" value="Profitability"><span id="prim3span"
+                                                                    class="text-center">Profitability</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
@@ -181,8 +183,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim6" onclick="onCheck('prim6', 'prim')"
-                                                                    name="prim6" value="Social Impact"><span id="prim6span"
-                                                                    class="text-center">Social Impact</span>
+                                                                    name="prim6" value="Customer Care"><span id="prim6span"
+                                                                    class="text-center">Customer Care</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -202,8 +204,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim8" onclick="onCheck('prim8', 'prim')"
-                                                                    name="prim8" value="Honesty"><span id="prim8span"
-                                                                    class="text-center">Honesty</span>
+                                                                    name="prim8" value="Diversity"><span id="prim8span"
+                                                                    class="text-center">Diversity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -212,15 +214,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="prim9" onclick="onCheck('prim9', 'prim')"
-                                                                    name="prim9" value="Health"><span id="prim9span"
-                                                                    class="text-center">Health</span>
+                                                                    name="prim9" value="Personal Growth"><span id="prim9span"
+                                                                    class="text-center">Personal Growth</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim10" onclick="onCheck('prim10', 'prim')"
-                                                                    name="prim10" value="Family"><span id="prim10span"
-                                                                    class="text-center">Family</span>
+                                                                    name="prim10" value="Integrity"><span id="prim10span"
+                                                                    class="text-center">Integrity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -229,15 +231,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="prim11" onclick="onCheck('prim11', 'prim')"
-                                                                    name="prim11" value="Peace"><span id="prim11span"
-                                                                    class="text-center">Peace</span>
+                                                                    name="prim11" value="Humility"><span id="prim11span"
+                                                                    class="text-center">Humility</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim12" onclick="onCheck('prim12', 'prim')"
-                                                                    name="prim12" value="Wealth"><span id="prim12span"
-                                                                    class="text-center">Wealth</span>
+                                                                    name="prim12" value="Sustainability"><span id="prim12span"
+                                                                    class="text-center">Sustainability</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -333,6 +335,8 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12" id="secDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are some of you secondary values and motivations?</h3>
+                                                <p class="text-center">These are secondary values that are still important to you but take a
+                                                back seat to the values you chose above.</p>
                                                 <p id="secInstruct" class="text-center">Choose up to 5 values.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
@@ -356,8 +360,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="sec3" onclick="onCheck('sec3', 'sec')"
-                                                                    name="sec3" value="Achievement"><span id="sec3span"
-                                                                    class="text-center">Achievement</span>
+                                                                    name="sec3" value="Profitability"><span id="sec3span"
+                                                                    class="text-center">Profitability</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
@@ -379,8 +383,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec6" onclick="onCheck('sec6', 'sec')"
-                                                                    name="sec6" value="Social Impact"><span id="sec6span"
-                                                                    class="text-center">Social Impact</span>
+                                                                    name="sec6" value="Customer Care"><span id="sec6span"
+                                                                    class="text-center">Customer Care</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -400,8 +404,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec8" onclick="onCheck('sec8', 'sec')"
-                                                                    name="sec8" value="Honesty"><span id="sec8span"
-                                                                    class="text-center">Honesty</span>
+                                                                    name="sec8" value="Diversity"><span id="sec8span"
+                                                                    class="text-center">Diversity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -410,15 +414,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="sec9" onclick="onCheck('sec9', 'sec')"
-                                                                    name="sec9" value="Health"><span id="sec9span"
-                                                                    class="text-center">Health</span>
+                                                                    name="sec9" value="Personal Growth"><span id="sec9span"
+                                                                    class="text-center">Personal Growth</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec10" onclick="onCheck('sec10', 'sec')"
-                                                                    name="sec10" value="Family"><span id="sec10span"
-                                                                    class="text-center">Family</span>
+                                                                    name="sec10" value="Integrity"><span id="sec10span"
+                                                                    class="text-center">Integrity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -427,15 +431,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="sec11" onclick="onCheck('sec11', 'sec')"
-                                                                    name="sec11" value="Peace"><span id="sec11span"
-                                                                    class="text-center">Peace</span>
+                                                                    name="sec11" value="Humility"><span id="sec11span"
+                                                                    class="text-center">Humility</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec12" onclick="onCheck('sec12', 'sec')"
-                                                                    name="sec12" value="Wealth"><span id="sec12span"
-                                                                    class="text-center">Wealth</span>
+                                                                    name="sec12" value="Sustainability"><span id="sec12span"
+                                                                    class="text-center">Sustainability</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -1112,10 +1116,10 @@ include 'inc/firebase_init.php';
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your top 3 resume highlights?
                                                 </h3>
-                                                <p class="text-center"><span>Please write 1 sentence about 3 experiences listed on your resume</span></p>
+                                                <p class="text-center"><span>Please write 1 sentence about 3 experiences listed on your resume (150 character limit)</span></p>
                                                 <div class="d-flex justify-content-center">
                                                     <textarea placeholder="Summer Data Science internship with RBC"
-                                                        oninput="this.className = ''" name="exp1" max="50"></textarea>
+                                                        oninput="this.className = ''" name="exp1" maxlength="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1124,7 +1128,7 @@ include 'inc/firebase_init.php';
                                                 <div class="d-flex justify-content-center">
                                                     <textarea
                                                         placeholder="Research Assistant with Queen's University"
-                                                        oninput="this.className = ''" name="exp2" max="50"></textarea>
+                                                        oninput="this.className = ''" name="exp2" maxlength="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1132,7 +1136,7 @@ include 'inc/firebase_init.php';
                                             <div class="form-group">
                                                 <div class="d-flex justify-content-center">
                                                     <textarea placeholder="Varsity soccer team captian"
-                                                        oninput="this.className = ''" name="exp3" max="50"></textarea>
+                                                        oninput="this.className = ''" name="exp3" maxlength="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1141,10 +1145,10 @@ include 'inc/firebase_init.php';
                                             <div class="form-group">
                                                 <h3 class="text-center">Tell us something that isn't on your resume.
                                                 </h3>
-                                                <p class="text-center"><span>This is your space to wow! What is something that helps you stand out? </span></p>
+                                                <p class="text-center"><span>This is your space to wow! What is something that helps you stand out? (150 character limit)</span></p>
                                                 <div class="d-flex justify-content-center">
                                                     <textarea placeholder="I've travelled to 25 different countries"
-                                                        oninput="this.className = ''" name="magic" max="50"></textarea>
+                                                        oninput="this.className = ''" name="magic" max="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1246,7 +1250,7 @@ include 'inc/firebase_init.php';
     document.addEventListener("click", closeAllSelect);
   </script>
 
-    <script>
+  <script>
     // ------------step-wizard-------------
     $(document).ready(function() {
         $('.nav-tabs > li a[title]').tooltip();
@@ -1290,6 +1294,8 @@ include 'inc/firebase_init.php';
         $(this).addClass('active');
     });
 
+    /* --------------- Form handling --------------------- */
+
     // global arrays for each choice topic
     // max len 3
     var primArr = [];
@@ -1303,6 +1309,8 @@ include 'inc/firebase_init.php';
     var softArr = [];
     // max len 3
     var workTypeArr = [];
+    // any self inputted values
+    var otherArr = [];
 
     function onCheck(element, type){
       var typeArr = [];
@@ -1400,9 +1408,20 @@ include 'inc/firebase_init.php';
 
         }
 
+        // if the field is empty or has empty space, whatever was previously entered has already been deleted
+        // and the function should stop since the empty space shouldn't be added to the form arr
+        if(choice.value.trim() == ''){
+          return;
+        }
+
+      }
+
+
       // choice is being picked for the first time
       // havent reached max amount of choices
       if(typeArr.length < maxLen){
+        if(choice.type != "checkbox") otherArr.push(value);
+
         typeArr.push(value);
         setElem.value = typeArr;
       } else {
@@ -1419,19 +1438,16 @@ include 'inc/firebase_init.php';
         span.style.borderRadius = "4px";
 
 
-        setTimeout(function(){
-          instruction.classList.remove("animated");
-          span.style = "none";
+          setTimeout(function(){
+            instruction.classList.remove("animated");
+            span.style = "none";
 
-        }, 1000);
+          }, 1000);
 
-        // uncheck or clear textArea (and scroll to that section to bring attention)
-        choice.type == "checkbox" ? choice.checked = false : (choice.value = "", scrollDiv.scrollIntoView() );
-
-      }
-
+          // uncheck or clear textArea (and scroll to that section to bring attention)
+          choice.type == "checkbox" ? choice.checked = false : (choice.value = "", scrollDiv.scrollIntoView() );
+        }
     }
-
 
     </script>
 </body>

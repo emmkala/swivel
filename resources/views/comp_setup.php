@@ -88,9 +88,17 @@ include 'inc/firebase_init.php';
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <h6>What is your company size?</h6>
-                                                <input class="form-control" placeholder="15"
-                                                     name="size">
+                                                <h6>What is your company size? (employees)</h6>
+                                                <div class="custom-select" style="width: 200px;">
+                                                  <select oninput="this.className = ''" name="size">
+                                                    <option value="1-10 employees">1-10</option>
+                                                    <option value="11-50 employees">11-50</option>
+                                                    <option value="51-200 employees">51-200</option>
+                                                    <option value="201-500 employees">201-500</option>
+                                                    <option value="501-1000 employees">501-1000</option>
+                                                    <option value="1001-5000 employees">1001-5000</option>
+                                                  </select>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -135,6 +143,8 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12" id="primDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your company’s primary values?</h3>
+                                                <p class="text-center">These are the top three things that are important to your company as a whole.
+                                                These values dictate how you operate, what you base decisions off of, and what you like to see in your employees..</p>
                                                 <p id="primInstruct" class="text-center">Choose up to 3 values.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
@@ -158,8 +168,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="prim3" onclick="onCheck('prim3', 'prim')"
-                                                                    name="prim3" value="Achievement"><span id="prim3span"
-                                                                    class="text-center">Achievement</span>
+                                                                    name="prim3" value="Profitability"><span id="prim3span"
+                                                                    class="text-center">Profitability</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
@@ -182,8 +192,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim6" onclick="onCheck('prim6', 'prim')"
-                                                                    name="prim6" value="Social Impact"><span id="prim6span"
-                                                                    class="text-center">Social Impact</span>
+                                                                    name="prim6" value="Customer Care"><span id="prim6span"
+                                                                    class="text-center">Customer Care</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -203,8 +213,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim8" onclick="onCheck('prim8', 'prim')"
-                                                                    name="prim8" value="Honesty"><span id="prim8span"
-                                                                    class="text-center">Honesty</span>
+                                                                    name="prim8" value="Diversity"><span id="prim8span"
+                                                                    class="text-center">Diversity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -213,15 +223,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="prim9" onclick="onCheck('prim9', 'prim')"
-                                                                    name="prim9" value="Health"><span id="prim9span"
-                                                                    class="text-center">Health</span>
+                                                                    name="prim9" value="Personal Growth"><span id="prim9span"
+                                                                    class="text-center">Personal Growth</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim10" onclick="onCheck('prim10', 'prim')"
-                                                                    name="prim10" value="Family"><span id="prim10span"
-                                                                    class="text-center">Family</span>
+                                                                    name="prim10" value="Integrity"><span id="prim10span"
+                                                                    class="text-center">Integrity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -230,15 +240,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="prim11" onclick="onCheck('prim11', 'prim')"
-                                                                    name="prim11" value="Peace"><span id="prim11span"
-                                                                    class="text-center">Peace</span>
+                                                                    name="prim11" value="Humility"><span id="prim11span"
+                                                                    class="text-center">Humility</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="prim12" onclick="onCheck('prim12', 'prim')"
-                                                                    name="prim12" value="Wealth"><span id="prim12span"
-                                                                    class="text-center">Wealth</span>
+                                                                    name="prim12" value="Sustainability"><span id="prim12span"
+                                                                    class="text-center">Sustainability</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -334,6 +344,8 @@ include 'inc/firebase_init.php';
                                         <div class="col-md-12" id="secDiv">
                                             <div class="form-group">
                                                 <h3 class="text-center">What are your company’s secondary values?</h3>
+                                                <p class="text-center">These are other values that are still important to your company, but take a
+                                                  back seat to the values you chose above.</p>
                                                 <p id="secInstruct" class="text-center">Choose up to 5 values.</p>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-sm-12 d-flex justify-content-center mt-2">
@@ -357,8 +369,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="sec3" onclick="onCheck('sec3', 'sec')"
-                                                                    name="sec3" value="Achievement"><span id="sec3span"
-                                                                    class="text-center">Achievement</span>
+                                                                    name="sec3" value="Profitability"><span id="sec3span"
+                                                                    class="text-center">Profitability</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
@@ -380,8 +392,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec6" onclick="onCheck('sec6', 'sec')"
-                                                                    name="sec6" value="Social Impact"><span id="sec6span"
-                                                                    class="text-center">Social Impact</span>
+                                                                    name="sec6" value="Customer Care"><span id="sec6span"
+                                                                    class="text-center">Customer Care</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -401,8 +413,8 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec8" onclick="onCheck('sec8', 'sec')"
-                                                                    name="sec8" value="Honesty"><span id="sec8span"
-                                                                    class="text-center">Honesty</span>
+                                                                    name="sec8" value="Diversity"><span id="sec8span"
+                                                                    class="text-center">Diversity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -411,15 +423,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="sec9" onclick="onCheck('sec9', 'sec')"
-                                                                    name="sec9" value="Health"><span id="sec9span"
-                                                                    class="text-center">Health</span>
+                                                                    name="sec9" value="Personal Growth"><span id="sec9span"
+                                                                    class="text-center">Personal Growth</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec10" onclick="onCheck('sec10', 'sec')"
-                                                                    name="sec10" value="Family"><span id="sec10span"
-                                                                    class="text-center">Family</span>
+                                                                    name="sec10" value="Integrity"><span id="sec10span"
+                                                                    class="text-center">Integrity</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -428,15 +440,15 @@ include 'inc/firebase_init.php';
                                                         <div id="ck-button" class="mr-2">
                                                             <label>
                                                                 <input type="checkbox" id="sec11" onclick="onCheck('sec11', 'sec')"
-                                                                    name="sec11" value="Peace"><span id="sec11span"
-                                                                    class="text-center">Peace</span>
+                                                                    name="sec11" value="Humility"><span id="sec11span"
+                                                                    class="text-center">Humility</span>
                                                             </label>
                                                         </div>
                                                         <div id="ck-button">
                                                             <label>
                                                                 <input type="checkbox" id="sec12" onclick="onCheck('sec12', 'sec')"
-                                                                    name="sec12" value="Wealth"><span id="sec12span"
-                                                                    class="text-center">Wealth</span>
+                                                                    name="sec12" value="Sustainability"><span id="sec12span"
+                                                                    class="text-center">Sustainability</span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -1120,10 +1132,10 @@ include 'inc/firebase_init.php';
                                             <div class="form-group">
                                                 <h3 class="text-center">Give us a brief description of your company.
                                                 </h3>
-                                                <p class="text-center"><span>In 50 words or less.</span></p>
+                                                <p class="text-center"><span>150 character limit.</span></p>
                                                 <div class="d-flex justify-content-center">
                                                     <textarea placeholder="Swivels purpose is to..."
-                                                         name="info1" max="50"></textarea>
+                                                         name="info1" maxlength="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -1131,21 +1143,21 @@ include 'inc/firebase_init.php';
                                             <div class="form-group">
                                                 <h3 class="text-center">Give us a brief description of life at your
                                                     company.</h3>
-                                                <p class="text-center"><span>In 50 words or less.</span></p>
+                                                <p class="text-center"><span>150 character limit.</span></p>
                                                 <div class="d-flex justify-content-center">
                                                     <textarea
                                                         placeholder="Life at Swivel is filled with learning, teamwork and ..."
-                                                         name="info2" max="50"></textarea>
+                                                         name="info2" maxlength="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <h3 class="text-center">Give us a brief description of yourself.</h3>
-                                                <p class="text-center"><span>In 50 words or less.</span></p>
+                                                <p class="text-center"><span>150 character limit.</span></p>
                                                 <div class="d-flex justify-content-center">
                                                     <textarea placeholder="I am an entrepreneur at heart ..."
-                                                         name="info3" max="50"></textarea>
+                                                         name="info3" maxlength="150"></textarea>
                                                 </div>
                                             </div>
                                         </div>

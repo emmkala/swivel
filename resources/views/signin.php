@@ -22,7 +22,7 @@ include 'inc/firebase_init.php';
          <!--Form Area-->
          <form class="formgroup1">
            <div class="signin_form1">
-              <input type="text" id="email" placeholder="School Email">
+              <input type="text" id="email" placeholder="Email">
            </div>
            <div class="signin_form1">
               <input type="password" id="password" placeholder="Password">
@@ -31,11 +31,25 @@ include 'inc/firebase_init.php';
                <input type="button" value="Login" onclick="signin()">
            </div>
          </form>
-         <!-- <h4><a class="linkno" href="/signin">Forgot Password?</a></h4>-->
-         <h5>Don't have an account? Join <a class="linkyes company" href="/studentCompany">here.</a></h5>
+         <h5 id="error"></h4>
+
+         <h6 id="forget" onclick="forget()">Forgot your password?</h6>
+         <h6>Don't have an account? Join <a class="linkyes company" href="/studentCompany">here.</a></h6>
 
      </div> <!--End of sign-in block -->
 
+     <div class="forgetPassword" id="popup-div-forget" style="display: none;">
+       <center>
+         <h3> Enter your email </h3>
+         <form>
+           <input type="text" id="emailPass" placeholder="email">
+           <input type="button" id="forgetSubmit" value="Submit" onclick="forgottenPass()">
+         </form>
+         <h2 id="response"></h2>
+         <h5> You will recieve an email with instructions to reset your password. </h5>
+         <h5> Come back and refresh the page after resetting. </h5>
+      </center>
+      </div>
 
 
  <!--Footer-->
@@ -49,24 +63,42 @@ include 'inc/firebase_init.php';
 
 <script>
 
-function signin(){
-  var email = document.getElementById("email").value;
-  var pass = document.getElementById("password").value;
+  function signin(){
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("password").value;
 
-  firebase.auth().signInWithEmailAndPassword(email, pass).then(function() {
+    firebase.auth().signInWithEmailAndPassword(email, pass).then(function() {
 
-    var user = firebase.auth().currentUser;
-    var uid = user.uid;
-    var url = "/matching/"+uid;
-    window.location = url;
+      var user = firebase.auth().currentUser;
+      var uid = user.uid;
+      var url = "/curated/"+uid;
+      window.location = url;
 
-  }).catch(function(error){
-      // Handle Errors here.
-      var errorCode = error.code;
+    }).catch(function(error){
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        document.getElementById("error").innerHTML = errorMessage;
+        // ...
+    });
+  }
+
+  function forget(){
+    document.getElementById("popup-div-forget").style.display = "inline";
+  }
+
+  function forgottenPass(){
+    var auth = firebase.auth();
+    var emailAddress = document.getElementById("emailPass").value;
+
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+      document.getElementById("response").innerHTML = "Email sent";
+    }).catch(function(error) {
       var errorMessage = error.message;
-      // ...
-  });
+      document.getElementById("response").innerHTML = errorMessage;
+    });
 
-}
+  }
+
 
 </script>
